@@ -30,7 +30,7 @@ class Rcc2d(CombinatorialBody.CombinatorialBody):
         radius = int(self.r * self.visualizer.scale)
         if radius >= 2:
             #pygame.draw.circle(self.visualizer.screen, (150, 150, 150), [centerx, centery], radius, 0)
-            pygame.draw.circle(self.visualizer.screen, (0, 0, 0), [centerx, centery], radius, 2)
+            pygame.draw.circle(self.visualizer.screen, self.color, [centerx, centery], radius, 2)
 
     def __str__(self):
         return "  " + str(self.id) + ": RCC: " + \

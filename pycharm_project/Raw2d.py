@@ -36,7 +36,9 @@ class Raw2d(CombinatorialBody):
         return self
 
     def clone(self):
-        return Raw2d((self.px, self.py), self.vec1, self.vec2)
+        b = Raw2d((self.px, self.py), self.vec1, self.vec2)
+        b.color = self.color
+        return b
 
     def getcorners(self):
         return [(self.px, self.py), (self.px+self.vec1[0], self.py+self.vec1[1]), (self.px+self.vec2[0], self.py+self.vec2[1])]
@@ -50,7 +52,7 @@ class Raw2d(CombinatorialBody):
 
         #pygame.draw.rect(self.visualizer.screen, self.color,
         #                 [int(self.left), 400-int(self.top), int(self.w), int(self.h)], 1)
-        pygame.draw.aalines(self.visualizer.screen, (0, 0, 0), True,
+        pygame.draw.aalines(self.visualizer.screen, self.color, True,
                             [[int(k[0]), 400-int(k[1])] for k in d], True)
 
     def __str__(self):

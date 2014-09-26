@@ -52,7 +52,9 @@ class Box2d(CombinatorialBody):
         return self
 
     def clone(self):
-        return Box2d([self.cx, self.cy], self.vec1, self.vec2)
+        b = Box2d([self.cx, self.cy], self.vec1, self.vec2)
+        b.color = self.color
+        return b
 
     def getcorners(self):
         return [(self.cx - self.vec1[0] - self.vec2[0], self.cy - self.vec1[1] - self.vec2[1]),
@@ -69,7 +71,7 @@ class Box2d(CombinatorialBody):
 
         #pygame.draw.rect(self.visualizer.screen, self.color,
         #                 [int(self.left), 400-int(self.top), int(self.w), int(self.h)], 1)
-        pygame.draw.aalines(self.visualizer.screen, (0, 0, 0), True,
+        pygame.draw.aalines(self.visualizer.screen, self.color, True,
                             [[int(k[0]), 400-int(k[1])] for k in d], True)
 
     def __str__(self):

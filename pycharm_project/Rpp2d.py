@@ -33,16 +33,24 @@ class Rpp2d(CombinatorialBody.CombinatorialBody):
         self.comment = "Axis-aligned Right Parallelpiped"
 
     def clone_down(self):
-        return Rpp2d([self.cx, self.cy - self.h], [self.w, self.h])
+        r = Rpp2d([self.cx, self.cy - self.h], [self.w, self.h])
+        r.color = self.color
+        return r
 
     def clone_up(self):
-        return Rpp2d([self.cx, self.cy + self.h], [self.w, self.h])
+        r = Rpp2d([self.cx, self.cy + self.h], [self.w, self.h])
+        r.color = self.color
+        return r
 
     def clone_right(self):
-        return Rpp2d([self.cx + self.w, self.cy], [self.w, self.h])
+        r = Rpp2d([self.cx + self.w, self.cy], [self.w, self.h])
+        r.color = self.color
+        return r
 
     def clone_left(self):
-        return Rpp2d([self.cx - self.w, self.cy], [self.w, self.h])
+        r = Rpp2d([self.cx - self.w, self.cy], [self.w, self.h])
+        r.color = self.color
+        return r
 
     def set_center(self, pt):
         self.cx = pt[0]

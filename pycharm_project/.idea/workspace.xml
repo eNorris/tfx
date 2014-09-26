@@ -35,16 +35,16 @@
       <file leaf-file-name="makephantom.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/makephantom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="62" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.0" vertical-offset="655" max-vertical-offset="1904">
+            <state line="77" column="36" selection-start="2111" selection-end="2111" vertical-scroll-proportion="0.0" vertical-offset="961" max-vertical-offset="1938">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="partswriter.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="partswriter.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/partswriter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="48" selection-start="329" selection-end="329" vertical-scroll-proportion="0.4678899" vertical-offset="0" max-vertical-offset="1003">
+            <state line="10" column="30" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
               <folding />
             </state>
           </provider>
@@ -62,7 +62,7 @@
       <file leaf-file-name="Box2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Box2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="27" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1496">
+            <state line="57" column="0" selection-start="1737" selection-end="1737" vertical-scroll-proportion="0.0" vertical-offset="804" max-vertical-offset="1530">
               <folding />
             </state>
           </provider>
@@ -80,7 +80,7 @@
       <file leaf-file-name="Raw2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Raw2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="27" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.0" vertical-offset="507" max-vertical-offset="1173">
+            <state line="40" column="16" selection-start="1285" selection-end="1285" vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="1207">
               <folding>
                 <element signature="e#107#118#0" expanded="true" />
               </folding>
@@ -91,7 +91,7 @@
       <file leaf-file-name="Rcc2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Rcc2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="19" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="714">
+            <state line="32" column="65" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="714">
               <folding>
                 <element signature="e#107#118#0" expanded="true" />
               </folding>
@@ -99,10 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rpp2d.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Rpp2d.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Rpp2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="52" selection-start="2461" selection-end="2461" vertical-scroll-proportion="0.0" vertical-offset="1128" max-vertical-offset="1615">
+            <state line="47" column="16" selection-start="1382" selection-end="1382" vertical-scroll-proportion="0.33867276" vertical-offset="651" max-vertical-offset="1751">
               <folding />
             </state>
           </provider>
@@ -111,7 +111,7 @@
       <file leaf-file-name="CombinatorialBody.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CombinatorialBody.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="30" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+            <state line="11" column="29" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
               <folding />
             </state>
           </provider>
@@ -128,21 +128,21 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/Visualizer.py" />
+        <option value="$PROJECT_DIR$/Region.py" />
+        <option value="$PROJECT_DIR$/partswriter.py" />
+        <option value="$PROJECT_DIR$/CombinatorialBody.py" />
+        <option value="$PROJECT_DIR$/makephantom.py" />
+        <option value="$PROJECT_DIR$/Rcc2d.py" />
         <option value="$PROJECT_DIR$/Box2d.py" />
         <option value="$PROJECT_DIR$/Raw2d.py" />
-        <option value="$PROJECT_DIR$/Visualizer.py" />
-        <option value="$PROJECT_DIR$/Rcc2d.py" />
-        <option value="$PROJECT_DIR$/CombinatorialBody.py" />
         <option value="$PROJECT_DIR$/Rpp2d.py" />
-        <option value="$PROJECT_DIR$/Region.py" />
-        <option value="$PROJECT_DIR$/makephantom.py" />
-        <option value="$PROJECT_DIR$/partswriter.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="458" />
-    <option name="y" value="16" />
+    <option name="x" value="523" />
+    <option name="y" value="20" />
     <option name="width" value="1048" />
     <option name="height" value="840" />
   </component>
@@ -356,8 +356,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="458" y="16" width="1048" height="840" extended-state="0" />
-    <editor active="false" />
+    <frame x="523" y="20" width="1048" height="840" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -367,7 +367,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39831698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3043478" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30294532" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -399,8 +399,13 @@
           <line>31</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/Box2d.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="21" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -559,48 +564,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Box2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="27" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1496">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Raw2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="27" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.0" vertical-offset="507" max-vertical-offset="1173">
-          <folding>
-            <element signature="e#107#118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Visualizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="88" column="64" selection-start="2611" selection-end="2611" vertical-scroll-proportion="0.0" vertical-offset="1476" max-vertical-offset="2142">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Rcc2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="19" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="714">
-          <folding>
-            <element signature="e#107#118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CombinatorialBody.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="30" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Rpp2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="52" selection-start="2461" selection-end="2461" vertical-scroll-proportion="0.0" vertical-offset="1128" max-vertical-offset="1615">
           <folding />
         </state>
       </provider>
@@ -612,16 +578,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/makephantom.py">
+    <entry file="file://$PROJECT_DIR$/CombinatorialBody.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="62" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.0" vertical-offset="655" max-vertical-offset="1904">
+        <state line="11" column="29" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/partswriter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="48" selection-start="329" selection-end="329" vertical-scroll-proportion="0.4678899" vertical-offset="0" max-vertical-offset="1003">
+        <state line="10" column="30" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Box2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="0" selection-start="1737" selection-end="1737" vertical-scroll-proportion="0.0" vertical-offset="804" max-vertical-offset="1530">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/makephantom.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="36" selection-start="2111" selection-end="2111" vertical-scroll-proportion="0.0" vertical-offset="961" max-vertical-offset="1938">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Raw2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="16" selection-start="1285" selection-end="1285" vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="1207">
+          <folding>
+            <element signature="e#107#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rcc2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="65" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="714">
+          <folding>
+            <element signature="e#107#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rpp2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="16" selection-start="1382" selection-end="1382" vertical-scroll-proportion="0.33867276" vertical-offset="651" max-vertical-offset="1751">
           <folding />
         </state>
       </provider>
