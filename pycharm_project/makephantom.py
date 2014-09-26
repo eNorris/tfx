@@ -31,8 +31,8 @@ def makeparts():
     # Mesh the phantom and add the regions
     width = 32
     height = 32
-    xdivs = 32
-    ydivs = 32
+    xdivs = 2
+    ydivs = 2
     bot = -16
     left = -16
 
