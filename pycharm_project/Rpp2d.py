@@ -86,5 +86,5 @@ class Rpp2d(CombinatorialBody.CombinatorialBody):
     #    return (self.cx, self.cy, 0.5)
 
     def __str__(self):
-        return "  " + str(self.id) + ": RPP " + \
+        return "  " + str(self.id) + ": RPP: " + \
                ", ".join(str(x) for x in [self.left, self.right, self.top, self.bottom, 0, 1]) + " :: " + self.comment

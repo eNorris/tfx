@@ -44,7 +44,7 @@
       <file leaf-file-name="partswriter.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/partswriter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="20" selection-start="1588" selection-end="1588" vertical-scroll-proportion="0.0" vertical-offset="278" max-vertical-offset="986">
+            <state line="24" column="57" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0" vertical-offset="278" max-vertical-offset="1003">
               <folding />
             </state>
           </provider>
@@ -99,19 +99,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rpp2d.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Rpp2d.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Rpp2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="27" selection-start="2159" selection-end="2159" vertical-scroll-proportion="0.0" vertical-offset="949" max-vertical-offset="1615">
+            <state line="73" column="46" selection-start="2403" selection-end="2403" vertical-scroll-proportion="0.14220184" vertical-offset="1179" max-vertical-offset="1615">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CombinatorialBody.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CombinatorialBody.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CombinatorialBody.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="30" selection-start="53" selection-end="53" vertical-scroll-proportion="0.075723834" vertical-offset="0" max-vertical-offset="449">
+            <state line="2" column="30" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
               <folding />
             </state>
           </provider>
@@ -130,13 +130,13 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/makephantom.py" />
         <option value="$PROJECT_DIR$/Region.py" />
-        <option value="$PROJECT_DIR$/partswriter.py" />
         <option value="$PROJECT_DIR$/Box2d.py" />
         <option value="$PROJECT_DIR$/Raw2d.py" />
-        <option value="$PROJECT_DIR$/Rpp2d.py" />
         <option value="$PROJECT_DIR$/Visualizer.py" />
         <option value="$PROJECT_DIR$/Rcc2d.py" />
         <option value="$PROJECT_DIR$/CombinatorialBody.py" />
+        <option value="$PROJECT_DIR$/partswriter.py" />
+        <option value="$PROJECT_DIR$/Rpp2d.py" />
       </list>
     </option>
   </component>
@@ -573,13 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partswriter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="20" selection-start="1588" selection-end="1588" vertical-scroll-proportion="0.0" vertical-offset="278" max-vertical-offset="986">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Box2d.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="27" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1496">
@@ -593,13 +586,6 @@
           <folding>
             <element signature="e#107#118#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Rpp2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="27" selection-start="2159" selection-end="2159" vertical-scroll-proportion="0.0" vertical-offset="949" max-vertical-offset="1615">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -621,7 +607,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CombinatorialBody.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="30" selection-start="53" selection-end="53" vertical-scroll-proportion="0.075723834" vertical-offset="0" max-vertical-offset="449">
+        <state line="2" column="30" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partswriter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="57" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0" vertical-offset="278" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rpp2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="46" selection-start="2403" selection-end="2403" vertical-scroll-proportion="0.14220184" vertical-offset="1179" max-vertical-offset="1615">
           <folding />
         </state>
       </provider>
