@@ -71,12 +71,12 @@ def makeparts():
     # Add the collimators and their air centers
     colwidth = 50 * math.tan(math.pi / srcpts)
     holewidth = 4 * math.tan(beamangle / 2)
-    if holewidth > holewidth:
+    if holewidth > colwidth:
         print("WARNING: Collimator hole exceeds collimator size!")
 
-    upcollimator = Box2d.Box2d((51.5, holewidth), (-1.5, 0), (0, (colwidth-holewidth)/2))
+    upcollimator = Box2d.Box2d((50, holewidth), (1.5, 0), (0, (colwidth-holewidth)/2), False)
     upcollimator.color = (255, 0, 0)
-    downcollimator = Box2d.Box2d((51.5, -holewidth), (-1.5, 0), (0, -(colwidth-holewidth)/2))
+    downcollimator = Box2d.Box2d((50, -holewidth), (1.5, 0), (0, -(colwidth-holewidth)/2), False)
     downcollimator.color = (0, 255, 0)
     upbow = Raw2d.Raw2d((44, 0), (0, 5), (5, 5))
     downbow = Raw2d.Raw2d((44, 0), (0, -5), (5, -5))

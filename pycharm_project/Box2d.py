@@ -12,12 +12,18 @@ from CombinatorialBody import CombinatorialBody
 
 class Box2d(CombinatorialBody):
 
-    def __init__(self, center=(0, 0), vec1=(1, 0), vec2=(0, 1)):
+    def __init__(self, center=(0, 0), vec1=(1, 0), vec2=(0, 1), provide_center=True):
         super(Box2d, self).__init__()
 
-        self.cx, self.cy = center
-        self.vec1 = vec1
-        self.vec2 = vec2
+        if provide_center:
+            self.cx, self.cy = center
+            self.vec1 = vec1
+            self.vec2 = vec2
+        else:
+            self.cx = center[0] + vec1[0] + vec2[0]
+            self.cy = center[1] + vec1[1] + vec2[1]
+            self.vec1 = vec1
+            self.vec2 = vec2
 
         self.comment = "Arbitrary Box"
 

@@ -32,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="makephantom.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="makephantom.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/makephantom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="36" selection-start="2111" selection-end="2111" vertical-scroll-proportion="0.0" vertical-offset="961" max-vertical-offset="1938">
+            <state line="78" column="44" selection-start="2159" selection-end="2159" vertical-scroll-proportion="0.43707094" vertical-offset="999" max-vertical-offset="1938">
               <folding />
             </state>
           </provider>
@@ -54,7 +54,9 @@
         <entry file="file://$PROJECT_DIR$/Region.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="118" column="5" selection-start="3398" selection-end="3398" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3366">
-              <folding />
+              <folding>
+                <marker date="1411697127675" expanded="true" signature="3178:3368" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,7 +64,7 @@
       <file leaf-file-name="Box2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Box2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="0" selection-start="1737" selection-end="1737" vertical-scroll-proportion="0.0" vertical-offset="804" max-vertical-offset="1530">
+            <state line="23" column="51" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="1632">
               <folding />
             </state>
           </provider>
@@ -83,6 +85,7 @@
             <state line="40" column="16" selection-start="1285" selection-end="1285" vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="1207">
               <folding>
                 <element signature="e#107#118#0" expanded="true" />
+                <marker date="1411701305980" expanded="true" signature="1179:1285" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -99,10 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rpp2d.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Rpp2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Rpp2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="16" selection-start="1382" selection-end="1382" vertical-scroll-proportion="0.33867276" vertical-offset="651" max-vertical-offset="1751">
+            <state line="47" column="16" selection-start="1382" selection-end="1382" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1751">
               <folding />
             </state>
           </provider>
@@ -112,7 +115,10 @@
         <entry file="file://$PROJECT_DIR$/CombinatorialBody.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="11" column="29" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-              <folding />
+              <folding>
+                <marker date="1411700995567" expanded="true" signature="55:265" placeholder="..." />
+                <marker date="1411700995567" expanded="true" signature="96:265" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,11 +138,11 @@
         <option value="$PROJECT_DIR$/Region.py" />
         <option value="$PROJECT_DIR$/partswriter.py" />
         <option value="$PROJECT_DIR$/CombinatorialBody.py" />
-        <option value="$PROJECT_DIR$/makephantom.py" />
         <option value="$PROJECT_DIR$/Rcc2d.py" />
-        <option value="$PROJECT_DIR$/Box2d.py" />
         <option value="$PROJECT_DIR$/Raw2d.py" />
         <option value="$PROJECT_DIR$/Rpp2d.py" />
+        <option value="$PROJECT_DIR$/makephantom.py" />
+        <option value="$PROJECT_DIR$/Box2d.py" />
       </list>
     </option>
   </component>
@@ -401,11 +407,26 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/Box2d.py</url>
-          <line>73</line>
+          <line>79</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/makephantom.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/makephantom.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/Box2d.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="21" />
+      <option name="time" value="25" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -433,7 +454,9 @@
     <entry file="file://$PROJECT_DIR$/Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="117" column="23" selection-start="3380" selection-end="3380" vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="3349">
-          <folding />
+          <folding>
+            <marker date="1411697127675" expanded="true" signature="3178:3368" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -456,6 +479,7 @@
         <state line="53" column="22" selection-start="1942" selection-end="1942" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1105">
           <folding>
             <element signature="e#107#118#0" expanded="true" />
+            <marker date="1411701305980" expanded="true" signature="1179:1285" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -479,7 +503,10 @@
     <entry file="file://$PROJECT_DIR$/CombinatorialBody.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="0" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="289">
-          <folding />
+          <folding>
+            <marker date="1411700995567" expanded="true" signature="55:265" placeholder="..." />
+            <marker date="1411700995567" expanded="true" signature="96:265" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -507,7 +534,9 @@
     <entry file="file://$PROJECT_DIR$/Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="25" selection-start="538" selection-end="538" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="3281">
-          <folding />
+          <folding>
+            <marker date="1411697127675" expanded="true" signature="3178:3368" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -530,6 +559,7 @@
         <state line="53" column="22" selection-start="1942" selection-end="1942" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1105">
           <folding>
             <element signature="e#107#118#0" expanded="true" />
+            <marker date="1411701305980" expanded="true" signature="1179:1285" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -553,7 +583,10 @@
     <entry file="file://$PROJECT_DIR$/CombinatorialBody.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="30" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="272">
-          <folding />
+          <folding>
+            <marker date="1411700995567" expanded="true" signature="55:265" placeholder="..." />
+            <marker date="1411700995567" expanded="true" signature="96:265" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -574,14 +607,19 @@
     <entry file="file://$PROJECT_DIR$/Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="118" column="5" selection-start="3398" selection-end="3398" vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="3366">
-          <folding />
+          <folding>
+            <marker date="1411697127675" expanded="true" signature="3178:3368" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CombinatorialBody.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="29" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <folding />
+          <folding>
+            <marker date="1411700995567" expanded="true" signature="55:265" placeholder="..." />
+            <marker date="1411700995567" expanded="true" signature="96:265" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -592,25 +630,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Box2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="0" selection-start="1737" selection-end="1737" vertical-scroll-proportion="0.0" vertical-offset="804" max-vertical-offset="1530">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/makephantom.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="36" selection-start="2111" selection-end="2111" vertical-scroll-proportion="0.0" vertical-offset="961" max-vertical-offset="1938">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Raw2d.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="16" selection-start="1285" selection-end="1285" vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="1207">
           <folding>
             <element signature="e#107#118#0" expanded="true" />
+            <marker date="1411701305980" expanded="true" signature="1179:1285" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -626,7 +651,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Rpp2d.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="16" selection-start="1382" selection-end="1382" vertical-scroll-proportion="0.33867276" vertical-offset="651" max-vertical-offset="1751">
+        <state line="47" column="16" selection-start="1382" selection-end="1382" vertical-scroll-proportion="0.0" vertical-offset="651" max-vertical-offset="1751">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Box2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="51" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="1632">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/makephantom.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="44" selection-start="2159" selection-end="2159" vertical-scroll-proportion="0.43707094" vertical-offset="999" max-vertical-offset="1938">
           <folding />
         </state>
       </provider>
