@@ -31,8 +31,8 @@ def makeparts():
     # Mesh the phantom and add the regions
     width = 32
     height = 32
-    xdivs = 2
-    ydivs = 2
+    xdivs = 8
+    ydivs = 8
     bot = -16
     left = -16
 
@@ -65,7 +65,20 @@ def makeparts():
                 corespondingregion += r
                 corespondingregion.doeval = True
                 corespondingregion.matid = 'E'
-                corespondingregion.evalpoint = (r.cx, r.cy, .5)
+
+                evalpt = (0, 0, 0)
+                if r.cx**2 + r.cy*2 <= phantom.r**2:
+                    evalpt = (r.cx, r.cy, .5)
+                else:
+                    if r.cx > 0 and r.cy > 0:
+                        evalpt = (r.left, r.bottom, .5)
+                    elif r.cx > 0 and r.cy < 0:
+                        evalpt = (r.left, r.top, .5)
+                    elif r.cx < 0 and r.cy > 0:
+                        evalpt = (r.right, r.bottom, .5)
+                    else:
+                        evalpt = (r.right, r.top, .5)
+                corespondingregion.evalpoint = (evalpt[0], evalpt[1], evalpt[2])
                 regions.append(corespondingregion)
 
     # Add the collimators and their air centers
