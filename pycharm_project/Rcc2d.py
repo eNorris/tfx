@@ -1,6 +1,10 @@
 __author__ = 'Edward'
 
-import pygame
+try:
+    import pygame
+    graphics = True
+except ImportError:
+    graphics = False
 import math
 
 import CombinatorialBody
@@ -19,7 +23,7 @@ class Rcc2d(CombinatorialBody.CombinatorialBody):
         return math.sqrt((x-self.cx)**2 + (y-self.cy)**2) <= self.r
 
     def draw2d(self):
-        if self.visualizer is None:
+        if not graphics or self.visualizer is None:
             return
         centerx = int(self.cx * self.visualizer.scale + self.visualizer.gx)
         centery = int((400 - self.cy * self.visualizer.scale) + self.visualizer.gy)

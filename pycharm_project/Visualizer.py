@@ -1,12 +1,16 @@
 __author__ = 'Edward'
 
-import pygame
-import Box2d
+try:
+    import pygame
+    graphics = True
+except ImportError:
+    graphics = False
 
 
 class Visualizer:
 
     def __init__(self):
+        if not graphics: return
         pygame.init()
 
         self.screen_size = (600, 400)
@@ -24,6 +28,7 @@ class Visualizer:
         self.active = False
 
     def register(self, drawables):
+        if not graphics: return
         try:
             _ = iter(drawables)
         except TypeError:
@@ -34,6 +39,7 @@ class Visualizer:
                 self.register(d)
 
     def unregister(self, drawables):
+        if not graphics: return
         try:
             _ = iter(drawables)
         except TypeError:
@@ -44,7 +50,7 @@ class Visualizer:
                 self.unregister(d)
 
     def launch(self):
-
+        if not graphics: return
         #b = Box2d.Box2d((0, 0), (12, 0), (0, 12))
         #print(str(b))
         #b.set_pos((50, 50))

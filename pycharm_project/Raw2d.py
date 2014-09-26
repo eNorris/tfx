@@ -1,6 +1,10 @@
 __author__ = 'Edward'
 
-import pygame
+try:
+    import pygame
+    graphics = True
+except ImportError:
+    graphics = False
 import math
 
 from CombinatorialBody import CombinatorialBody
@@ -38,7 +42,7 @@ class Raw2d(CombinatorialBody):
         return [(self.px, self.py), (self.px+self.vec1[0], self.py+self.vec1[1]), (self.px+self.vec2[0], self.py+self.vec2[1])]
 
     def draw2d(self):
-        if self.visualizer is None:
+        if not graphics or self.visualizer is None:
             return
         d = self.getcorners()
 

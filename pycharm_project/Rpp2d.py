@@ -1,6 +1,10 @@
 __author__ = 'Edward'
 
-import pygame
+try:
+    import pygame
+    graphics = True
+except ImportError:
+    graphics = False
 
 import CombinatorialBody
 
@@ -63,7 +67,7 @@ class Rpp2d(CombinatorialBody.CombinatorialBody):
             self.top = self.bottom + self.h
 
     def draw2d(self):
-        if self.visualizer is None:
+        if not graphics or self.visualizer is None:
             return
         left = int(self.left * self.visualizer.scale + self.visualizer.gx)
         top = int(400 - self.top * self.visualizer.scale + self.visualizer.gy)

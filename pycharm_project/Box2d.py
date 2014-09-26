@@ -1,7 +1,11 @@
 __author__ = 'Edward'
 
 import math
-import pygame
+try:
+    import pygame
+    graphics = True
+except ImportError:
+    graphics = False
 
 from CombinatorialBody import CombinatorialBody
 
@@ -57,7 +61,7 @@ class Box2d(CombinatorialBody):
                 (self.cx - self.vec1[0] + self.vec2[0], self.cy - self.vec1[1] + self.vec2[1])]
 
     def draw2d(self):
-        if self.visualizer is None:
+        if not graphics or self.visualizer is None:
             return
         d = self.getcorners()
 
