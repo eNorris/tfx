@@ -65,6 +65,7 @@ def makeparts():
                 corespondingregion += r
                 corespondingregion.doeval = True
                 corespondingregion.matid = 'E'
+                corespondingregion.evalpoint = (r.cx, r.cy, .5)
                 regions.append(corespondingregion)
 
     # Add the collimators and their air centers

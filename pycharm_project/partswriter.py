@@ -9,8 +9,8 @@ class PartsWriter:
     def generate_evals(self, regions):
         lines = ""
         for region in regions:
-            pt = region.evalpt()
-            lines += "  " + str(region.id) + ": 0, " + str(pt[0]) + ", " + str(pt[1]) + ", " + str(pt[2]) + \
+            pt = region.evalpoint
+            lines += "  " + str(region.id) + ": " + str(pt[0]) + ", " + str(pt[1]) + ", " + str(pt[2]) + \
                      ", 1.0: Eval point/\n"
         return lines
 
@@ -48,7 +48,7 @@ class PartsWriter:
         file = open(self.filename[2:].split(".")[0] + ".rmap", 'w')
 
         for r in evalregions:
-            pt = r.evalpt()
+            pt = r.evalpoint
             file.write(str(r.id) + "\t" + str(pt[0]) + "\t" + str(pt[1]) + "\t" + str(pt[2]) + "\n")
 
         file.close()

@@ -24,6 +24,7 @@ class RegionNode:
         RegionNode.nextid += 1
         self.comment = ""
         self.doeval = False
+        self.evalpoint = (0, 0, 0)
 
         if left is None:
             return
@@ -114,8 +115,8 @@ class RegionNode:
         RegionNode.nextid -= 1
         return c
 
-    def evalpt(self):
-        return (0, 0, 0)
+    #def evalpt(self):
+    #    return (0, 0, 0)
 
     def str_rec(self):
         if self.type == RegionNode.BASE:

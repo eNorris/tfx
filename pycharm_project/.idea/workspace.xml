@@ -35,7 +35,7 @@
       <file leaf-file-name="makephantom.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/makephantom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="27" selection-start="2817" selection-end="2817" vertical-scroll-proportion="0.0" vertical-offset="1403" max-vertical-offset="2023">
+            <state line="67" column="62" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.0" vertical-offset="655" max-vertical-offset="1904">
               <folding />
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file leaf-file-name="partswriter.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/partswriter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="40" selection-start="430" selection-end="430" vertical-scroll-proportion="-0.32568806" vertical-offset="363" max-vertical-offset="1003">
+            <state line="12" column="48" selection-start="329" selection-end="329" vertical-scroll-proportion="0.4678899" vertical-offset="0" max-vertical-offset="1003">
               <folding />
             </state>
           </provider>
@@ -53,7 +53,7 @@
       <file leaf-file-name="Region.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Region.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="23" selection-start="3380" selection-end="3380" vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="3349">
+            <state line="118" column="5" selection-start="3398" selection-end="3398" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3366">
               <folding />
             </state>
           </provider>
@@ -128,14 +128,14 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/makephantom.py" />
-        <option value="$PROJECT_DIR$/Region.py" />
         <option value="$PROJECT_DIR$/Box2d.py" />
         <option value="$PROJECT_DIR$/Raw2d.py" />
         <option value="$PROJECT_DIR$/Visualizer.py" />
         <option value="$PROJECT_DIR$/Rcc2d.py" />
         <option value="$PROJECT_DIR$/CombinatorialBody.py" />
         <option value="$PROJECT_DIR$/Rpp2d.py" />
+        <option value="$PROJECT_DIR$/Region.py" />
+        <option value="$PROJECT_DIR$/makephantom.py" />
         <option value="$PROJECT_DIR$/partswriter.py" />
       </list>
     </option>
@@ -357,7 +357,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="458" y="16" width="1048" height="840" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -367,7 +367,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39831698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3043478" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3043478" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -559,20 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/makephantom.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="27" selection-start="2817" selection-end="2817" vertical-scroll-proportion="0.0" vertical-offset="1403" max-vertical-offset="2023">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Region.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="23" selection-start="3380" selection-end="3380" vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="3349">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Box2d.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="27" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1496">
@@ -619,9 +605,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Region.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="5" selection-start="3398" selection-end="3398" vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="3366">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/makephantom.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="62" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.0" vertical-offset="655" max-vertical-offset="1904">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/partswriter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="40" selection-start="430" selection-end="430" vertical-scroll-proportion="-0.32568806" vertical-offset="363" max-vertical-offset="1003">
+        <state line="12" column="48" selection-start="329" selection-end="329" vertical-scroll-proportion="0.4678899" vertical-offset="0" max-vertical-offset="1003">
           <folding />
         </state>
       </provider>
