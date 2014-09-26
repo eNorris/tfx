@@ -1,6 +1,6 @@
 __author__ = 'Edward'
 
-class CombinatorialBody:
+class CombinatorialBody(object):
 
     nextid = 1
 
