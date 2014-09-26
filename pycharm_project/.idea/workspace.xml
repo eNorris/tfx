@@ -41,10 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="partswriter.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="partswriter.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/partswriter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="57" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0" vertical-offset="278" max-vertical-offset="1003">
+            <state line="13" column="40" selection-start="430" selection-end="430" vertical-scroll-proportion="-0.32568806" vertical-offset="363" max-vertical-offset="1003">
               <folding />
             </state>
           </provider>
@@ -99,10 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rpp2d.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Rpp2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Rpp2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="52" selection-start="2461" selection-end="2461" vertical-scroll-proportion="0.18119267" vertical-offset="1179" max-vertical-offset="1615">
+            <state line="74" column="52" selection-start="2461" selection-end="2461" vertical-scroll-proportion="0.0" vertical-offset="1128" max-vertical-offset="1615">
               <folding />
             </state>
           </provider>
@@ -135,14 +135,14 @@
         <option value="$PROJECT_DIR$/Visualizer.py" />
         <option value="$PROJECT_DIR$/Rcc2d.py" />
         <option value="$PROJECT_DIR$/CombinatorialBody.py" />
-        <option value="$PROJECT_DIR$/partswriter.py" />
         <option value="$PROJECT_DIR$/Rpp2d.py" />
+        <option value="$PROJECT_DIR$/partswriter.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="529" />
-    <option name="y" value="29" />
+    <option name="x" value="458" />
+    <option name="y" value="16" />
     <option name="width" value="1048" />
     <option name="height" value="840" />
   </component>
@@ -356,7 +356,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="529" y="29" width="1048" height="840" extended-state="0" />
+    <frame x="458" y="16" width="1048" height="840" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -612,16 +612,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partswriter.py">
+    <entry file="file://$PROJECT_DIR$/Rpp2d.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="57" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0" vertical-offset="278" max-vertical-offset="1003">
+        <state line="74" column="52" selection-start="2461" selection-end="2461" vertical-scroll-proportion="0.0" vertical-offset="1128" max-vertical-offset="1615">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Rpp2d.py">
+    <entry file="file://$PROJECT_DIR$/partswriter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="52" selection-start="2461" selection-end="2461" vertical-scroll-proportion="0.18119267" vertical-offset="1179" max-vertical-offset="1615">
+        <state line="13" column="40" selection-start="430" selection-end="430" vertical-scroll-proportion="-0.32568806" vertical-offset="363" max-vertical-offset="1003">
           <folding />
         </state>
       </provider>
