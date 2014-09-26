@@ -80,6 +80,8 @@ def makeparts():
     downcollimator.color = (0, 255, 0)
     upbow = Raw2d.Raw2d((44, 0), (0, 5), (5, 5))
     downbow = Raw2d.Raw2d((44, 0), (0, -5), (5, -5))
+    upbow.color = (0, 0, 100)
+    downbow.color = (0, 0, 100)
     for i in range(srcpts):
         theta = i * 2 * math.pi / srcpts
 
