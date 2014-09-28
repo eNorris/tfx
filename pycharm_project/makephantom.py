@@ -20,7 +20,10 @@ def makeparts():
     regions = []
     vis = Visualizer.Visualizer()
 
-    phantom = Rcc2d.Rcc2d(16.0)
+    #phantom = Rcc2d.Rcc2d(16.0)
+    halfwidth = math.sqrt(math.pi) * 16.0 / 2.0
+    print("halfwidth = " + str(halfwidth))
+    phantom = Rpp2d.Rpp2d((0, 0), (halfwidth, halfwidth))
     air = Rpp2d.Rpp2d((0, 0), (150, 150))
     airregion = Region.RegionNode(air) - phantom
     airregion.matid = 'G'
@@ -29,6 +32,7 @@ def makeparts():
     vis.register([phantom, air])
 
     # Mesh the phantom and add the regions
+    """
     width = 32
     height = 32
     xdivs = 8
@@ -80,6 +84,7 @@ def makeparts():
                         evalpt = (r.right, r.top, .5)
                 corespondingregion.evalpoint = (evalpt[0], evalpt[1], evalpt[2])
                 regions.append(corespondingregion)
+    """
 
     # Add the collimators and their air centers
     colwidth = 50 * math.tan(math.pi / srcpts)
@@ -88,9 +93,9 @@ def makeparts():
         print("WARNING: Collimator hole exceeds collimator size!")
 
     upcollimator = Box2d.Box2d((50, holewidth), (1.5, 0), (0, (colwidth-holewidth)/2), False)
-    upcollimator.color = (255, 0, 0)
+    #upcollimator.color = (255, 0, 0)
     downcollimator = Box2d.Box2d((50, -holewidth), (1.5, 0), (0, -(colwidth-holewidth)/2), False)
-    downcollimator.color = (0, 255, 0)
+    #downcollimator.color = (0, 255, 0)
     upbow = Raw2d.Raw2d((44, 0), (0, 5), (5, 5))
     downbow = Raw2d.Raw2d((44, 0), (0, -5), (5, -5))
     upbow.color = (0, 0, 100)
