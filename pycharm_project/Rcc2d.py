@@ -19,8 +19,11 @@ class Rcc2d(CombinatorialBody.CombinatorialBody):
 
         self.comment = "Right Circular Cylinder"
 
-    def in_domain(self, x, y):
-        return math.sqrt((x-self.cx)**2 + (y-self.cy)**2) <= self.r
+    def __contains__(self, item):
+        return math.sqrt((item[0]-self.cx)**2 + (item[1]-self.cy)**2) <= self.r
+
+    #def in_domain(self, x, y):
+    #    return math.sqrt((x-self.cx)**2 + (y-self.cy)**2) <= self.r
 
     def draw2d(self):
         if not graphics or self.visualizer is None:

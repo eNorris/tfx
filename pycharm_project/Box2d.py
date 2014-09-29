@@ -27,6 +27,25 @@ class Box2d(CombinatorialBody):
 
         self.comment = "Arbitrary Box"
 
+    def __contains__(self, item):
+        # Based this off some code I found online by Jonas Elfstrom
+        # http://stackoverflow.com/questions/2752725/finding-whether-a-point-lies-inside-a-rectangle-or-not
+        bax = self.vec1[0]
+        bay = self.vec1[1]
+        dax = self.vec2[0]
+        day = self.vec2[1]
+
+        ax, ay = self.cx, self.cy
+        bx, by = self.cx + self.vec1[0], self.cy + self.vec1[1]
+        dx, dy = self.cx + self.vec2[0], self.cy + self.vec2[1]
+
+        if (item[0] - ax) * bax + (item[1] - ay) * bay < 0.0: return False
+        if (item[0] - bx) * bax + (item[1] - by) * bay > 0.0: return False
+        if (item[0] - ax) * dax + (item[1] - ay) * day < 0.0: return False
+        if (item[0] - dx) * dax + (item[1] - dy) * day > 0.0: return False
+
+        return True
+
     def valid(self):
         return math.fabs(self.vec1[0] * self.vec2[0] + self.vec1[1] * self.vec2[1]) <= 1e-10
 

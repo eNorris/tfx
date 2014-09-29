@@ -85,7 +85,7 @@ class Rpp2d(CombinatorialBody.CombinatorialBody):
         pygame.draw.rect(self.visualizer.screen, self.color,
                          [left, top, width, height], 1)
 
-    def contains(self, pt):
+    def __contains__(self, pt):
         if self.left <= pt[0] <= self.right and self.bottom <= pt[1] <= self.top:
             return True
         return False
