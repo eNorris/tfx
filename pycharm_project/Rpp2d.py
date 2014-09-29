@@ -95,4 +95,4 @@ class Rpp2d(CombinatorialBody.CombinatorialBody):
 
     def __str__(self):
         return "  " + str(self.id) + ": RPP: " + \
-               ", ".join(str(x) for x in [self.left, self.right, self.top, self.bottom, 0, 1]) + " :: " + self.comment
+               ", ".join(str(x) for x in [self.left, self.right, self.bottom, self.top, 0, 1]) + " :: " + self.comment
