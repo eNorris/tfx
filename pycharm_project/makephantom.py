@@ -125,8 +125,8 @@ def makeparts():
         downreg = Region.RegionNode(newdown)
         downreg.matid = 'H'
 
-        #for b in [newcolup, newcoldown, newup, newdown]:
-        for b in [newcolup, newcoldown]:
+        for b in [newcolup, newcoldown, newup, newdown]:
+            #for b in [newcolup, newcoldown]:
             airregion -= b
 
         bodies.extend([newcolup, newcoldown, newup, newdown])
