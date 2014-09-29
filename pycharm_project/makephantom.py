@@ -20,19 +20,21 @@ def makeparts():
     regions = []
     vis = Visualizer.Visualizer()
 
-    #phantom = Rcc2d.Rcc2d(16.0)
-    halfwidth = math.sqrt(math.pi) * 16.0 / 2.0
-    print("halfwidth = " + str(halfwidth))
-    phantom = Rpp2d.Rpp2d((0, 0), (halfwidth, halfwidth))
+    phantom = Rcc2d.Rcc2d(16.0)
+    phantomregion = Region.RegionNode(phantom)
+    phantomregion.matid = 'E'
+    #halfwidth = math.sqrt(math.pi) * 16.0 / 2.0
+    #print("halfwidth = " + str(halfwidth))
+    #phantom = Rpp2d.Rpp2d((0, 0), (halfwidth, halfwidth))
     air = Rpp2d.Rpp2d((0, 0), (150, 150))
     airregion = Region.RegionNode(air) - phantom
     airregion.matid = 'G'
     bodies.extend([phantom, air])
-    regions.append(airregion)
+    regions.extend([airregion, phantomregion])
     vis.register([phantom, air])
 
     # Mesh the phantom and add the regions
-    """
+
     width = 32
     height = 32
     xdivs = 8
@@ -43,6 +45,7 @@ def makeparts():
     dx = width / xdivs
     dy = height / ydivs
 
+    '''
     for i in range(xdivs):
         for j in range(ydivs):
             r = Rpp2d.Rpp2d([left + i * dx, bot + j * dy], [dx, dy], False)
@@ -84,7 +87,7 @@ def makeparts():
                         evalpt = (r.right, r.top, .5)
                 corespondingregion.evalpoint = (evalpt[0], evalpt[1], evalpt[2])
                 regions.append(corespondingregion)
-    """
+    '''
 
     # Add the collimators and their air centers
     colwidth = 50 * math.tan(math.pi / srcpts)
@@ -96,39 +99,39 @@ def makeparts():
     #upcollimator.color = (255, 0, 0)
     downcollimator = Box2d.Box2d((50, -holewidth), (1.5, 0), (0, -(colwidth-holewidth)/2), False)
     #downcollimator.color = (0, 255, 0)
-    #upbow = Raw2d.Raw2d((44, 0), (0, 5), (5, 5))
-    #downbow = Raw2d.Raw2d((44, 0), (0, -5), (5, -5))
-    #upbow.color = (0, 0, 100)
-    #downbow.color = (0, 0, 100)
+    upbow = Raw2d.Raw2d((44, 0), (0, 5), (5, 5))
+    downbow = Raw2d.Raw2d((44, 0), (0, -5), (5, -5))
+    upbow.color = (0, 0, 100)
+    downbow.color = (0, 0, 100)
     for i in range(srcpts):
         theta = i * 2 * math.pi / srcpts
 
         # Create the bodies
         newcolup = upcollimator.clone().rotate_about(theta)
         newcoldown = downcollimator.clone().rotate_about(theta)
-        #newup = upbow.clone().rotate_about(theta, (0, 0))
-        #newdown = downbow.clone().rotate_about(theta, (0, 0))
+        newup = upbow.clone().rotate_about(theta, (0, 0))
+        newdown = downbow.clone().rotate_about(theta, (0, 0))
 
         # Create the regions
         colreg = Region.RegionNode(newcolup)
         colreg.matid = 'F'
         colhreg = Region.RegionNode(newcoldown)
         colhreg.matid = 'F'
-        #upreg = Region.RegionNode(newup)
-        #upreg.matid = 'H'
-        #downreg = Region.RegionNode(newdown)
-        #downreg.matid = 'H'
+        upreg = Region.RegionNode(newup)
+        upreg.matid = 'H'
+        downreg = Region.RegionNode(newdown)
+        downreg.matid = 'H'
 
         #for b in [newcolup, newcoldown, newup, newdown]:
         for b in [newcolup, newcoldown]:
             airregion -= b
 
-        #bodies.extend([newcolup, newcoldown, newup, newdown])
-        #regions.extend([colreg, colhreg, upreg, downreg])
-        #vis.register([newcolup, newcoldown, newup, newdown])
-        bodies.extend([newcolup, newcoldown])
-        regions.extend([colreg, colhreg])
-        vis.register([newcolup, newcoldown])
+        bodies.extend([newcolup, newcoldown, newup, newdown])
+        regions.extend([colreg, colhreg, upreg, downreg])
+        vis.register([newcolup, newcoldown, newup, newdown])
+        # bodies.extend([newcolup, newcoldown])
+        # regions.extend([colreg, colhreg])
+        # vis.register([newcolup, newcoldown])
 
     writer = partswriter.PartsWriter("./phantom2.parts", {'E':"PHANTOM", 'F':"COLLIMATOR", 'G':"AIR", 'H':"ALUM"})
     writer.write("phantom_part", bodies, regions)

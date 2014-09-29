@@ -32,19 +32,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="makephantom.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="makephantom.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/makephantom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="41" selection-start="4213" selection-end="4213" vertical-scroll-proportion="0.0" vertical-offset="1627" max-vertical-offset="2346">
+            <state line="29" column="21" selection-start="624" selection-end="624" vertical-scroll-proportion="0.56629837" vertical-offset="152" max-vertical-offset="2397">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="partswriter.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="partswriter.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/partswriter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="54" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.61049724" vertical-offset="391" max-vertical-offset="1003">
+            <state line="28" column="47" selection-start="873" selection-end="873" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1003">
               <folding />
             </state>
           </provider>
@@ -143,8 +143,8 @@
         <option value="$PROJECT_DIR$/Raw2d.py" />
         <option value="$PROJECT_DIR$/Rpp2d.py" />
         <option value="$PROJECT_DIR$/Box2d.py" />
-        <option value="$PROJECT_DIR$/makephantom.py" />
         <option value="$PROJECT_DIR$/partswriter.py" />
+        <option value="$PROJECT_DIR$/makephantom.py" />
       </list>
     </option>
   </component>
@@ -654,16 +654,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/makephantom.py">
+    <entry file="file://$PROJECT_DIR$/partswriter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="41" selection-start="4213" selection-end="4213" vertical-scroll-proportion="0.0" vertical-offset="1627" max-vertical-offset="2346">
+        <state line="28" column="47" selection-start="873" selection-end="873" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1003">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partswriter.py">
+    <entry file="file://$PROJECT_DIR$/makephantom.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="54" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.61049724" vertical-offset="391" max-vertical-offset="1003">
+        <state line="29" column="21" selection-start="624" selection-end="624" vertical-scroll-proportion="0.56629837" vertical-offset="152" max-vertical-offset="2397">
           <folding />
         </state>
       </provider>
