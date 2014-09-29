@@ -98,6 +98,18 @@ class RegionNode:
         self.right = other
         return self
 
+    def __contains__(self, item):
+        if self.type == RegionNode.BASE:
+            return item in self.left
+        elif self.type == RegionNode.INTERSECT:
+            return item in self.left and item in self.right
+        elif self.type == RegionNode.UNION:
+            return item in self.left or item in self.right
+        elif self.type == RegionNode.SUBTRACT:
+            return item in self.left and not item in self.right
+        else:
+            raise Exception("Unknown region combination type: " + str(self.type))
+
     def __str__(self):
         return "  " + str(self.id) + ": " + self.matid + ": " + self.str_rec() + ": " + self.comment
 

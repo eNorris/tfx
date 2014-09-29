@@ -100,8 +100,8 @@ class Box2d(CombinatorialBody):
     def getcorners(self):
         return [(self.x, self.y),
             (self.x + self.vec1[0], self.y + self.vec1[1]),
-            (self.x + self.vec2[0], self.y + self.vec2[1]),
-            (self.x + self.vec1[0] + self.vec2[0], self.y + self.vec1[1] + self.vec2[1])]
+            (self.x + self.vec1[0] + self.vec2[0], self.y + self.vec1[1] + self.vec2[1]),
+            (self.x + self.vec2[0], self.y + self.vec2[1])]
                #[(self.cx - self.vec1[0] - self.vec2[0], self.cy - self.vec1[1] - self.vec2[1]),
                #(self.cx + self.vec1[0] - self.vec2[0], self.cy + self.vec1[1] - self.vec2[1]),
                # (self.cx + self.vec1[0] + self.vec2[0], self.cy + self.vec1[1] + self.vec2[1]),

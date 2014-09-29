@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="134" selection-end="134" vertical-scroll-proportion="-1.4088398" vertical-offset="714" max-vertical-offset="1445">
+            <state line="12" column="0" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1445">
               <folding>
                 <element signature="e#23#35#0" expanded="true" />
               </folding>
@@ -37,12 +37,8 @@
       <file leaf-file-name="Point.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Point.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="30" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-              <folding>
-                <marker date="1412029165198" expanded="true" signature="155:698" placeholder="..." />
-                <marker date="1412029165198" expanded="true" signature="209:296" placeholder="..." />
-                <marker date="1412029165198" expanded="true" signature="330:517" placeholder="..." />
-              </folding>
+            <state line="11" column="14" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="97" max-vertical-offset="612">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,16 +55,16 @@
       <file leaf-file-name="Region.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Region.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="24" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3366">
+            <state line="101" column="40" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.0" vertical-offset="1593" max-vertical-offset="3570">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Box2d.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Box2d.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Box2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="32" selection-start="2810" selection-end="2810" vertical-scroll-proportion="0.0" vertical-offset="1102" max-vertical-offset="2295">
+            <state line="98" column="0" selection-start="3350" selection-end="3350" vertical-scroll-proportion="0.2034384" vertical-offset="1595" max-vertical-offset="2295">
               <folding />
             </state>
           </provider>
@@ -137,16 +133,16 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/Visualizer.py" />
-        <option value="$PROJECT_DIR$/Region.py" />
         <option value="$PROJECT_DIR$/Raw2d.py" />
         <option value="$PROJECT_DIR$/partswriter.py" />
         <option value="$PROJECT_DIR$/makephantom.py" />
         <option value="$PROJECT_DIR$/Rpp2d.py" />
         <option value="$PROJECT_DIR$/CombinatorialBody.py" />
         <option value="$PROJECT_DIR$/Rcc2d.py" />
-        <option value="$PROJECT_DIR$/Point.py" />
-        <option value="$PROJECT_DIR$/Box2d.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/Point.py" />
+        <option value="$PROJECT_DIR$/Region.py" />
+        <option value="$PROJECT_DIR$/Box2d.py" />
       </list>
     </option>
   </component>
@@ -387,7 +383,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3968" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3456" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3456" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -618,13 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Region.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="24" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3366">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CombinatorialBody.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="21" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
@@ -639,17 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Point.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="30" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <folding>
-            <marker date="1412029165198" expanded="true" signature="155:698" placeholder="..." />
-            <marker date="1412029165198" expanded="true" signature="209:296" placeholder="..." />
-            <marker date="1412029165198" expanded="true" signature="330:517" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Rcc2d.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="74" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="250" max-vertical-offset="765">
@@ -661,19 +639,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Box2d.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="32" selection-start="2810" selection-end="2810" vertical-scroll-proportion="0.0" vertical-offset="1102" max-vertical-offset="2295">
+        <state line="12" column="0" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1445">
+          <folding>
+            <element signature="e#23#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Point.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="14" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="97" max-vertical-offset="612">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/Region.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="134" selection-end="134" vertical-scroll-proportion="-1.4088398" vertical-offset="714" max-vertical-offset="1445">
-          <folding>
-            <element signature="e#23#35#0" expanded="true" />
-          </folding>
+        <state line="101" column="40" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.0" vertical-offset="1593" max-vertical-offset="3570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Box2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="0" selection-start="3350" selection-end="3350" vertical-scroll-proportion="0.2034384" vertical-offset="1595" max-vertical-offset="2295">
+          <folding />
         </state>
       </provider>
     </entry>
