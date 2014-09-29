@@ -35,7 +35,7 @@ class PartsWriter:
 
         evalregions = [x for x in regions if x.doeval]
         thispartmats = set([k.matid for k in regions])
-        file.write("0, " + str(len(self.matmap)) + ", " + str(len(bodies)) + ", " + str(len(regions)) + ", " +
+        file.write("0, " + str(len(thispartmats)) + ", " + str(len(bodies)) + ", " + str(len(regions)) + ", " +
                    str(len(evalregions)) + "/\n")
         file.write(", ".join([str(k) + "=" + str(self.matmap[k]) for k in self.matmap if k in thispartmats]) + "/\n")
         for b in bodies:

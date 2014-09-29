@@ -96,35 +96,39 @@ def makeparts():
     #upcollimator.color = (255, 0, 0)
     downcollimator = Box2d.Box2d((50, -holewidth), (1.5, 0), (0, -(colwidth-holewidth)/2), False)
     #downcollimator.color = (0, 255, 0)
-    upbow = Raw2d.Raw2d((44, 0), (0, 5), (5, 5))
-    downbow = Raw2d.Raw2d((44, 0), (0, -5), (5, -5))
-    upbow.color = (0, 0, 100)
-    downbow.color = (0, 0, 100)
+    #upbow = Raw2d.Raw2d((44, 0), (0, 5), (5, 5))
+    #downbow = Raw2d.Raw2d((44, 0), (0, -5), (5, -5))
+    #upbow.color = (0, 0, 100)
+    #downbow.color = (0, 0, 100)
     for i in range(srcpts):
         theta = i * 2 * math.pi / srcpts
 
         # Create the bodies
         newcolup = upcollimator.clone().rotate_about(theta)
         newcoldown = downcollimator.clone().rotate_about(theta)
-        newup = upbow.clone().rotate_about(theta, (0, 0))
-        newdown = downbow.clone().rotate_about(theta, (0, 0))
+        #newup = upbow.clone().rotate_about(theta, (0, 0))
+        #newdown = downbow.clone().rotate_about(theta, (0, 0))
 
         # Create the regions
         colreg = Region.RegionNode(newcolup)
         colreg.matid = 'F'
         colhreg = Region.RegionNode(newcoldown)
         colhreg.matid = 'F'
-        upreg = Region.RegionNode(newup)
-        upreg.matid = 'H'
-        downreg = Region.RegionNode(newdown)
-        downreg.matid = 'H'
+        #upreg = Region.RegionNode(newup)
+        #upreg.matid = 'H'
+        #downreg = Region.RegionNode(newdown)
+        #downreg.matid = 'H'
 
-        for b in [newcolup, newcoldown, newup, newdown]:
+        #for b in [newcolup, newcoldown, newup, newdown]:
+        for b in [newcolup, newcoldown]:
             airregion -= b
 
-        bodies.extend([newcolup, newcoldown, newup, newdown])
-        regions.extend([colreg, colhreg, upreg, downreg])
-        vis.register([newcolup, newcoldown, newup, newdown])
+        #bodies.extend([newcolup, newcoldown, newup, newdown])
+        #regions.extend([colreg, colhreg, upreg, downreg])
+        #vis.register([newcolup, newcoldown, newup, newdown])
+        bodies.extend([newcolup, newcoldown])
+        regions.extend([colreg, colhreg])
+        vis.register([newcolup, newcoldown])
 
     writer = partswriter.PartsWriter("./phantom2.parts", {'E':"PHANTOM", 'F':"COLLIMATOR", 'G':"AIR", 'H':"ALUM"})
     writer.write("phantom_part", bodies, regions)
