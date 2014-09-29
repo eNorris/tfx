@@ -30,6 +30,9 @@ class PartsWriter:
         file.write("!-\n")
         file.write(partname + ": " + comment + "\n")
 
+        bodies = sorted(bodies, key=lambda x: x.id)
+        regions = sorted(regions, key=lambda x: x.id)
+
         self.collapse_simplify(bodies)
         self.collapse_simplify(regions)
 

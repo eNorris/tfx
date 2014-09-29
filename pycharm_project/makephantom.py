@@ -30,7 +30,7 @@ def makeparts():
     airregion = Region.RegionNode(air) - phantom
     airregion.matid = 'G'
     bodies.extend([phantom, air])
-    regions.extend([airregion, phantomregion])
+    regions.extend([phantomregion, airregion])
     vis.register([phantom, air])
 
     # Mesh the phantom and add the regions
