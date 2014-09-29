@@ -12,18 +12,18 @@ from CombinatorialBody import CombinatorialBody
 
 class Box2d(CombinatorialBody):
 
-    def __init__(self, center=(0, 0), vec1=(1, 0), vec2=(0, 1), provide_center=True):
+    def __init__(self, pos=(0, 0), vec1=(1, 0), vec2=(0, 1), provide_center=True):
         super(Box2d, self).__init__()
 
         if provide_center:
-            self.x = center[0] - vec1[0] / 2 - vec2[0] / 2
-            self.y = center[1] - vec1[1] / 2 - vec2[1] / 2
+            self.x = pos[0] - vec1[0] / 2 - vec2[0] / 2
+            self.y = pos[1] - vec1[1] / 2 - vec2[1] / 2
             self.vec1 = vec1
             self.vec2 = vec2
         else:
-            self.x, self.y = center
-            self.vec1 = [v/2 for v in vec1]
-            self.vec2 = [v/2 for v in vec2]
+            self.x, self.y = pos
+            self.vec1 = vec1
+            self.vec2 = vec2
 
         self.comment = "Arbitrary Box"
 
@@ -93,7 +93,7 @@ class Box2d(CombinatorialBody):
         return self
 
     def clone(self):
-        b = Box2d([self.x, self.y], self.vec1, self.vec2)
+        b = Box2d([self.x, self.y], self.vec1, self.vec2, False)
         b.color = self.color
         return b
 
