@@ -13,7 +13,7 @@ import partswriter
 def makeparts():
 
     # Problem constants
-    srcpts = 16
+    srcpts = 1
     beamangle = math.radians(55)
 
     bodies = []
@@ -90,7 +90,10 @@ def makeparts():
     '''
 
     # Add the collimators and their air centers
-    colwidth = 50 * math.tan(math.pi / srcpts)
+    if srcpts < 4:
+        colwidth = 10.0
+    else:
+        colwidth = 50 * math.tan(math.pi / srcpts)
     holewidth = 4 * math.tan(beamangle / 2)
     if holewidth > colwidth:
         print("WARNING: Collimator hole exceeds collimator size!")
