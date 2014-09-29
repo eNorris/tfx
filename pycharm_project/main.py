@@ -2,18 +2,10 @@ __author__ = 'Edward'
 
 import Rcc2d
 import Rpp2d
-import Box2d
 import Visualizer
 import Region
 import makephantom
 
-q = Box2d.Box2d((0, 0), (1, 0), (0, 1), True)
-if (.99, .99) in q:
-    print("in")
-else:
-    print("not in")
-
-exit()
 
 makephantom.makeparts()
 
