@@ -15,6 +15,7 @@ class Point2d:
         self.x, self.y = pos
         self.visualizer = None
         self.color = color
+        self.dodraw = False
 
     def __getitem__(self, item):
         if item == 0:
@@ -24,7 +25,9 @@ class Point2d:
         raise Exception("Only elements 0 and 1 and be indexed into for 2-D Point objects")
 
     def draw2d(self):
-        if not graphics or self.visualizer is None:
+        if not self.dodraw or not graphics or self.visualizer is None:
             return
-        pygame.draw.circle(self.visualizer.screen, self.color, [self.x, self.y], 1, 0)
+        sx = int(self.x * self.visualizer.scale + self.visualizer.gx)
+        sy = int((400 - self.y * self.visualizer.scale) + self.visualizer.gy)
+        pygame.draw.circle(self.visualizer.screen, self.color, [sx, sy], 1, 0)
 

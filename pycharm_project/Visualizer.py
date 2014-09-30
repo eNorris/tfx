@@ -38,6 +38,10 @@ class Visualizer:
             for d in drawables:
                 self.register(d)
 
+    def registerthis(self, drawable):
+        self.drawables.add(drawable)
+        drawable.visualizer = self
+
     def unregister(self, drawables):
         if not graphics: return
         try:

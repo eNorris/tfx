@@ -18,6 +18,20 @@ class Raw2d(CombinatorialBody):
         self.vec2 = v2
         self.comment = "Right Angle Wedge"
 
+    def __contains__(self, item):
+        c = self.getcorners()
+        if len(c) < 3:
+            return False
+        v1 = c[0][0] - c[-1][0], c[0][1] - c[-1][1]
+        v2 = c[0][0] - item[0], c[0][1] - item[1]
+        positive = v1[0] * v2[1] - v1[1] * v2[0] >= 0
+        for i in range(1, len(c)):
+            v1 = c[i][0] - c[i-1][0], c[i][1] - c[i-1][1]
+            v2 = c[i][0] - item[0], c[i][1] - item[1]
+            if (v1[0] * v2[1] - v1[1] * v2[0] >= 0) != positive:
+                return False
+        return True
+
     def rotate(self, theta):
         self.vec1 = [self.vec1[0] * math.cos(theta) - self.vec1[1] * math.sin(theta),
                      self.vec1[0] * math.sin(theta) + self.vec1[1] * math.cos(theta)]

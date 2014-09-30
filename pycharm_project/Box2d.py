@@ -28,24 +28,37 @@ class Box2d(CombinatorialBody):
         self.comment = "Arbitrary Box"
 
     def __contains__(self, item):
+        c = self.getcorners()
+        if len(c) < 3:
+            return False
+        v1 = c[0][0] - c[-1][0], c[0][1] - c[-1][1]
+        v2 = c[0][0] - item[0], c[0][1] - item[1]
+        positive = v1[0] * v2[1] - v1[1] * v2[0] >= 0
+        for i in range(1, len(c)):
+            v1 = c[i][0] - c[i-1][0], c[i][1] - c[i-1][1]
+            v2 = c[i][0] - item[0], c[i][1] - item[1]
+            if (v1[0] * v2[1] - v1[1] * v2[0] >= 0) != positive:
+                return False
+        return True
+
         # Based this off some code I found online by Jonas Elfstrom
         # http://stackoverflow.com/questions/2752725/finding-whether-a-point-lies-inside-a-rectangle-or-not
-        corners = self.getcorners()
-        ax, ay = corners[0]
-        bx, by = corners[1]
-        dx, dy = corners[2]
-
-        bax = bx - ax
-        bay = by - ay
-        dax = dx - ax
-        day = dy - ay
-
-        if (item[0] - ax) * bax + (item[1] - ay) * bay < 0.0:  return False
-        if (item[0] - bx) * bax + (item[1] - by) * bay > 0.0:  return False
-        if (item[0] - ax) * dax + (item[1] - ay) * day < 0.0:  return False
-        if (item[0] - dx) * dax + (item[1] - dy) * day > 0.0:  return False
-
-        return True
+        # corners = self.getcorners()
+        # ax, ay = corners[0]
+        # bx, by = corners[1]
+        # dx, dy = corners[2]
+#
+        # bax = bx - ax
+        # bay = by - ay
+        # dax = dx - ax
+        # day = dy - ay
+#
+        # if (item[0] - ax) * bax + (item[1] - ay) * bay < 0.0:  return False
+        # if (item[0] - bx) * bax + (item[1] - by) * bay > 0.0:  return False
+        # if (item[0] - ax) * dax + (item[1] - ay) * day < 0.0:  return False
+        # if (item[0] - dx) * dax + (item[1] - dy) * day > 0.0:  return False
+#
+        # return True
 
     def center(self):
         return self.x + (self.vec1[0] + self.vec2[0])/2, self.y + (self.vec1[1] + self.vec2[1])/2

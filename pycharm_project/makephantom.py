@@ -6,9 +6,11 @@ import Rcc2d
 import Rpp2d
 import Box2d
 import Raw2d
+import Point
 import Visualizer
 import Region
 import partswriter
+import random
 
 def makeparts():
 
@@ -143,5 +145,19 @@ def makeparts():
         print(b)
     for r in regions:
         print(r)
+
+    for i in range(5000):
+        p = Point.Point2d((random.random() * 15 + 40, random.random() * 16 - 8))
+        p.dodraw = True
+        p.color = (255, 0, 0)
+        counts = 0
+        for r in [regions[3]]:
+            if p in r:
+                counts += 1
+                if counts == 1:
+                    p.color = (0, 255, 0)
+                else:
+                    p.color = (255, 0, 0)
+        vis.registerthis(p)
 
     vis.launch()
