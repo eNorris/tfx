@@ -16,7 +16,7 @@ import time
 def makeparts():
 
     # Problem constants
-    srcpts = 16
+    srcpts = 8
     beamangle = math.radians(55)
 
     bodies = []
@@ -24,8 +24,8 @@ def makeparts():
     vis = Visualizer.Visualizer()
 
     phantom = Rcc2d.Rcc2d(16.0)
-    phantomregion = Region.RegionNode(phantom)
-    phantomregion.matid = 'E'
+    #phantomregion = Region.RegionNode(phantom)
+    #phantomregion.matid = 'E'
     #halfwidth = math.sqrt(math.pi) * 16.0 / 2.0
     #print("halfwidth = " + str(halfwidth))
     #phantom = Rpp2d.Rpp2d((0, 0), (halfwidth, halfwidth))
@@ -33,7 +33,7 @@ def makeparts():
     airregion = Region.RegionNode(air) - phantom
     airregion.matid = 'G'
     bodies.extend([phantom, air])
-    regions.extend([phantomregion, airregion])
+    regions.extend([airregion])
     vis.register([phantom, air])
 
     # Mesh the phantom and add the regions
@@ -48,7 +48,7 @@ def makeparts():
     dx = width / xdivs
     dy = height / ydivs
 
-    '''
+
     for i in range(xdivs):
         for j in range(ydivs):
             r = Rpp2d.Rpp2d([left + i * dx, bot + j * dy], [dx, dy], False)
@@ -90,7 +90,7 @@ def makeparts():
                         evalpt = (r.right, r.top, .5)
                 corespondingregion.evalpoint = (evalpt[0], evalpt[1], evalpt[2])
                 regions.append(corespondingregion)
-    '''
+
 
     # Add the collimators and their air centers
     if srcpts < 4:

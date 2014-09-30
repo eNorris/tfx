@@ -17,7 +17,7 @@ class Visualizer:
         self.screen = pygame.display.set_mode(self.screen_size)
         self.screen.fill((220, 220, 220))
 
-        pygame.display.set_caption("Meshing Visualizer v0.3")
+        pygame.display.set_caption("Meshing Visualizer v1.0")
 
         self.clock = pygame.time.Clock()
         self.drawables = set()
