@@ -24,6 +24,9 @@ class Point2d:
             return self.y
         raise Exception("Only elements 0 and 1 and be indexed into for 2-D Point objects")
 
+    def __str__(self):
+        return "(" + str(self.x) + ", " + str(self.y) + ")"
+
     def draw2d(self):
         if not self.dodraw or not graphics or self.visualizer is None:
             return

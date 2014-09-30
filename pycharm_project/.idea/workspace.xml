@@ -26,7 +26,7 @@
       <file leaf-file-name="makephantom.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/makephantom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="30" selection-start="4886" selection-end="4886" vertical-scroll-proportion="0.32872927" vertical-offset="2482" max-vertical-offset="2856">
+            <state line="101" column="0" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.23076923" vertical-offset="1627" max-vertical-offset="2890">
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -37,10 +37,8 @@
       <file leaf-file-name="Point.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Point.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="74" selection-start="881" selection-end="881" vertical-scroll-proportion="0.0" vertical-offset="284" max-vertical-offset="663">
-              <folding>
-                <marker date="1412035480418" expanded="true" signature="209:324" placeholder="..." />
-              </folding>
+            <state line="16" column="26" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,7 +87,7 @@
       <file leaf-file-name="Raw2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Raw2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="19" selection-start="450" selection-end="936" vertical-scroll-proportion="0.0" vertical-offset="297" max-vertical-offset="1445">
+            <state line="19" column="0" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1564">
               <folding>
                 <element signature="e#107#118#0" expanded="true" />
               </folding>
@@ -148,18 +146,18 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/Region.py" />
         <option value="$PROJECT_DIR$/Visualizer.py" />
+        <option value="$PROJECT_DIR$/Box2d.py" />
         <option value="$PROJECT_DIR$/Point.py" />
         <option value="$PROJECT_DIR$/Raw2d.py" />
-        <option value="$PROJECT_DIR$/Box2d.py" />
         <option value="$PROJECT_DIR$/makephantom.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="427" />
-    <option name="y" value="13" />
+    <option name="x" value="393" />
+    <option name="y" value="71" />
     <option name="width" value="1175" />
-    <option name="height" value="754" />
+    <option name="height" value="782" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -381,7 +379,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="427" y="13" width="1175" height="754" extended-state="0" />
+    <frame x="393" y="71" width="1175" height="782" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -389,10 +387,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24925816" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16695958" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3968" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39663094" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3456" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.330781" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -435,12 +433,12 @@
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/Point.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="33" />
+          <url>file://$PROJECT_DIR$/Raw2d.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="34" />
+      <option name="time" value="35" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -683,24 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Point.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="74" selection-start="881" selection-end="881" vertical-scroll-proportion="0.0" vertical-offset="284" max-vertical-offset="663">
-          <folding>
-            <marker date="1412035480418" expanded="true" signature="209:324" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Raw2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="19" selection-start="450" selection-end="936" vertical-scroll-proportion="0.0" vertical-offset="297" max-vertical-offset="1445">
-          <folding>
-            <element signature="e#107#118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Box2d.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="10" selection-start="1926" selection-end="1926" vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="2516">
@@ -708,9 +688,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Point.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="26" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Raw2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1564">
+          <folding>
+            <element signature="e#107#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/makephantom.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="30" selection-start="4886" selection-end="4886" vertical-scroll-proportion="0.32872927" vertical-offset="2482" max-vertical-offset="2856">
+        <state line="101" column="0" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.23076923" vertical-offset="1627" max-vertical-offset="2890">
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>

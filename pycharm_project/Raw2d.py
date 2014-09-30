@@ -17,6 +17,7 @@ class Raw2d(CombinatorialBody):
         self.vec1 = v1
         self.vec2 = v2
         self.comment = "Right Angle Wedge"
+        self.validate()
 
     def __contains__(self, item):
         c = self.getcorners()
@@ -37,7 +38,13 @@ class Raw2d(CombinatorialBody):
                      self.vec1[0] * math.sin(theta) + self.vec1[1] * math.cos(theta)]
         self.vec2 = [self.vec2[0] * math.cos(theta) - self.vec2[1] * math.sin(theta),
                      self.vec2[0] * math.sin(theta) + self.vec2[1] * math.cos(theta)]
+        self.validate()
         return self
+
+    def validate(self):
+        if self.vec1[0] * self.vec2[0] + self.vec1[1] * self.vec2[1] >= 1e-10:
+            raise Exception("Invalid Raw2d, vectors must be mutually perpendicualr")
+        return True
 
     def rotate_about(self, theta, pt=(0, 0)):
 

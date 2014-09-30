@@ -101,13 +101,13 @@ def makeparts():
         print("WARNING: Collimator hole exceeds collimator size!")
 
     upcollimator = Box2d.Box2d((50, holewidth), (3, 0), (0, (colwidth-holewidth)/2), False)
-    upcollimator.color = (255, 0, 0)
+    #upcollimator.color = (255, 0, 0)
     downcollimator = Box2d.Box2d((50, -holewidth), (3, 0), (0, -(colwidth-holewidth)/2), False)
     #downcollimator.color = (0, 255, 0)
-    upbow = Raw2d.Raw2d((44, 0), (0, 5), (5, 5))
-    downbow = Raw2d.Raw2d((44, 0), (0, -5), (5, -5))
-    upbow.color = (0, 0, 100)
-    downbow.color = (0, 0, 100)
+    upbow = Raw2d.Raw2d((44, 5), (5, 0), (0, -5))
+    downbow = Raw2d.Raw2d((44, -5), (5, 0), (0, 5))
+    #upbow.color = (0, 0, 100)
+    #downbow.color = (0, 0, 100)
     for i in range(srcpts):
         theta = i * 2 * math.pi / srcpts
 
@@ -147,17 +147,19 @@ def makeparts():
         print(r)
 
     for i in range(5000):
-        p = Point.Point2d((random.random() * 15 + 40, random.random() * 16 - 8))
+        p = Point.Point2d((random.random() * 150 - 75, random.random() * 150 - 75))
         p.dodraw = True
         p.color = (255, 0, 0)
         counts = 0
-        for r in [regions[3]]:
+        for r in regions:
             if p in r:
                 counts += 1
                 if counts == 1:
                     p.color = (0, 255, 0)
                 else:
                     p.color = (255, 0, 0)
+        if counts != 1:
+            print("WARNING: Error point: " + str(p))
         vis.registerthis(p)
 
     vis.launch()
