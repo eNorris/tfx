@@ -77,17 +77,23 @@ def makeparts():
                 corespondingregion.matid = 'E'
 
                 evalpt = (0, 0, 0)
-                if r.cx**2 + r.cy*2 <= phantom.r**2:
+                if r.cx**2 + r.cy**2 <= phantom.r**2:
+                    #print(str(r.cx**2) + " + " + str(r.cy) + " < " + str())
                     evalpt = (r.cx, r.cy, .5)
                 else:
                     if r.cx > 0 and r.cy > 0:
-                        evalpt = (r.left, r.bottom, .5)
+                        evalpt = (r.left+.0001, r.bottom+.0001, .5)
                     elif r.cx > 0 and r.cy < 0:
-                        evalpt = (r.left, r.top, .5)
+                        evalpt = (r.left+.0001, r.top-.0001, .5)
                     elif r.cx < 0 and r.cy > 0:
-                        evalpt = (r.right, r.bottom, .5)
+                        evalpt = (r.right-.0001, r.bottom+.0001, .5)
                     else:
-                        evalpt = (r.right, r.top, .5)
+                        evalpt = (r.right-.0001, r.top-.0001, .5)
+                evvispt = Point.Point2d((evalpt[0], evalpt[1]))
+                evvispt.dodraw = True
+                evvispt.color = (255, 0, 255)
+                evvispt.radius = 10
+                vis.registerthis(evvispt)
                 corespondingregion.evalpoint = (evalpt[0], evalpt[1], evalpt[2])
                 regions.append(corespondingregion)
 
@@ -147,7 +153,7 @@ def makeparts():
     for r in regions:
         print(r)
 
-    checkval = 5000
+    checkval = 0
     starttime = time.time()
     print("Checking geometry (" + str(checkval) + ") points: ")
     for i in range(checkval):

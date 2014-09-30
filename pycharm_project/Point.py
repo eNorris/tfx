@@ -16,6 +16,7 @@ class Point2d:
         self.visualizer = None
         self.color = color
         self.dodraw = False
+        self.radius = 1
 
     def __getitem__(self, item):
         if item == 0:
@@ -32,5 +33,5 @@ class Point2d:
             return
         sx = int(self.x * self.visualizer.scale + self.visualizer.gx)
         sy = int((400 - self.y * self.visualizer.scale) + self.visualizer.gy)
-        pygame.draw.circle(self.visualizer.screen, self.color, [sx, sy], 1, 0)
+        pygame.draw.circle(self.visualizer.screen, self.color, [sx, sy], self.radius, 0)
 
