@@ -39,6 +39,7 @@ class Visualizer:
                 self.register(d)
 
     def registerthis(self, drawable):
+        if not graphics: return
         self.drawables.add(drawable)
         drawable.visualizer = self
 

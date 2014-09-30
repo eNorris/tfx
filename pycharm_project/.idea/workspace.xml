@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="makephantom.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="makephantom.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/makephantom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="0" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.23076923" vertical-offset="1627" max-vertical-offset="2890">
+            <state line="158" column="21" selection-start="5035" selection-end="5035" vertical-scroll-proportion="0.0" vertical-offset="2449" max-vertical-offset="2890">
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -37,8 +37,10 @@
       <file leaf-file-name="Point.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Point.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="26" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-              <folding />
+            <state line="22" column="21" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+              <folding>
+                <marker date="1412036874763" expanded="true" signature="569:629" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,13 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Visualizer.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Visualizer.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Visualizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="16" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="2210">
-              <folding>
-                <marker date="1412035038555" expanded="true" signature="126:4314" placeholder="..." />
-              </folding>
+            <state line="41" column="29" selection-start="978" selection-end="978" vertical-scroll-proportion="0.5871795" vertical-offset="468" max-vertical-offset="2227">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,6 +90,9 @@
             <state line="19" column="0" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1564">
               <folding>
                 <element signature="e#107#118#0" expanded="true" />
+                <marker date="1412040298668" expanded="true" signature="243:430" placeholder="..." />
+                <marker date="1412040298668" expanded="true" signature="465:960" placeholder="..." />
+                <marker date="1412040298668" expanded="true" signature="1403:1587" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -145,17 +148,17 @@
         <option value="$PROJECT_DIR$/Rcc2d.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/Region.py" />
-        <option value="$PROJECT_DIR$/Visualizer.py" />
         <option value="$PROJECT_DIR$/Box2d.py" />
         <option value="$PROJECT_DIR$/Point.py" />
         <option value="$PROJECT_DIR$/Raw2d.py" />
         <option value="$PROJECT_DIR$/makephantom.py" />
+        <option value="$PROJECT_DIR$/Visualizer.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="393" />
-    <option name="y" value="71" />
+    <option name="x" value="408" />
+    <option name="y" value="16" />
     <option name="width" value="1175" />
     <option name="height" value="782" />
   </component>
@@ -379,7 +382,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="393" y="71" width="1175" height="782" extended-state="0" />
+    <frame x="408" y="16" width="1175" height="782" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -487,9 +490,7 @@
     <entry file="file://$PROJECT_DIR$/Visualizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="92" column="59" selection-start="2981" selection-end="2981" vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="2040">
-          <folding>
-            <marker date="1412035038555" expanded="true" signature="126:4314" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -498,6 +499,9 @@
         <state line="53" column="22" selection-start="1942" selection-end="1942" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1105">
           <folding>
             <element signature="e#107#118#0" expanded="true" />
+            <marker date="1412040298668" expanded="true" signature="243:430" placeholder="..." />
+            <marker date="1412040298668" expanded="true" signature="465:960" placeholder="..." />
+            <marker date="1412040298668" expanded="true" signature="1403:1587" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -575,9 +579,7 @@
     <entry file="file://$PROJECT_DIR$/Visualizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="17" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="2040">
-          <folding>
-            <marker date="1412035038555" expanded="true" signature="126:4314" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -586,6 +588,9 @@
         <state line="53" column="22" selection-start="1942" selection-end="1942" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1105">
           <folding>
             <element signature="e#107#118#0" expanded="true" />
+            <marker date="1412040298668" expanded="true" signature="243:430" placeholder="..." />
+            <marker date="1412040298668" expanded="true" signature="465:960" placeholder="..." />
+            <marker date="1412040298668" expanded="true" signature="1403:1587" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -655,15 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Visualizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="16" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="2210">
-          <folding>
-            <marker date="1412035038555" expanded="true" signature="126:4314" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="101" column="40" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.0" vertical-offset="1593" max-vertical-offset="3570">
@@ -688,28 +684,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Point.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="26" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Raw2d.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1564">
           <folding>
             <element signature="e#107#118#0" expanded="true" />
+            <marker date="1412040298668" expanded="true" signature="243:430" placeholder="..." />
+            <marker date="1412040298668" expanded="true" signature="465:960" placeholder="..." />
+            <marker date="1412040298668" expanded="true" signature="1403:1587" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Point.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="21" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <folding>
+            <marker date="1412036874763" expanded="true" signature="569:629" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/makephantom.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="0" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.23076923" vertical-offset="1627" max-vertical-offset="2890">
+        <state line="158" column="21" selection-start="5035" selection-end="5035" vertical-scroll-proportion="0.0" vertical-offset="2449" max-vertical-offset="2890">
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Visualizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="29" selection-start="978" selection-end="978" vertical-scroll-proportion="0.5871795" vertical-offset="468" max-vertical-offset="2227">
+          <folding />
         </state>
       </provider>
     </entry>

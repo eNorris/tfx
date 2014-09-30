@@ -15,7 +15,7 @@ import random
 def makeparts():
 
     # Problem constants
-    srcpts = 1
+    srcpts = 16
     beamangle = math.radians(55)
 
     bodies = []
