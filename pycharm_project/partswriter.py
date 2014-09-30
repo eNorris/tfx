@@ -48,7 +48,8 @@ class PartsWriter:
         file.write(self.generate_evals(evalregions))
         file.close()
 
-        file = open(self.filename[2:].split(".")[0] + ".rmap", 'w')
+        lastdotindex = self.filename.rsplit(".", 1)
+        file = open(lastdotindex[0] + ".rmap", 'w')
 
         for r in evalregions:
             pt = r.evalpoint
