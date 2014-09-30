@@ -11,6 +11,7 @@ import Visualizer
 import Region
 import partswriter
 import random
+import time
 
 def makeparts():
 
@@ -146,7 +147,14 @@ def makeparts():
     for r in regions:
         print(r)
 
-    for i in range(5000):
+    checkval = 5000
+    starttime = time.time()
+    print("Checking geometry (" + str(checkval) + ") points: ")
+    for i in range(checkval):
+        nowtime = time.time()
+        if nowtime - starttime > 1:
+            starttime = nowtime
+            print("{0:.2f}".format(100 * i/checkval) + "% complete")
         p = Point.Point2d((random.random() * 150 - 75, random.random() * 150 - 75))
         p.dodraw = True
         p.color = (255, 0, 0)
