@@ -24,7 +24,7 @@ class RegionNode:
         RegionNode.nextid += 1
         self.comment = ""
         self.doeval = False
-        self.evalpoint = (0, 0, 0)
+        self.evalpoints = []
 
         if left is None:
             return

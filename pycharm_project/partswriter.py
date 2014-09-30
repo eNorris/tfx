@@ -9,9 +9,9 @@ class PartsWriter:
     def generate_evals(self, regions):
         lines = ""
         for region in regions:
-            pt = region.evalpoint
-            lines += "  " + str(region.id) + ": " + str(pt[0]) + ", " + str(pt[1]) + ", " + str(pt[2]) + \
-                     ", 1.0: Eval point/\n"
+            for pt in region.evalpoints:
+                lines += "  " + str(region.id) + ": " + str(pt[0]) + ", " + str(pt[1]) + ", " + str(pt[2]) + \
+                         ", " + str(1/len(region.evalpoints)) + ": Eval point/\n"
         return lines
 
     def collapse_simplify(self, objects):
@@ -37,9 +37,10 @@ class PartsWriter:
         self.collapse_simplify(regions)
 
         evalregions = [x for x in regions if x.doeval]
+        evalpointcount = sum(len(x.evalpoints) for x in evalregions)
         thispartmats = set([k.matid for k in regions])
         file.write("0, " + str(len(thispartmats)) + ", " + str(len(bodies)) + ", " + str(len(regions)) + ", " +
-                   str(len(evalregions)) + "/\n")
+                   str(evalpointcount) + "/\n")
         file.write(", ".join([str(k) + "=" + str(self.matmap[k]) for k in self.matmap if k in thispartmats]) + "/\n")
         for b in bodies:
             file.write(str(b) + "/\n")
@@ -52,7 +53,7 @@ class PartsWriter:
         file = open(lastdotindex[0] + ".rmap", 'w')
 
         for r in evalregions:
-            pt = r.evalpoint
-            file.write(str(r.id) + "\t" + str(pt[0]) + "\t" + str(pt[1]) + "\t" + str(pt[2]) + "\n")
+            for pt in r.evalpoints:
+                file.write(str(r.id) + "\t" + str(pt[0]) + "\t" + str(pt[1]) + "\t" + str(pt[2]) + "\n")
 
         file.close()

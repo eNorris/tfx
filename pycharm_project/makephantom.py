@@ -16,7 +16,7 @@ import time
 def makeparts():
 
     # Problem constants
-    srcpts = 8
+    srcpts = 16
     beamangle = math.radians(55)
 
     bodies = []
@@ -31,6 +31,8 @@ def makeparts():
     #phantom = Rpp2d.Rpp2d((0, 0), (halfwidth, halfwidth))
     air = Rpp2d.Rpp2d((0, 0), (150, 150))
     airregion = Region.RegionNode(air) - phantom
+    # TODO Istead of having a doeval variable, just test length of evalpoints
+    airregion.doeval = True
     airregion.matid = 'G'
     bodies.extend([phantom, air])
     regions.extend([airregion])
@@ -92,9 +94,9 @@ def makeparts():
                 evvispt = Point.Point2d((evalpt[0], evalpt[1]))
                 evvispt.dodraw = True
                 evvispt.color = (255, 0, 255)
-                evvispt.radius = 10
+                evvispt.radius = 3
                 vis.registerthis(evvispt)
-                corespondingregion.evalpoint = (evalpt[0], evalpt[1], evalpt[2])
+                corespondingregion.evalpoints.append((evalpt[0], evalpt[1], evalpt[2]))
                 regions.append(corespondingregion)
 
 
@@ -117,6 +119,14 @@ def makeparts():
     #downbow.color = (0, 0, 100)
     for i in range(srcpts):
         theta = i * 2 * math.pi / srcpts
+
+        newevalpt = Point.Point2d((30 * math.cos(theta), 30 * math.sin(theta)))
+        newevalpt.dodraw = True
+        newevalpt.color = (255, 0, 255)
+        newevalpt.radius = 3
+        vis.registerthis(newevalpt)
+        #corespondingregion.evalpoints.append((evalpt[0], evalpt[1], evalpt[2]))
+        airregion.evalpoints.append((newevalpt[0], newevalpt[1], 0.5))
 
         # Create the bodies
         newcolup = upcollimator.clone().rotate_about(theta)
