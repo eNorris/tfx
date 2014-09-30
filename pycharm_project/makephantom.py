@@ -120,6 +120,7 @@ def makeparts():
     for i in range(srcpts):
         theta = i * 2 * math.pi / srcpts
 
+        # Add a new eval point in the air region
         newevalpt = Point.Point2d((30 * math.cos(theta), 30 * math.sin(theta)))
         newevalpt.dodraw = True
         newevalpt.color = (255, 0, 255)
@@ -143,6 +144,22 @@ def makeparts():
         upreg.matid = 'H'
         downreg = Region.RegionNode(newdown)
         downreg.matid = 'H'
+
+        # Add eval points to the bowtie filter parts
+        upeval = Point.Point2d(newup.centroid())
+        downeval = Point.Point2d(newdown.centroid())
+        upeval.dodraw = True
+        upeval.color = (255, 0, 255)
+        upeval.radius = 3
+        downeval.dodraw = True
+        downeval.color = (255, 0, 255)
+        downeval.radius = 3
+        vis.registerthis(upeval)
+        vis.registerthis(downeval)
+        upreg.evalpoints.append((upeval[0], upeval[1], 0.5))
+        downreg.evalpoints.append((downeval[0], downeval[1], 0.5))
+        upreg.doeval = True
+        downreg.doeval = True
 
         for b in [newcolup, newcoldown, newup, newdown]:
             #for b in [newcolup, newcoldown]:

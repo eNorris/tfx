@@ -64,6 +64,10 @@ class Raw2d(CombinatorialBody):
     def getcorners(self):
         return [(self.px, self.py), (self.px+self.vec1[0], self.py+self.vec1[1]), (self.px+self.vec2[0], self.py+self.vec2[1])]
 
+    def centroid(self):
+        c = self.getcorners()
+        return (c[0][0] + c[1][0] + c[2][0])/3, (c[0][1] + c[1][1] + c[2][1])/3
+
     def draw2d(self):
         if not graphics or self.visualizer is None:
             return
