@@ -82,6 +82,9 @@ class Rpp2d(CombinatorialBody.CombinatorialBody):
         width = int(self.w * self.visualizer.scale)
         height = int(self.h * self.visualizer.scale)
 
+        if self.fillcolor[3] != 0:
+            pygame.draw.rect(self.visualizer.screen, self.fillcolor,
+                             [left, top, width, height], 0)
         pygame.draw.rect(self.visualizer.screen, self.color,
                          [left, top, width, height], 1)
 

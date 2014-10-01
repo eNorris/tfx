@@ -11,6 +11,7 @@ class CombinatorialBody(object):
         self.comment = ""
         self.visualizer = None
         self.color = (0, 0, 0)
+        self.fillcolor = (0, 0, 0, 0)
 
     def __contains__(self, item):
         raise Exception("Operator __contains__ not overloaded for this body (" + str(self.__class__.__name__) + ")")
