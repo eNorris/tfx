@@ -41,8 +41,8 @@ vis.register([phantom, air])
 
 width = 32
 height = 32
-xdivs = 8
-ydivs = 8
+xdivs = 31
+ydivs = 31
 bot = -16
 left = -16
 
@@ -71,7 +71,7 @@ for i in range(xdivs):
 
         if (neary - phantom.cy)**2 + (nearx - phantom.cx)**2 < phantom.r**2:
             vis.register(r)
-            r.fillcolor = (0, 255, 0, 1)
+            #r.fillcolor = (0, 255, 0, 1)
             bodies.append(r)
             corespondingregion = Region.RegionNode(phantom)
             corespondingregion += r
@@ -205,5 +205,13 @@ for i in range(checkval):
 
 vis.launch()
 
+regions = regions[1:-1]
+
+for r in regions:
+    if len(r.evalpoints) != 0:
+        for body in r.get_all_bodies():
+            body.fillcolor = (0, 255, 0, 1)
+
+vis.launch()
 
 
