@@ -27,6 +27,13 @@ class Point2d:
 
     def __str__(self):
         return "(" + str(self.x) + ", " + str(self.y) + ")"
+    
+    def clone(self):
+        p = Point2d([self.x, self.y], self.color)
+        p.visualizer = self.visualizer
+        p.dodraw = self.dodraw
+        p.radius = self.radius
+        return p
 
     def draw2d(self):
         if not self.dodraw or not graphics or self.visualizer is None:
