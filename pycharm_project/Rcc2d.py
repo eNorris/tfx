@@ -10,7 +10,7 @@ import math
 import CombinatorialBody
 
 
-class Rcc2d(CombinatorialBody.CombinatorialBody):
+class Rcc2d(CombinatorialBody.CombinatorialBody2d):
     def __init__(self, r=1, center=(0, 0)):
         super(Rcc2d, self).__init__()
         self.cx = center[0]

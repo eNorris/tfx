@@ -110,13 +110,10 @@ if holewidth > colwidth:
     print("WARNING: Collimator hole exceeds collimator size!")
 
 upcollimator = Box2d.Box2d((50, holewidth), (3, 0), (0, (colwidth-holewidth)/2), False)
-#upcollimator.color = (255, 0, 0)
 downcollimator = Box2d.Box2d((50, -holewidth), (3, 0), (0, -(colwidth-holewidth)/2), False)
-#downcollimator.color = (0, 255, 0)
 upbow = Raw2d.Raw2d((44, 5), (5, 0), (0, -5))
 downbow = Raw2d.Raw2d((44, -5), (5, 0), (0, 5))
-#upbow.color = (0, 0, 100)
-#downbow.color = (0, 0, 100)
+
 for i in range(srcpts):
     theta = i * 2 * math.pi / srcpts
 

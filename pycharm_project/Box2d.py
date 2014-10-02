@@ -7,10 +7,11 @@ try:
 except ImportError:
     graphics = False
 
-from CombinatorialBody import CombinatorialBody
+import util
+from CombinatorialBody import CombinatorialBody2d
 
 
-class Box2d(CombinatorialBody):
+class Box2d(CombinatorialBody2d):
 
     def __init__(self, pos=(0, 0), vec1=(1, 0), vec2=(0, 1), provide_center=True):
         super(Box2d, self).__init__()
@@ -77,20 +78,40 @@ class Box2d(CombinatorialBody):
         return self
 
     def rotate_about(self, theta, is_radians=True, pt=(0, 0)):
-        #self.rotate(theta)
+
         if not is_radians:
             theta *= math.pi / 180
-
-        self.vec1 = [self.vec1[0] * math.cos(theta) - self.vec1[1] * math.sin(theta),
-                     self.vec1[0] * math.sin(theta) + self.vec1[1] * math.cos(theta)]
-        self.vec2 = [self.vec2[0] * math.cos(theta) - self.vec2[1] * math.sin(theta),
-                     self.vec2[0] * math.sin(theta) + self.vec2[1] * math.cos(theta)]
-        posvec = [pt[0] - self.x, pt[1] - self.y]
-        dx = posvec[0] * math.cos(theta) - posvec[1] * math.sin(theta)
-        dy = posvec[0] * math.sin(theta) + posvec[1] * math.cos(theta)
-        self.x += posvec[0] - dx
-        self.y += posvec[1] - dy
+        self.x, self.y = util.get_rotated_about_2d([self.x, self.y], theta, (0, 0), is_radians )
+        self.vec1 = util.get_rotated_about_2d(self.vec1, theta, (0, 0), is_radians )
+        self.vec2 = util.get_rotated_about_2d(self.vec2, theta, (0, 0), is_radians )
+        if not self.valid():
+            print("WARNING: Box2d::rotate() invalid vectors after rotation")
         return self
+
+    def get_rotated_about(self, theta, is_radians=True, pt=(0, 0)):
+
+        if not is_radians:
+            theta *= math.pi / 180
+        self.x, self.y = util.get_rotated_about_2d([self.x, self.y], theta, (0, 0), is_radians )
+        self.vec1 = util.get_rotated_about_2d(self.vec1, theta, (0, 0), is_radians )
+        self.vec2 = util.get_rotated_about_2d(self.vec2, theta, (0, 0), is_radians )
+        if not self.valid():
+            print("WARNING: Box2d::rotate() invalid vectors after rotation")
+        return self
+
+        #if not is_radians:
+        #    theta *= math.pi / 180
+#
+        #self.vec1 = [self.vec1[0] * math.cos(theta) - self.vec1[1] * math.sin(theta),
+        #             self.vec1[0] * math.sin(theta) + self.vec1[1] * math.cos(theta)]
+        #self.vec2 = [self.vec2[0] * math.cos(theta) - self.vec2[1] * math.sin(theta),
+        #             self.vec2[0] * math.sin(theta) + self.vec2[1] * math.cos(theta)]
+        #posvec = [pt[0] - self.x, pt[1] - self.y]
+        #dx = posvec[0] * math.cos(theta) - posvec[1] * math.sin(theta)
+        #dy = posvec[0] * math.sin(theta) + posvec[1] * math.cos(theta)
+        #self.x += posvec[0] - dx
+        #self.y += posvec[1] - dy
+        #return self
 
     def set_pos(self, pos, set_center=True):
         if set_center:

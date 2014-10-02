@@ -7,9 +7,9 @@ except ImportError:
     graphics = False
 import math
 
-from CombinatorialBody import CombinatorialBody
+from CombinatorialBody import CombinatorialBody2d
 
-class Raw2d(CombinatorialBody):
+class Raw2d(CombinatorialBody2d):
 
     def __init__(self, refpoint, v1, v2):
         super(Raw2d, self).__init__()
