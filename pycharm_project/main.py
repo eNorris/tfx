@@ -172,7 +172,7 @@ for i in range(srcpts):
     # regions.extend([colreg, colhreg])
     # vis.register([newcolup, newcoldown])
 
-writer = partswriter.PartsWriter("./phantom2.parts", {'E':"PHANTOM", 'F':"COLLIMATOR", 'G':"AIR", 'H':"ALUM"})
+writer = partswriter.PartsWriter("./phantom2.parts", {'E': "PHANTOM", 'F': "COLLIMATOR", 'G': "AIR", 'H': "ALUM"})
 writer.write("phantom_part", bodies, regions)
 
 for b in bodies:

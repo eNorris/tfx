@@ -4,7 +4,7 @@ TFX_Parts
 !-
 phantom_part: 
 0, 4, 867, 866, 849/
-H=ALUM, E=PHANTOM, G=AIR, F=COLLIMATOR/
+E=PHANTOM, F=COLLIMATOR, G=AIR, H=ALUM/
   1: RCC: 0, 0, 0, 0, 0, 1, 16.0 :: Right Circular Cylinder/
   2: RPP: -75.0, 75.0, -75.0, 75.0, 0, 1 :: Axis-aligned Right Parallelpiped/
   3: RPP: -16.0, -14.967741935483872, -5.67741935483871, -4.645161290322581, 0, 1 :: Axis-aligned Right Parallelpiped/

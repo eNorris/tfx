@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="867" selection-end="867" vertical-scroll-proportion="0.46708465" vertical-offset="531" max-vertical-offset="3791">
+            <state line="173" column="0" selection-start="5386" selection-end="5386" vertical-scroll-proportion="0.0" vertical-offset="2754" max-vertical-offset="3791">
               <folding>
                 <element signature="e#23#35#0" expanded="true" />
               </folding>
@@ -34,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="partswriter.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="partswriter.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/partswriter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0" vertical-offset="91" max-vertical-offset="1088">
+            <state line="44" column="24" selection-start="1696" selection-end="1696" vertical-scroll-proportion="0.5975" vertical-offset="509" max-vertical-offset="1088">
               <folding />
             </state>
           </provider>
@@ -122,21 +122,21 @@
         <option value="$PROJECT_DIR$/Box2d.py" />
         <option value="$PROJECT_DIR$/Visualizer.py" />
         <option value="$PROJECT_DIR$/Point.py" />
-        <option value="$PROJECT_DIR$/partswriter.py" />
         <option value="$PROJECT_DIR$/Raw2d.py" />
         <option value="$PROJECT_DIR$/makephantom.py" />
         <option value="$PROJECT_DIR$/CombinatorialBody.py" />
         <option value="$PROJECT_DIR$/Rpp2d.py" />
         <option value="$PROJECT_DIR$/Region.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/partswriter.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="438" />
-    <option name="y" value="166" />
+    <option name="x" value="386" />
+    <option name="y" value="73" />
     <option name="width" value="1175" />
-    <option name="height" value="674" />
+    <option name="height" value="755" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -358,7 +358,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="438" y="166" width="1175" height="674" extended-state="0" />
+    <frame x="386" y="73" width="1175" height="755" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -366,10 +366,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24925816" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16695958" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39663094" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39616615" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32844037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2859425" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -421,8 +421,13 @@
           <line>80</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/partswriter.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="37" />
+      <option name="time" value="38" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -676,13 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partswriter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0" vertical-offset="91" max-vertical-offset="1088">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/makephantom.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="36" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3587">
@@ -720,10 +718,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="867" selection-end="867" vertical-scroll-proportion="0.46708465" vertical-offset="531" max-vertical-offset="3791">
+        <state line="173" column="0" selection-start="5386" selection-end="5386" vertical-scroll-proportion="0.0" vertical-offset="2754" max-vertical-offset="3791">
           <folding>
             <element signature="e#23#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partswriter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="24" selection-start="1696" selection-end="1696" vertical-scroll-proportion="0.5975" vertical-offset="509" max-vertical-offset="1088">
+          <folding />
         </state>
       </provider>
     </entry>
