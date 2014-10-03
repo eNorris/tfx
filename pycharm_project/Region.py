@@ -54,6 +54,7 @@ class RegionNode:
         if itype is None and right is not None:
             print("WARNING: type is not specified by two regions were specified")
 
+    # TODO - Think about how union, get_unioned, | and |= should all work together
     def union(self, other):
         if not isinstance(other, RegionNode):
             other = RegionNode(other)
@@ -183,11 +184,11 @@ class RegionNode:
             return
 
         # TODO - Need to fix this
-        if self.type == RegionNode.BASE:
-            self.left.draw2d()
-        else:
-            self.left.draw2d()
-            self.right.draw2d()
+        # if self.type == RegionNode.BASE:
+        #     self.left.draw2d()
+        # else:
+        #     self.left.draw2d()
+        #     self.right.draw2d()
 
         if self.drawevals:
             for e in self.evalpoints:

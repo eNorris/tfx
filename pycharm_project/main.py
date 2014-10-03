@@ -116,20 +116,23 @@ upbow = Raw2d.Raw2d((44, 5), (5, 0), (0, -5))
 downbow = Raw2d.Raw2d((44, -5), (5, 0), (0, 5))
 
 # Define the collimator regions
-upcol = Box2d.Box2d((50, holewidth), (3, 0), (0, (colwidth-holewidth)/2), False)
+upcol = Box2d.Box2d((50, holewidth), (3, 0), (0, (colwidth-holewidth)), False)
 upcolreg = Region.RegionNode(upcol)
 upcolreg.matid = "F"
+upcolreg.drawevals = True
 upcolreg.evalpoints.append((51.5, (colwidth + holewidth)/2))
 
-downcol = Box2d.Box2d((50, -holewidth), (3, 0), (0, -(colwidth-holewidth)/2), False)
+downcol = Box2d.Box2d((50, -holewidth), (3, 0), (0, -(colwidth-holewidth)), False)
 downcolreg = Region.RegionNode(downcol)
 downcolreg.matid = "F"
-downcolreg.evalpoints.append((51.5, (colwidth + holewidth)/2))
+downcolreg.drawevals = True
+downcolreg.evalpoints.append((-51.5, (colwidth + holewidth)/2))
 
 # Define the flat filter region
 flatfilter = Box2d.Box2d((49.55, 0), (.1, 0), (0, 10), True)
 filterreg = Region.RegionNode(flatfilter)
 filterreg.matid = "H"
+filterreg.drawevals = True
 filterreg.evalpoints.append((49.55, 0))
 
 # Define the bowtie region
@@ -148,7 +151,8 @@ bowtie9 = auxutil.fliptie(bowtie4)
 bowtie10 = auxutil.fliptie(bowtie5)
 bowtieregion = Region.RegionNode(basebox) | topbox | botbox | bowtie1 | bowtie2 | bowtie3 | bowtie4 | bowtie5 | bowtie6 | bowtie7 | bowtie8 | bowtie9 | bowtie10
 bowtieregion.matid = "H"
-bowtieregion.evalpoints.extend([])
+bowtieregion.drawevals = True
+bowtieregion.evalpoints.extend([(46.5, 3.8), (46.5, -3.8), (44.5, 0)])
 #l = bowtieregion.get_all_bodies()
 #vis.register([basebox, topbox, botbox, bowtie1, bowtie2, bowtie3, bowtie4, bowtie5, bowtie6, bowtie7, bowtie8, bowtie9, bowtie10])
 
@@ -181,6 +185,7 @@ for i in range(srcpts):
 
     for region in [newupcolreg, newdowncolreg, newfilterreg, newbowtiereg]:
         regions.append(region)
+        vis.register(region)
 
     ## Create the bodies
     #newcolup = upcollimator.clone().rotate_about_2d(theta)
