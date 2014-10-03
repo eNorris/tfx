@@ -8,6 +8,7 @@ import Point
 import Visualizer
 import Region
 import partswriter
+import auxutil
 
 import random
 import time
@@ -118,13 +119,45 @@ downbow = Raw2d.Raw2d((44, -5), (5, 0), (0, 5))
 upcol = Box2d.Box2d((50, holewidth), (3, 0), (0, (colwidth-holewidth)/2), False)
 upcolreg = Region.RegionNode(upcol)
 upcolreg.matid = "F"
-upcolreg.evalpoints.append((51.5, (colwidth + holewidth)/4))
+upcolreg.evalpoints.append((51.5, (colwidth + holewidth)/2))
+
+downcol = Box2d.Box2d((50, -holewidth), (3, 0), (0, -(colwidth-holewidth)/2), False)
+downcolreg = Region.RegionNode(downcol)
+downcolreg.matid = "F"
+downcolreg.evalpoints.append((51.5, (colwidth + holewidth)/2))
+
 # Define the flat filter region
+flatfilter = Box2d.Box2d((49.55, 0), (.1, 0), (0, 10), True)
+filterreg = Region.RegionNode(flatfilter)
+filterreg.matid = "H"
+filterreg.evalpoints.append((49.55, 0))
 
 # Define the bowtie region
+basebox = Box2d.Box2d((44.5, 0), (1, 0), (0, 10))
+topbox = Box2d.Box2d((47, 3.725), (4, 0), (0, 2.55))
+botbox = Box2d.Box2d((47, -3.725), (4, 0), (0, 2.55))
+bowtie1 = auxutil.bowtie_triangle((45, 2.45), (45, 0), (45.5, .919))
+bowtie2 = auxutil.bowtie_triangle((45, 2.45), (45.5, .919), (46, 1.302))
+bowtie3 = auxutil.bowtie_triangle((45, 2.45), (46, 1.302), (47, 1.808))
+bowtie4 = auxutil.bowtie_triangle((45, 2.45), (47, 1.808), (48, 2.162))
+bowtie5 = auxutil.bowtie_triangle((45, 2.45), (48, 2.162), (49, 2.45))
+bowtie6 = auxutil.fliptie(bowtie1)
+bowtie7 = auxutil.fliptie(bowtie2)
+bowtie8 = auxutil.fliptie(bowtie3)
+bowtie9 = auxutil.fliptie(bowtie4)
+bowtie10 = auxutil.fliptie(bowtie5)
+bowtieregion = Region.RegionNode(basebox) | topbox | botbox | bowtie1 | bowtie2 | bowtie3 | bowtie4 | bowtie5 | bowtie6 | bowtie7 | bowtie8 | bowtie9 | bowtie10
+bowtieregion.matid = "H"
+bowtieregion.evalpoints.extend([])
+#l = bowtieregion.get_all_bodies()
+#vis.register([basebox, topbox, botbox, bowtie1, bowtie2, bowtie3, bowtie4, bowtie5, bowtie6, bowtie7, bowtie8, bowtie9, bowtie10])
 
+#nb = bowtieregion.get_rotated_about_2d(20, is_radians=False)
+#for k in bowtieregion.get_rotated_about_2d(200, is_radians=False).get_all_bodies():
+#    vis.register(k)
 
 for i in range(srcpts):
+    # Calculate the angle
     theta = i * 2 * math.pi / srcpts
 
     # Add a new eval point in the air region
@@ -133,51 +166,64 @@ for i in range(srcpts):
     newevalpt.color = (255, 0, 255)
     newevalpt.radius = 3
     vis.registerthis(newevalpt)
-    #corespondingregion.evalpoints.append((evalpt[0], evalpt[1], evalpt[2]))
     airregion.evalpoints.append((newevalpt[0], newevalpt[1], 0.5))
 
-    # Create the bodies
-    newcolup = upcollimator.clone().rotate_about_2d(theta)
-    newcoldown = downcollimator.clone().rotate_about_2d(theta)
-    newup = upbow.clone().rotate_about_2d(theta, (0, 0))
-    newdown = downbow.clone().rotate_about_2d(theta, (0, 0))
+    newupcolreg = upcolreg.get_rotated_about_2d(theta, (0, 0), True)
+    newdowncolreg = downcolreg.get_rotated_about_2d(theta, (0, 0), True)
+    newfilterreg = filterreg.get_rotated_about_2d(theta, (0, 0), True)
+    newbowtiereg = bowtieregion.get_rotated_about_2d(theta, (0, 0), True)
 
-    # Create the regions
-    colreg = Region.RegionNode(newcolup)
-    colreg.matid = 'F'
-    colhreg = Region.RegionNode(newcoldown)
-    colhreg.matid = 'F'
-    upreg = Region.RegionNode(newup)
-    upreg.matid = 'H'
-    downreg = Region.RegionNode(newdown)
-    downreg.matid = 'H'
+    for region in [newupcolreg, newdowncolreg, newfilterreg, newbowtiereg]:
+        for b in region.get_all_bodies():
+            vis.register(b)
+            bodies.append(b)
+            airregion -= b
 
-    # Add eval points to the bowtie filter parts
-    upeval = Point.Point2d(newup.centroid())
-    downeval = Point.Point2d(newdown.centroid())
-    upeval.dodraw = True
-    upeval.color = (255, 0, 255)
-    upeval.radius = 3
-    downeval.dodraw = True
-    downeval.color = (255, 0, 255)
-    downeval.radius = 3
-    vis.registerthis(upeval)
-    vis.registerthis(downeval)
-    upreg.evalpoints.append((upeval[0], upeval[1], 0.5))
-    downreg.evalpoints.append((downeval[0], downeval[1], 0.5))
-    upreg.doeval = True
-    downreg.doeval = True
+    for region in [newupcolreg, newdowncolreg, newfilterreg, newbowtiereg]:
+        regions.append(region)
 
-    for b in [newcolup, newcoldown, newup, newdown]:
-        #for b in [newcolup, newcoldown]:
-        airregion -= b
-
-    bodies.extend([newcolup, newcoldown, newup, newdown])
-    regions.extend([colreg, colhreg, upreg, downreg])
-    vis.register([newcolup, newcoldown, newup, newdown])
-    # bodies.extend([newcolup, newcoldown])
-    # regions.extend([colreg, colhreg])
-    # vis.register([newcolup, newcoldown])
+    ## Create the bodies
+    #newcolup = upcollimator.clone().rotate_about_2d(theta)
+    #newcoldown = downcollimator.clone().rotate_about_2d(theta)
+    #newup = upbow.clone().rotate_about_2d(theta, (0, 0))
+    #newdown = downbow.clone().rotate_about_2d(theta, (0, 0))
+#
+    ## Create the regions
+    #colreg = Region.RegionNode(newcolup)
+    #colreg.matid = 'F'
+    #colhreg = Region.RegionNode(newcoldown)
+    #colhreg.matid = 'F'
+    #upreg = Region.RegionNode(newup)
+    #upreg.matid = 'H'
+    #downreg = Region.RegionNode(newdown)
+    #downreg.matid = 'H'
+#
+    ## Add eval points to the bowtie filter parts
+    #upeval = Point.Point2d(newup.centroid())
+    #downeval = Point.Point2d(newdown.centroid())
+    #upeval.dodraw = True
+    #upeval.color = (255, 0, 255)
+    #upeval.radius = 3
+    #downeval.dodraw = True
+    #downeval.color = (255, 0, 255)
+    #downeval.radius = 3
+    #vis.registerthis(upeval)
+    #vis.registerthis(downeval)
+    #upreg.evalpoints.append((upeval[0], upeval[1], 0.5))
+    #downreg.evalpoints.append((downeval[0], downeval[1], 0.5))
+    #upreg.doeval = True
+    #downreg.doeval = True
+#
+    #for b in [newcolup, newcoldown, newup, newdown]:
+    #    #for b in [newcolup, newcoldown]:
+    #    airregion -= b
+#
+    #bodies.extend([newcolup, newcoldown, newup, newdown])
+    #regions.extend([colreg, colhreg, upreg, downreg])
+    #vis.register([newcolup, newcoldown, newup, newdown])
+    ## bodies.extend([newcolup, newcoldown])
+    ## regions.extend([colreg, colhreg])
+    ## vis.register([newcolup, newcoldown])
 
 writer = partswriter.PartsWriter("./phantom2.parts", {'E': "PHANTOM", 'F': "COLLIMATOR", 'G': "AIR", 'H': "ALUM"})
 writer.write("phantom_part", bodies, regions)
