@@ -23,19 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="0" selection-start="5077" selection-end="5077" vertical-scroll-proportion="0.0" vertical-offset="1587" max-vertical-offset="3553">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="util.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+            <state line="4" column="67" selection-start="61" selection-end="103" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
               <folding />
             </state>
           </provider>
@@ -53,7 +44,7 @@
       <file leaf-file-name="Region.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Region.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="48" selection-start="4064" selection-end="4064" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="3672">
+            <state line="146" column="0" selection-start="4601" selection-end="4601" vertical-scroll-proportion="0.0" vertical-offset="2193" max-vertical-offset="4046">
               <folding />
             </state>
           </provider>
@@ -68,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Point.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Point.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Point.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="4" selection-start="658" selection-end="658" vertical-scroll-proportion="0.5625" vertical-offset="187" max-vertical-offset="850">
+            <state line="31" column="49" selection-start="725" selection-end="725" vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
@@ -93,6 +84,15 @@
               <folding>
                 <element signature="e#107#118#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CombinatorialBody.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CombinatorialBody.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="30" selection-start="235" selection-end="235" vertical-scroll-proportion="0.34501845" vertical-offset="0" max-vertical-offset="578">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,16 +127,16 @@
       <list>
         <option value="$PROJECT_DIR$/Visualizer.py" />
         <option value="$PROJECT_DIR$/makephantom.py" />
-        <option value="$PROJECT_DIR$/Region.py" />
         <option value="$PROJECT_DIR$/partswriter.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/util.py" />
-        <option value="$PROJECT_DIR$/CombinatorialBody.py" />
         <option value="$PROJECT_DIR$/Rpp2d.py" />
         <option value="$PROJECT_DIR$/Rcc2d.py" />
         <option value="$PROJECT_DIR$/Raw2d.py" />
         <option value="$PROJECT_DIR$/Box2d.py" />
         <option value="$PROJECT_DIR$/Point.py" />
+        <option value="$PROJECT_DIR$/Region.py" />
+        <option value="$PROJECT_DIR$/CombinatorialBody.py" />
       </list>
     </option>
   </component>
@@ -367,7 +367,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -378,7 +378,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39616615" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23898531" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23962517" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -728,13 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Region.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="48" selection-start="4064" selection-end="4064" vertical-scroll-proportion="0.0" vertical-offset="2155" max-vertical-offset="3672">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partswriter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="0" selection-start="1220" selection-end="1220" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1088">
@@ -745,27 +738,6 @@
     <entry file="file://$PROJECT_DIR$/Visualizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="0" selection-start="791" selection-end="791" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="2227">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="0" selection-start="5077" selection-end="5077" vertical-scroll-proportion="0.0" vertical-offset="1587" max-vertical-offset="3553">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CombinatorialBody.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="73" selection-end="73" vertical-scroll-proportion="0.1875" vertical-offset="0" max-vertical-offset="544">
           <folding />
         </state>
       </provider>
@@ -802,7 +774,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Point.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="4" selection-start="658" selection-end="658" vertical-scroll-proportion="0.5625" vertical-offset="187" max-vertical-offset="850">
+        <state line="31" column="49" selection-start="725" selection-end="725" vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="166" column="0" selection-start="5077" selection-end="5077" vertical-scroll-proportion="0.0" vertical-offset="1587" max-vertical-offset="3553">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="67" selection-start="61" selection-end="103" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Region.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="0" selection-start="4601" selection-end="4601" vertical-scroll-proportion="0.0" vertical-offset="2193" max-vertical-offset="4046">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CombinatorialBody.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="30" selection-start="235" selection-end="235" vertical-scroll-proportion="0.34501845" vertical-offset="0" max-vertical-offset="578">
           <folding />
         </state>
       </provider>

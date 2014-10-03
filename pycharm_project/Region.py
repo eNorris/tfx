@@ -1,7 +1,6 @@
 __author__ = 'Edward'
 
-import copy
-
+import util
 
 class RegionNode:
 
@@ -114,10 +113,18 @@ class RegionNode:
         return "  " + str(self.id) + ": " + self.matid + ": " + self.str_rec() + ": " + self.comment
 
     def clone(self):
-        c = RegionNode(self.left, self.type, self.right)
-        c.matid = self.matid
-        c.comment = self.comment
-        return c
+
+        if self.type == RegionNode.BASE:
+            x = RegionNode(self.left.clone(), self.type, None)
+        else:
+            x = RegionNode(self.left.clone(), self.type, self.right.clone())
+
+        x.matid = self.matid
+        x.comment = self.comment
+        x.doeval = self.doeval
+        self.evalpoints = [k for k in self.evalpoints]
+
+        return x
 
     def clonedeep(self):
         c = RegionNode(self.left, self.type, self.right)
@@ -126,6 +133,21 @@ class RegionNode:
         c.id = self.id
         RegionNode.nextid -= 1
         return c
+
+    def get_rotated_about_2d(self, theta, aboutpt=(0, 0), is_radians=True):
+        x = self.clone()
+        return x.rotate_about_2d(theta, aboutpt, is_radians)
+
+    def rotate_about_2d(self, theta, aboutpt=(0, 0), is_radians=True):
+        if self.type == RegionNode.BASE:
+            self.left.rotate_about(theta, aboutpt, is_radians)
+        else:
+            self.right.rotate_about(theta, aboutpt, is_radians)
+            self.right.rotate_about(theta, aboutpt, is_radians)
+
+        self.evalpoints = [util.get_rotated_about_2d(x, theta, aboutpt, is_radians) for x in self.evalpoints]
+
+        return self
 
     def get_all_bodies(self):
         if self.type == RegionNode.BASE:

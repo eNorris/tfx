@@ -27,7 +27,7 @@ class Point2d:
 
     def __str__(self):
         return "(" + str(self.x) + ", " + str(self.y) + ")"
-    
+
     def clone(self):
         p = Point2d([self.x, self.y], self.color)
         p.visualizer = self.visualizer
