@@ -6,6 +6,7 @@ try:
 except ImportError:
     graphics = False
 import math
+import util
 
 from CombinatorialBody import CombinatorialBody2d
 
@@ -33,28 +34,35 @@ class Raw2d(CombinatorialBody2d):
                 return False
         return True
 
-    def rotate(self, theta):
-        self.vec1 = [self.vec1[0] * math.cos(theta) - self.vec1[1] * math.sin(theta),
-                     self.vec1[0] * math.sin(theta) + self.vec1[1] * math.cos(theta)]
-        self.vec2 = [self.vec2[0] * math.cos(theta) - self.vec2[1] * math.sin(theta),
-                     self.vec2[0] * math.sin(theta) + self.vec2[1] * math.cos(theta)]
-        self.validate()
-        return self
+    #def rotate(self, theta):
+    #    self.vec1 = [self.vec1[0] * math.cos(theta) - self.vec1[1] * math.sin(theta),
+    #                 self.vec1[0] * math.sin(theta) + self.vec1[1] * math.cos(theta)]
+    #    self.vec2 = [self.vec2[0] * math.cos(theta) - self.vec2[1] * math.sin(theta),
+    #                 self.vec2[0] * math.sin(theta) + self.vec2[1] * math.cos(theta)]
+    #    self.validate()
+    #    return self
 
     def validate(self):
         if self.vec1[0] * self.vec2[0] + self.vec1[1] * self.vec2[1] >= 1e-10:
             raise Exception("Invalid Raw2d, vectors must be mutually perpendicualr")
         return True
 
-    def rotate_about(self, theta, pt=(0, 0)):
-
-        self.rotate(theta)
-        posvec = [pt[0] - self.px, pt[1] - self.py]
-        dx = posvec[0] * math.cos(theta) - posvec[1] * math.sin(theta)
-        dy = posvec[0] * math.sin(theta) + posvec[1] * math.cos(theta)
-        self.px += posvec[0] - dx
-        self.py += posvec[1] - dy
+    def rotate_about_2d(self, theta, pt=(0, 0), is_radians=True):
+        self.px, self.py = util.get_rotated_about_2d((self.px, self.py), theta, pt, is_radians)
+        self.vec1 = util.get_rotated_about_2d(self.vec1, theta, pt, is_radians)
+        self.vec2 = util.get_rotated_about_2d(self.vec2, theta, pt, is_radians)
         return self
+
+        #self.rotate(theta)
+        #posvec = [pt[0] - self.px, pt[1] - self.py]
+        #dx = posvec[0] * math.cos(theta) - posvec[1] * math.sin(theta)
+        #dy = posvec[0] * math.sin(theta) + posvec[1] * math.cos(theta)
+        #self.px += posvec[0] - dx
+        #self.py += posvec[1] - dy
+        #return self
+
+    def get_rotated_about_2d(self, theta, about_point, is_radians):
+        return self.clone().rotate_about_2d(theta, about_point, is_radians)
 
     def clone(self):
         b = Raw2d((self.px, self.py), self.vec1, self.vec2)
