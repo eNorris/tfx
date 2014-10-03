@@ -109,10 +109,20 @@ holewidth = 4 * math.tan(beamangle / 2)
 if holewidth > colwidth:
     print("WARNING: Collimator hole exceeds collimator size!")
 
-upcollimator = Box2d.Box2d((50, holewidth), (3, 0), (0, (colwidth-holewidth)/2), False)
-downcollimator = Box2d.Box2d((50, -holewidth), (3, 0), (0, -(colwidth-holewidth)/2), False)
+upcollimator = Box2d.Box2d((50, holewidth), (3, 0), (0, (colwidth-holewidth)), False)
+downcollimator = Box2d.Box2d((50, -holewidth), (3, 0), (0, -(colwidth-holewidth)), False)
 upbow = Raw2d.Raw2d((44, 5), (5, 0), (0, -5))
 downbow = Raw2d.Raw2d((44, -5), (5, 0), (0, 5))
+
+# Define the collimator regions
+upcol = Box2d.Box2d((50, holewidth), (3, 0), (0, (colwidth-holewidth)/2), False)
+upcolreg = Region.RegionNode(upcol)
+upcolreg.matid = "F"
+upcolreg.evalpoints.append((51.5, (colwidth + holewidth)/4))
+# Define the flat filter region
+
+# Define the bowtie region
+
 
 for i in range(srcpts):
     theta = i * 2 * math.pi / srcpts
@@ -127,10 +137,10 @@ for i in range(srcpts):
     airregion.evalpoints.append((newevalpt[0], newevalpt[1], 0.5))
 
     # Create the bodies
-    newcolup = upcollimator.clone().rotate_about(theta)
-    newcoldown = downcollimator.clone().rotate_about(theta)
-    newup = upbow.clone().rotate_about(theta, (0, 0))
-    newdown = downbow.clone().rotate_about(theta, (0, 0))
+    newcolup = upcollimator.clone().rotate_about_2d(theta)
+    newcoldown = downcollimator.clone().rotate_about_2d(theta)
+    newup = upbow.clone().rotate_about_2d(theta, (0, 0))
+    newdown = downbow.clone().rotate_about_2d(theta, (0, 0))
 
     # Create the regions
     colreg = Region.RegionNode(newcolup)
