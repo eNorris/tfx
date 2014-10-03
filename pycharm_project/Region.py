@@ -2,6 +2,12 @@ __author__ = 'Edward'
 
 import util
 
+try:
+    import pygame
+    graphics = True
+except ImportError:
+    graphics = False
+
 class RegionNode:
 
     UNION = 0
@@ -23,7 +29,9 @@ class RegionNode:
         RegionNode.nextid += 1
         self.comment = ""
         self.doeval = False
+        self.drawevals = False
         self.evalpoints = []
+        self.visualizer = None
 
         if left is None:
             return
@@ -122,7 +130,9 @@ class RegionNode:
         x.matid = self.matid
         x.comment = self.comment
         x.doeval = self.doeval
-        self.evalpoints = [k for k in self.evalpoints]
+        x.drawevals = self.drawevals
+        x.evalpoints = [k for k in self.evalpoints]
+        x.visualizer = self.visualizer
 
         return x
 
@@ -167,6 +177,23 @@ class RegionNode:
             return self.left.str_rec() + "+" + self.right.str_rec()
         if self.type == RegionNode.SUBTRACT:
             return self.left.str_rec() + "-" + self.right.str_rec()
+
+    def draw2d(self):
+        if not graphics or self.visualizer is None:
+            return
+
+        # TODO - Need to fix this
+        if self.type == RegionNode.BASE:
+            self.left.draw2d()
+        else:
+            self.left.draw2d()
+            self.right.draw2d()
+
+        if self.drawevals:
+            for e in self.evalpoints:
+                sx = int(e[0] * self.visualizer.scale + self.visualizer.gx)
+                sy = int((400 - e[1] * self.visualizer.scale) + self.visualizer.gy)
+                pygame.draw.circle(self.visualizer.screen, (255, 0, 255), [sx, sy], 3, 0)
 
 
 class Region:
