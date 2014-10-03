@@ -67,17 +67,17 @@ class Box2d(CombinatorialBody2d):
     def valid(self):
         return math.fabs(self.vec1[0] * self.vec2[0] + self.vec1[1] * self.vec2[1]) <= 1e-10
 
-    def rotate(self, theta, is_radians=True, about_center=True):
-        if about_center:
-            self.rotate_about(theta, is_radians, self.center())
-        else:
-            self.rotate_about(theta, is_radians, (self.x, self.y))
+    #def rotate(self, theta, is_radians=True, about_center=True):
+    #    if about_center:
+    #        self.rotate_about(theta, is_radians, self.center())
+    #    else:
+    #        self.rotate_about(theta, is_radians, (self.x, self.y))
+#
+    #    if not self.valid():
+    #        print("WARNING: Box2d::rotate() invalid vectors after rotation")
+    #    return self
 
-        if not self.valid():
-            print("WARNING: Box2d::rotate() invalid vectors after rotation")
-        return self
-
-    def rotate_about(self, theta, is_radians=True, pt=(0, 0)):
+    def rotate_about_2d(self, theta, pt=(0, 0), is_radians=True):
 
         if not is_radians:
             theta *= math.pi / 180
@@ -88,7 +88,7 @@ class Box2d(CombinatorialBody2d):
             print("WARNING: Box2d::rotate() invalid vectors after rotation")
         return self
 
-    def get_rotated_about(self, theta, is_radians=True, pt=(0, 0)):
+    def get_rotated_about_2d(self, theta,  pt=(0, 0), is_radians=True):
 
         if not is_radians:
             theta *= math.pi / 180
