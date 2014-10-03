@@ -150,10 +150,10 @@ class RegionNode:
 
     def rotate_about_2d(self, theta, aboutpt=(0, 0), is_radians=True):
         if self.type == RegionNode.BASE:
-            self.left.rotate_about(theta, aboutpt, is_radians)
+            self.left.rotate_about_2d(theta, aboutpt, is_radians)
         else:
-            self.right.rotate_about(theta, aboutpt, is_radians)
-            self.right.rotate_about(theta, aboutpt, is_radians)
+            self.left.rotate_about_2d(theta, aboutpt, is_radians)
+            self.right.rotate_about_2d(theta, aboutpt, is_radians)
 
         self.evalpoints = [util.get_rotated_about_2d(x, theta, aboutpt, is_radians) for x in self.evalpoints]
 
