@@ -1,12 +1,9 @@
+from geo import raw2d, rcc2d, rpp2d, box2d, region
+
 __author__ = 'Edward'
 
-import Rcc2d
-import Rpp2d
-import Box2d
-import Raw2d
 import Point
-import Visualizer
-import Region
+import trxvisualizers
 import partswriter
 import auxutil
 
@@ -21,16 +18,16 @@ beamangle = math.radians(55)
 
 bodies = []
 regions = []
-vis = Visualizer.Visualizer()
+vis = trxvisualizers.Visualizer()
 
-phantom = Rcc2d.Rcc2d(16.0)
+phantom = rcc2d.Rcc2d(16.0)
 #phantomregion = Region.RegionNode(phantom)
 #phantomregion.matid = 'E'
 #halfwidth = math.sqrt(math.pi) * 16.0 / 2.0
 #print("halfwidth = " + str(halfwidth))
 #phantom = Rpp2d.Rpp2d((0, 0), (halfwidth, halfwidth))
-air = Rpp2d.Rpp2d((0, 0), (150, 150))
-airregion = Region.RegionNode(air) - phantom
+air = rpp2d.Rpp2d((0, 0), (150, 150))
+airregion = region.Region(air) - phantom
 # TODO Istead of having a doeval variable, just test length of evalpoints
 airregion.doeval = True
 airregion.matid = 'G'
@@ -53,7 +50,7 @@ dy = height / ydivs
 
 for i in range(xdivs):
     for j in range(ydivs):
-        r = Rpp2d.Rpp2d([left + i * dx, bot + j * dy], [dx, dy], False)
+        r = rpp2d.Rpp2d([left + i * dx, bot + j * dy], [dx, dy], False)
         neary, nearx = None, None
 
         if r.top < phantom.cy:
@@ -74,7 +71,7 @@ for i in range(xdivs):
             vis.register(r)
             #r.fillcolor = (0, 255, 0, 1)
             bodies.append(r)
-            corespondingregion = Region.RegionNode(phantom)
+            corespondingregion = region.Region(phantom)
             corespondingregion += r
             corespondingregion.doeval = True
             corespondingregion.matid = 'E'
@@ -110,35 +107,35 @@ holewidth = 4 * math.tan(beamangle / 2)
 if holewidth > colwidth:
     print("WARNING: Collimator hole exceeds collimator size!")
 
-upcollimator = Box2d.Box2d((50, holewidth), (3, 0), (0, (colwidth-holewidth)), False)
-downcollimator = Box2d.Box2d((50, -holewidth), (3, 0), (0, -(colwidth-holewidth)), False)
-upbow = Raw2d.Raw2d((44, 5), (5, 0), (0, -5))
-downbow = Raw2d.Raw2d((44, -5), (5, 0), (0, 5))
+upcollimator = box2d.Box2d((50, holewidth), (3, 0), (0, (colwidth-holewidth)), False)
+downcollimator = box2d.Box2d((50, -holewidth), (3, 0), (0, -(colwidth-holewidth)), False)
+upbow = raw2d.Raw2d((44, 5), (5, 0), (0, -5))
+downbow = raw2d.Raw2d((44, -5), (5, 0), (0, 5))
 
 # Define the collimator regions
-upcol = Box2d.Box2d((50, holewidth), (3, 0), (0, (colwidth-holewidth)), False)
-upcolreg = Region.RegionNode(upcol)
+upcol = box2d.Box2d((50, holewidth), (3, 0), (0, (colwidth-holewidth)), False)
+upcolreg = region.Region(upcol)
 upcolreg.matid = "F"
 upcolreg.drawevals = True
 upcolreg.evalpoints.append((51.5, (colwidth + holewidth)/2))
 
-downcol = Box2d.Box2d((50, -holewidth), (3, 0), (0, -(colwidth-holewidth)), False)
-downcolreg = Region.RegionNode(downcol)
+downcol = box2d.Box2d((50, -holewidth), (3, 0), (0, -(colwidth-holewidth)), False)
+downcolreg = region.Region(downcol)
 downcolreg.matid = "F"
 downcolreg.drawevals = True
 downcolreg.evalpoints.append((-51.5, (colwidth + holewidth)/2))
 
 # Define the flat filter region
-flatfilter = Box2d.Box2d((49.55, 0), (.1, 0), (0, 10), True)
-filterreg = Region.RegionNode(flatfilter)
+flatfilter = box2d.Box2d((49.55, 0), (.1, 0), (0, 10), True)
+filterreg = region.Region(flatfilter)
 filterreg.matid = "H"
 filterreg.drawevals = True
 filterreg.evalpoints.append((49.55, 0))
 
 # Define the bowtie region
-basebox = Box2d.Box2d((44.5, 0), (1, 0), (0, 10))
-topbox = Box2d.Box2d((47, 3.725), (4, 0), (0, 2.55))
-botbox = Box2d.Box2d((47, -3.725), (4, 0), (0, 2.55))
+basebox = box2d.Box2d((44.5, 0), (1, 0), (0, 10))
+topbox = box2d.Box2d((47, 3.725), (4, 0), (0, 2.55))
+botbox = box2d.Box2d((47, -3.725), (4, 0), (0, 2.55))
 bowtie1 = auxutil.bowtie_triangle((45, 2.45), (45, 0), (45.5, .919))
 bowtie2 = auxutil.bowtie_triangle((45, 2.45), (45.5, .919), (46, 1.302))
 bowtie3 = auxutil.bowtie_triangle((45, 2.45), (46, 1.302), (47, 1.808))
@@ -149,7 +146,7 @@ bowtie7 = auxutil.fliptie(bowtie2)
 bowtie8 = auxutil.fliptie(bowtie3)
 bowtie9 = auxutil.fliptie(bowtie4)
 bowtie10 = auxutil.fliptie(bowtie5)
-bowtieregion = Region.RegionNode(basebox) | topbox | botbox | bowtie1 | bowtie2 | bowtie3 | bowtie4 | bowtie5 | bowtie6 | bowtie7 | bowtie8 | bowtie9 | bowtie10
+bowtieregion = region.Region(basebox) | topbox | botbox | bowtie1 | bowtie2 | bowtie3 | bowtie4 | bowtie5 | bowtie6 | bowtie7 | bowtie8 | bowtie9 | bowtie10
 bowtieregion.matid = "H"
 bowtieregion.drawevals = True
 bowtieregion.evalpoints.extend([(46.5, 3.8), (46.5, -3.8), (44.5, 0)])

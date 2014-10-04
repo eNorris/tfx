@@ -8,7 +8,7 @@ except ImportError:
     graphics = False
 
 import util
-from CombinatorialBody import CombinatorialBody2d
+from geo.combinatorialbody import CombinatorialBody2d
 
 
 class Box2d(CombinatorialBody2d):

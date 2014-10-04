@@ -1,6 +1,6 @@
-__author__ = 'Edward'
+from geo import raw2d
 
-import Raw2d
+__author__ = 'Edward'
 
 
 def bowtie_triangle(pt, a, b):
@@ -15,7 +15,7 @@ def bowtie_triangle(pt, a, b):
         m = (b[1] - a[1]) / (b[0] - a[0])
         v1 = (0, m * (pt[0] - a[0]) + a[1] - pt[1])
         v2 = ((pt[1] - a[1])/m + a[0] - pt[0], 0)
-        return Raw2d.Raw2d(pt, v1, v2)
+        return raw2d.Raw2d(pt, v1, v2)
 
 def fliptie(tie):
-    return Raw2d.Raw2d((tie.px, -tie.py), (tie.vec1[0], -tie.vec1[1]), (tie.vec2[0], -tie.vec2[1]))
+    return raw2d.Raw2d((tie.px, -tie.py), (tie.vec1[0], -tie.vec1[1]), (tie.vec2[0], -tie.vec2[1]))

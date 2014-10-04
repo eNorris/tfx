@@ -1,3 +1,5 @@
+from geo import combinatorialbody
+
 __author__ = 'Edward'
 
 try:
@@ -6,10 +8,8 @@ try:
 except ImportError:
     graphics = False
 
-import CombinatorialBody
 
-
-class Rpp2d(CombinatorialBody.CombinatorialBody2d):
+class Rpp2d(combinatorialbody.CombinatorialBody2d):
     def __init__(self, loc=(0, 0), dims=(1, 1), provide_center=True):
         super(Rpp2d, self).__init__()
         self.w = dims[0]

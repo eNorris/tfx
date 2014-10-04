@@ -5,10 +5,9 @@ try:
     graphics = True
 except ImportError:
     graphics = False
-import math
 import util
 
-from CombinatorialBody import CombinatorialBody2d
+from geo.combinatorialbody import CombinatorialBody2d
 
 class Raw2d(CombinatorialBody2d):
 
