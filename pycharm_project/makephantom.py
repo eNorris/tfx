@@ -1,11 +1,11 @@
 from geo import raw2d, rcc2d, rpp2d, box2d, region
+from visualizer import pygamevisualizer
 
 __author__ = 'Edward'
 
 import math
 
 import Point
-import trxvisualizers
 import partswriter
 import random
 import time
@@ -18,7 +18,7 @@ def makeparts():
 
     bodies = []
     regions = []
-    vis = trxvisualizers.Visualizer()
+    vis = pygamevisualizer.Visualizer()
 
     phantom = rcc2d.Rcc2d(16.0)
     #phantomregion = Region.RegionNode(phantom)

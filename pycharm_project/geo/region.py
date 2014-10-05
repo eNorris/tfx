@@ -163,7 +163,7 @@ class Region:
 
     def get_all_bodies(self):
         if self.type == Region.BASE:
-            return {[self.left]}
+            return set([self.left])
         else:
             return self.left.get_all_bodies() | (self.right.get_all_bodies())
 

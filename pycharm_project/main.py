@@ -1,9 +1,9 @@
 from geo import raw2d, rcc2d, rpp2d, box2d, region
+from visualizer import pygamevisualizer
 
 __author__ = 'Edward'
 
 import Point
-import trxvisualizers
 import partswriter
 import auxutil
 
@@ -18,7 +18,7 @@ beamangle = math.radians(55)
 
 bodies = []
 regions = []
-vis = trxvisualizers.Visualizer()
+vis = pygamevisualizer.Visualizer()
 
 phantom = rcc2d.Rcc2d(16.0)
 #phantomregion = Region.RegionNode(phantom)
