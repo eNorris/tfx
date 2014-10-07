@@ -1,17 +1,15 @@
-from geo import raw2d, rcc2d, rpp2d, box2d, region
-from visualizer import pygamevisualizer
-
 __author__ = 'Edward'
 
 import Point
 import partswriter
-import auxutil
-
+from visualizer import pygamevisualizer
 import random
 import time
-import math
+import makephantom
 
+#regions = makephantom.makeslice()
 
+'''
 # Problem constants
 srcpts = 16
 beamangle = math.radians(55)
@@ -226,14 +224,35 @@ for i in range(srcpts):
     ## bodies.extend([newcolup, newcoldown])
     ## regions.extend([colreg, colhreg])
     ## vis.register([newcolup, newcoldown])
+'''
 
-writer = partswriter.PartsWriter("./phantom2.parts", {'E': "PHANTOM", 'F': "COLLIMATOR", 'G': "AIR", 'H': "ALUM"})
-writer.write("phantom_part", bodies, regions)
+#bodies = set()
+#for r in regions:
+#    bodies.update(r.get_all_bodies())
 
-for b in bodies:
-    print(b)
-for r in regions:
-    print(r)
+#writer = partswriter.PartsWriter("./phantom2.parts", {'E': "PHANTOM", 'F': "COLLIMATOR", 'G': "AIR", 'H': "ALUM"})
+#writer.write("phantom_part", bodies, regions)
+
+phantomregions = makephantom.makephantom()
+sliceregions = makephantom.makeslice()
+
+phantombodies = set()
+for r in phantomregions:
+    phantombodies.update(r.get_all_bodies())
+
+slicebodies = set()
+for r in sliceregions:
+    slicebodies.update(r.get_all_bodies())
+
+writer = partswriter.PartsWriter("./phantom.parts", {'E': "PHANTOM", 'F': "COLLIMATOR", 'G': "AIR", 'H': "ALUM"},
+                                 override_existing=True)
+writer.write("phantom_part", phantombodies, phantomregions, comment="The phantom istelf meshed into squares")
+writer.write("slice_part", slicebodies, sliceregions, comment="A 1/16 slice")
+writer.close()
+
+vis = pygamevisualizer.Visualizer()
+vis.register(phantombodies)
+vis.register(phantomregions)
 
 checkval = 0
 starttime = time.time()
@@ -242,12 +261,12 @@ for i in range(checkval):
     nowtime = time.time()
     if nowtime - starttime > 1:
         starttime = nowtime
-        print("{0:.2f}".format(100 * i/checkval) + "% complete")
+        print("{0:.2f}".format(100 * i / checkval) + "% complete")
     p = Point.Point2d((random.random() * 150 - 75, random.random() * 150 - 75))
     p.dodraw = True
     p.color = (255, 0, 0)
     counts = 0
-    for r in regions:
+    for r in phantomregions:
         if p in r:
             counts += 1
             if counts == 1:
@@ -260,13 +279,13 @@ for i in range(checkval):
 
 vis.launch()
 
-regions = regions[1:-1]
-
-for r in regions:
-    if len(r.evalpoints) != 0:
-        for body in r.get_all_bodies():
-            body.fillcolor = (0, 255, 0, 1)
-
-vis.launch()
+# regions = regions[1:-1]
+#
+# for r in regions:
+#     if len(r.evalpoints) != 0:
+#         for body in r.get_all_bodies():
+#             body.fillcolor = (0, 255, 0, 1)
+#
+# vis.launch()
 
 
