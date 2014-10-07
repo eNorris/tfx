@@ -185,11 +185,11 @@ class Region:
             return
 
         # TODO - Need to fix this
-        # if self.type == RegionNode.BASE:
-        #     self.left.draw2d()
-        # else:
-        #     self.left.draw2d()
-        #     self.right.draw2d()
+        if self.type == Region.BASE:
+            self.left.draw2d()
+        else:
+            self.left.draw2d()
+            self.right.draw2d()
 
         if self.drawevals:
             for e in self.evalpoints:

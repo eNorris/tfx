@@ -32,8 +32,7 @@ class Visualizer:
         try:
             _ = iter(drawables)
         except TypeError:
-            self.drawables.add(drawables)
-            drawables.visualizer = self
+            self.registerthis(drawables)
         else:
             for d in drawables:
                 self.register(d)

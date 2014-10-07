@@ -67,18 +67,7 @@ class Box2d(CombinatorialBody2d):
     def valid(self):
         return math.fabs(self.vec1[0] * self.vec2[0] + self.vec1[1] * self.vec2[1]) <= 1e-10
 
-    #def rotate(self, theta, is_radians=True, about_center=True):
-    #    if about_center:
-    #        self.rotate_about(theta, is_radians, self.center())
-    #    else:
-    #        self.rotate_about(theta, is_radians, (self.x, self.y))
-#
-    #    if not self.valid():
-    #        print("WARNING: Box2d::rotate() invalid vectors after rotation")
-    #    return self
-
     def rotate_about_2d(self, theta, pt=(0, 0), is_radians=True):
-
         self.x, self.y = util.get_rotated_about_2d([self.x, self.y], theta, pt, is_radians)
         self.vec1 = util.get_rotated_about_2d(self.vec1, theta, pt, is_radians)
         self.vec2 = util.get_rotated_about_2d(self.vec2, theta, pt, is_radians)
@@ -88,29 +77,6 @@ class Box2d(CombinatorialBody2d):
 
     def get_rotated_about_2d(self, theta,  pt=(0, 0), is_radians=True):
         return self.clone().rotate_about_2d(theta, pt, is_radians)
-
-        #if not is_radians:
-        #    theta *= math.pi / 180
-        #self.x, self.y = util.get_rotated_about_2d([self.x, self.y], theta, (0, 0), is_radians )
-        #self.vec1 = util.get_rotated_about_2d(self.vec1, theta, (0, 0), is_radians )
-        #self.vec2 = util.get_rotated_about_2d(self.vec2, theta, (0, 0), is_radians )
-        #if not self.valid():
-        #    print("WARNING: Box2d::rotate() invalid vectors after rotation")
-        #return self
-
-        #if not is_radians:
-        #    theta *= math.pi / 180
-#
-        #self.vec1 = [self.vec1[0] * math.cos(theta) - self.vec1[1] * math.sin(theta),
-        #             self.vec1[0] * math.sin(theta) + self.vec1[1] * math.cos(theta)]
-        #self.vec2 = [self.vec2[0] * math.cos(theta) - self.vec2[1] * math.sin(theta),
-        #             self.vec2[0] * math.sin(theta) + self.vec2[1] * math.cos(theta)]
-        #posvec = [pt[0] - self.x, pt[1] - self.y]
-        #dx = posvec[0] * math.cos(theta) - posvec[1] * math.sin(theta)
-        #dy = posvec[0] * math.sin(theta) + posvec[1] * math.cos(theta)
-        #self.x += posvec[0] - dx
-        #self.y += posvec[1] - dy
-        #return self
 
     def set_pos(self, pos, set_center=True):
         if set_center:

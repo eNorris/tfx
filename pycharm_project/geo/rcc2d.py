@@ -8,6 +8,7 @@ try:
 except ImportError:
     graphics = False
 import math
+import util
 
 
 class Rcc2d(combinatorialbody.CombinatorialBody2d):
@@ -22,8 +23,19 @@ class Rcc2d(combinatorialbody.CombinatorialBody2d):
     def __contains__(self, item):
         return math.sqrt((item[0]-self.cx)**2 + (item[1]-self.cy)**2) <= self.r
 
-    #def in_domain(self, x, y):
-    #    return math.sqrt((x-self.cx)**2 + (y-self.cy)**2) <= self.r
+    def clone(self):
+        c = Rcc2d(self.r, [self.cx, self.cy])
+        c.comment = self.comment
+        c.visualizer = self.visualizer
+
+        return c
+
+    def rotate_about_2d(self, theta, pt=(0, 0), is_radians=True):
+        self.cx, self.cy = util.get_rotated_about_2d([self.cx, self.cy], theta, pt, is_radians)
+        return self
+
+    def get_rotated_about_2d(self, theta,  pt=(0, 0), is_radians=True):
+        return self.clone().rotate_about_2d(theta, pt, is_radians)
 
     def draw2d(self):
         if not graphics or self.visualizer is None:

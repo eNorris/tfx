@@ -23,12 +23,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="249" column="75" selection-start="8795" selection-end="8795" vertical-scroll-proportion="0.43542436" vertical-offset="3997" max-vertical-offset="5049">
+            <state line="38" column="22" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.0" vertical-offset="548" max-vertical-offset="952">
               <folding>
-                <element signature="e#23#35#0" expanded="true" />
+                <element signature="e#50#89#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="geocheck.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/geocheck.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="9" selection-start="157" selection-end="157" vertical-scroll-proportion="0.39534885" vertical-offset="0" max-vertical-offset="1156">
+              <folding>
+                <element signature="e#23#34#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -43,13 +54,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="makephantom.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/makephantom.py">
+      <file leaf-file-name="box2d.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geo/box2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="32" selection-start="4359" selection-end="4359" vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="5389">
-              <folding>
-                <element signature="e#23#34#0" expanded="true" />
-              </folding>
+            <state line="69" column="0" selection-start="2195" selection-end="2778" vertical-scroll-proportion="0.0" vertical-offset="1031" max-vertical-offset="2278">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="region.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geo/region.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="150" column="0" selection-start="4378" selection-end="4378" vertical-scroll-proportion="0.0" vertical-offset="2877" max-vertical-offset="3468">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -70,6 +88,15 @@
               <folding>
                 <marker date="1412446798706" expanded="true" signature="77:498" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rcc2d.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geo/rcc2d.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="0" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,19 +123,24 @@
         <option value="$PROJECT_DIR$/Region.py" />
         <option value="$PROJECT_DIR$/parts.py" />
         <option value="$PROJECT_DIR$/geo/__init__.py" />
-        <option value="$PROJECT_DIR$/geo/region.py" />
         <option value="$PROJECT_DIR$/visualizer/qtvisuzlizer.py" />
         <option value="$PROJECT_DIR$/makephantom.py" />
         <option value="$PROJECT_DIR$/partswriter.py" />
+        <option value="$PROJECT_DIR$/geo/region.py" />
+        <option value="$PROJECT_DIR$/visualizer/pygamevisualizer.py" />
+        <option value="$PROJECT_DIR$/geo/box2d.py" />
+        <option value="$PROJECT_DIR$/geo/rcc2d.py" />
+        <option value="$PROJECT_DIR$/spacegenerators.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/geocheck.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="x" value="5" />
+    <option name="y" value="36" />
+    <option name="width" value="976" />
+    <option name="height" value="755" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -370,18 +402,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="5" y="36" width="976" height="755" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24925816" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.112096265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3935743" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18849841" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39297125" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23962517" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2859425" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -410,17 +442,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/geo/rcc2d.py</url>
-          <line>34</line>
+          <line>46</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/geo/box2d.py</url>
-          <line>145</line>
+          <line>111</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/geo/box2d.py</url>
-          <line>133</line>
+          <line>99</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -428,39 +460,21 @@
           <line>45</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/geo/region.py</url>
+          <line>183</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="46" />
+      <option name="time" value="48" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/visualizer/pygamevisualizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="23" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="2227">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geo/raw2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="79" selection-start="2362" selection-end="2362" vertical-scroll-proportion="0.0" vertical-offset="926" max-vertical-offset="1632">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geo/rcc2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="74" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="250" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geo/rpp2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="21" selection-start="2303" selection-end="2303" vertical-scroll-proportion="0.0" vertical-offset="1236" max-vertical-offset="1802">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/geo/combinatorialbody.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="36" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="391">
@@ -542,7 +556,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1428">
           <folding>
-            <element signature="e#23#35#0" expanded="true" />
+            <element signature="e#50#89#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -614,7 +628,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1428">
           <folding>
-            <element signature="e#23#35#0" expanded="true" />
+            <element signature="e#50#89#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -682,20 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geo/rpp2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="49" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1802">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geo/rcc2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="49" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Point.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="88" selection-start="965" selection-end="1193" vertical-scroll-proportion="0.0" vertical-offset="308" max-vertical-offset="850">
@@ -726,23 +726,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geo/combinatorialbody.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="20" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/geo/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="0" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/visualizer/pygamevisualizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="0.34" vertical-offset="0" max-vertical-offset="2227">
           <folding />
         </state>
       </provider>
@@ -754,32 +740,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geo/region.py">
+    <entry file="file://$PROJECT_DIR$/geo/part.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="0" selection-start="5139" selection-end="5139" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3468">
+        <state line="3" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geo/box2d.py">
+    <entry file="file://$PROJECT_DIR$/visualizer/pygamevisualizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="0" selection-start="4708" selection-end="4708" vertical-scroll-proportion="0.0" vertical-offset="1983" max-vertical-offset="2856">
+        <state line="31" column="12" selection-start="690" selection-end="690" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geo/rpp2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1802">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/makephantom.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="32" selection-start="4359" selection-end="4359" vertical-scroll-proportion="0.0" vertical-offset="2091" max-vertical-offset="5389">
+        <state line="79" column="0" selection-start="2150" selection-end="2150" vertical-scroll-proportion="0.0" vertical-offset="1785" max-vertical-offset="5389">
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geo/part.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+        <state line="1538" column="0" selection-start="60694" selection-end="60694" vertical-scroll-proportion="0.0" vertical-offset="23747" max-vertical-offset="26265">
+          <folding>
+            <element signature="e#120#165#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0" vertical-offset="287" max-vertical-offset="714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geo/combinatorialbody.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="663">
           <folding />
         </state>
       </provider>
@@ -791,11 +800,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/geo/box2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="2195" selection-end="2778" vertical-scroll-proportion="0.0" vertical-offset="1031" max-vertical-offset="2278">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geo/rcc2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="249" column="75" selection-start="8795" selection-end="8795" vertical-scroll-proportion="0.43542436" vertical-offset="3997" max-vertical-offset="5049">
+        <state line="38" column="22" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.0" vertical-offset="548" max-vertical-offset="952">
           <folding>
-            <element signature="e#23#35#0" expanded="true" />
+            <element signature="e#50#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geo/region.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="0" selection-start="4378" selection-end="4378" vertical-scroll-proportion="0.0" vertical-offset="2408" max-vertical-offset="3468">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geocheck.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="9" selection-start="157" selection-end="157" vertical-scroll-proportion="0.39534885" vertical-offset="0" max-vertical-offset="1156">
+          <folding>
+            <element signature="e#23#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
