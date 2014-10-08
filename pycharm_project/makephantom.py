@@ -12,12 +12,12 @@ def makephantom():
     regions = []
     phantom = rcc2d.Rcc2d(16.0)
 
-    width = 32
-    height = 32
+    width = 32.0
+    height = 32.0
     xdivs = 31
     ydivs = 31
-    bot = -16
-    left = -16
+    bot = -16.0
+    left = -16.0
 
     dx = width / xdivs
     dy = height / ydivs
