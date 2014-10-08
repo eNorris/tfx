@@ -9,6 +9,7 @@ import geocheck
 # Create the regions
 phantomregions = makephantom.makephantom()
 sliceregions = makephantom.makeslice()
+externregions = makephantom.makeoutter()
 
 # Create sets of all the bodies
 phantombodies = set()
@@ -19,11 +20,16 @@ slicebodies = set()
 for r in sliceregions:
     slicebodies.update(r.get_all_bodies())
 
+externbodies = set()
+for r in externregions:
+    externbodies.update(r.get_all_bodies())
+
 # Write the file
 writer = partswriter.PartsWriter("./phantom.parts", {'E': "PHANTOM", 'F': "COLLIMATOR", 'G': "AIR", 'H': "ALUM"},
                                  override_existing=True)
 writer.write("phantom_part", phantombodies, phantomregions, comment="The phantom istelf meshed into squares")
 writer.write("slice_part", slicebodies, sliceregions, comment="A 1/16 slice")
+writer.write("extern_part", externbodies, externregions, comment="Fills out to RPP boundary")
 writer.close()
 
 # Create the visualiser

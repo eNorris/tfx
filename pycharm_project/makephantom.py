@@ -1,18 +1,11 @@
 __author__ = 'Edward'
 
 import math
-
 import Point
-import partswriter
-import random
-import time
-
-from geo import raw2d, rcc2d, rpp2d, box2d
+from geo import rcc2d, rpp2d, box2d
 from visualizer import pygamevisualizer
 import geo.region
-
 import auxutil
-
 
 def makephantom():
 
@@ -69,7 +62,6 @@ def makephantom():
                         evalpt = (r.right-.0001, r.top-.0001, .5)
                 corespondingregion.evalpoints.append((evalpt[0], evalpt[1], evalpt[2]))
                 regions.append(corespondingregion)
-
     return regions
 
 
@@ -137,7 +129,7 @@ def makeslice():
     lowervoid.rotate_about_2d(-theta/2 - math.pi/2)
     uppervoid.translate([uppervoid.vec1[0] * -.5, uppervoid.vec1[1] * -.5])
     lowervoid.translate([lowervoid.vec2[0] * -.5, lowervoid.vec2[1] * -.5])
-    air = rcc2d.Rcc2d(75.0)
+    air = rcc2d.Rcc2d(74.0)
     airregion = geo.region.Region(air) - phantom - uppervoid - lowervoid - upcolreg - downcolreg - filterreg - bowtieregion
     airregion.matid = "G"
     airregion.drawevals = True
@@ -147,6 +139,15 @@ def makeslice():
 
     return regions
 
+
+def makeoutter():
+    regions = []
+    bounds = rpp2d.Rpp2d(dims=(150, 150))
+    inner = rcc2d.Rcc2d(74.0)
+    r = geo.region.Region(bounds) - inner
+    r.matid = "G"
+    regions.append(r)
+    return regions
 
 def makeallgeo():
     # Problem constants
