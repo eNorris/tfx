@@ -161,6 +161,15 @@ class Region:
 
         return self
 
+    def registervis(self):
+        if self.visualizer is None:
+            return
+        if self.type == Region.BASE:
+            self.visualizer.register(self.left)
+        else:
+            self.left.registervis()
+            self.right.registervis()
+
     def get_all_bodies(self):
         if self.type == Region.BASE:
             return set([self.left])

@@ -27,7 +27,6 @@ class Rcc2d(combinatorialbody.CombinatorialBody2d):
         c = Rcc2d(self.r, [self.cx, self.cy])
         c.comment = self.comment
         c.visualizer = self.visualizer
-
         return c
 
     def rotate_about_2d(self, theta, pt=(0, 0), is_radians=True):

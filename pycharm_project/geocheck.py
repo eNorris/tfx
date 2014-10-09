@@ -61,3 +61,14 @@ def points_in_circle(n=1, r=1.0, center=(0, 0)):
         radius = random.random()
         theta = random.random() * 2 * math.pi
         yield r * math.sqrt(radius)*math.cos(theta) + center[0], r * math.sqrt(radius)*math.sin(theta) + center[1]
+
+def points_in_rect(n=1, right=1, top=1, left=0, bottom=1):
+    count = 0
+    while count < n:
+        count += 1
+        yield rand_pt_in_rect(right, top, left, bottom)
+
+def rand_pt_in_rect(right=1, top=1, left=0, bottom=1):
+    x = random.random() * (right - left) + left
+    y = random.random() * (top - bottom) + bottom
+    return x, y

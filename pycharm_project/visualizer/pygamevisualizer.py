@@ -41,6 +41,10 @@ class Visualizer:
         if not graphics: return
         self.drawables.add(drawable)
         drawable.visualizer = self
+        try:
+            drawable.registervis()
+        except AttributeError:
+            pass
 
     def unregister(self, drawables):
         if not graphics: return
