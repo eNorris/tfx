@@ -20,7 +20,7 @@ class Rpp2d(combinatorialbody.CombinatorialBody2d):
             self.left = self.cx - self.w / 2.0
             self.right = self.cx + self.w / 2.0
             self.top = self.cy + self.h / 2.0
-            self.bottom = self.cx - self.h / 2.0
+            self.bottom = self.cy - self.h / 2.0
         else:
             self.left = loc[0]
             self.bottom = loc[1]
@@ -51,6 +51,15 @@ class Rpp2d(combinatorialbody.CombinatorialBody2d):
         r = Rpp2d([self.cx - self.w, self.cy], [self.w, self.h])
         r.color = self.color
         return r
+
+    def get_corners(self):
+        return [(self.cx - self.w/2, self.cy - self.h/2),
+                (self.cx + self.w/2, self.cy - self.h/2),
+                (self.cx + self.w/2, self.cy + self.h/2),
+                (self.cx - self.w/2, self.cy + self.h/2)]
+
+    def get_edges(self):
+        return self.cx + self.w/2, self.cy + self.h/2, self.cx - self.w/2, self.cy - self.h/2
 
     def set_center(self, pt):
         self.cx = pt[0]
