@@ -9,6 +9,11 @@ except ImportError:
     graphics = False
 
 
+class GhostRegion(object):
+    def __init__(self):
+        self.type = -1
+        self.left = self.right = None
+
 class Region:
 
     UNION = 0
@@ -32,7 +37,7 @@ class Region:
         self.doeval = False
         self.drawevals = False
         self.evalpoints = []
-        self.visualizer = None
+        #self.visualizer = None
 
         if left is None:
             return
@@ -134,7 +139,7 @@ class Region:
         x.doeval = self.doeval
         x.drawevals = self.drawevals
         x.evalpoints = [k for k in self.evalpoints]
-        x.visualizer = self.visualizer
+        #x.visualizer = self.visualizer
 
         return x
 
@@ -145,6 +150,16 @@ class Region:
         c.id = self.id
         Region.nextid -= 1
         return c
+
+    def ghostcopy(self):
+        r = GhostRegion()
+        r.type = self.type
+        if r.type == Region.BASE:
+            r.left = self.left
+        else:
+            r.left = self.left.ghostcopy()
+            r.right = self.right.ghostcopy()
+        return r
 
     def get_rotated_about_2d(self, theta, aboutpt=(0, 0), is_radians=True):
         x = self.clone()
