@@ -9,9 +9,10 @@ except ImportError:
     graphics = False
 import math
 import util
+import visualizer.renderable
 
 
-class Rcc2d(combinatorialbody.CombinatorialBody2d):
+class Rcc2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Renderable):
     def __init__(self, r=1, center=(0, 0)):
         super(Rcc2d, self).__init__()
         self.cx = center[0]

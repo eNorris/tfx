@@ -7,9 +7,11 @@ except ImportError:
     graphics = False
 import util
 
+import visualizer.renderable
+
 from geo.combinatorialbody import CombinatorialBody2d
 
-class Raw2d(CombinatorialBody2d):
+class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
 
     def __init__(self, refpoint, v1, v2):
         super(Raw2d, self).__init__()
@@ -32,14 +34,6 @@ class Raw2d(CombinatorialBody2d):
             if (v1[0] * v2[1] - v1[1] * v2[0] >= 0) != positive:
                 return False
         return True
-
-    #def rotate(self, theta):
-    #    self.vec1 = [self.vec1[0] * math.cos(theta) - self.vec1[1] * math.sin(theta),
-    #                 self.vec1[0] * math.sin(theta) + self.vec1[1] * math.cos(theta)]
-    #    self.vec2 = [self.vec2[0] * math.cos(theta) - self.vec2[1] * math.sin(theta),
-    #                 self.vec2[0] * math.sin(theta) + self.vec2[1] * math.cos(theta)]
-    #    self.validate()
-    #    return self
 
     def validate(self):
         if self.vec1[0] * self.vec2[0] + self.vec1[1] * self.vec2[1] >= 1e-10:

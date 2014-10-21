@@ -9,9 +9,10 @@ except ImportError:
 
 import util
 from geo.combinatorialbody import CombinatorialBody2d
+import visualizer.renderable
 
 
-class Box2d(CombinatorialBody2d):
+class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
 
     def __init__(self, pos=(0, 0), vec1=(1, 0), vec2=(0, 1), provide_center=True):
         super(Box2d, self).__init__()

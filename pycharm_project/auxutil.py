@@ -5,6 +5,7 @@ import geo.region
 import geocheck
 import math
 
+
 def bowtie_triangle(pt, a, b):
     """
     pt is the corner of the right triangle
@@ -19,8 +20,10 @@ def bowtie_triangle(pt, a, b):
         v2 = ((pt[1] - a[1])/m + a[0] - pt[0], 0)
         return raw2d.Raw2d(pt, v1, v2)
 
+
 def fliptie(tie):
     return raw2d.Raw2d((tie.px, -tie.py), (tie.vec1[0], -tie.vec1[1]), (tie.vec2[0], -tie.vec2[1]))
+
 
 def automesh(region, size):
     print("WARNING: automesh isn't very smart: \n" +
