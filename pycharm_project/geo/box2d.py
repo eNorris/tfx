@@ -92,10 +92,15 @@ class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
         self.y += translation[1]
         return self
 
-    def clone(self):
-        b = Box2d([self.x, self.y], self.vec1, self.vec2, False)
-        b.color = self.color
-        return b
+    #def clone(self):
+    #    b = Box2d([self.x, self.y], self.vec1, self.vec2, False)
+    #    b.color = self.color
+    #    return b
+
+    def clone(self, other):
+        super(Box2d, self).clone(other)
+        self.x, self.y = other.x, other.y
+        self.vec1, self.vec2 = other.vec1, other.vec2
 
     def getcorners(self):
         return [(self.x, self.y),

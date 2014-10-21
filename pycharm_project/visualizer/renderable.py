@@ -9,10 +9,13 @@ class Renderable(object):
         self.fillcolor = (0, 0, 0, 0)
         self.linecolor = (0, 0, 0)
 
-    def clone(self):
+    def clone(self, other):
+        self.visualizer = other.visualizer
+        self.color = other.color
+        self.fillcolor = other.fillcolor
+        self.linecolor = other.linecolor
+
+    def get_cloned(self):
         x = Renderable()
-        x.visualizer = self.visualizer
-        x.color = self.color
-        x.fillcolor = self.fillcolor
-        x.linecolor = self.linecolor
+        x.clone(self)
         return x

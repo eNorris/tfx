@@ -30,29 +30,30 @@ class Rpp2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Rendera
             self.cy = self.bottom + self.h / 2.0
             self.right = self.left + self.w
             self.top = self.bottom + self.h
-        self.color = (0, 0, 0)
+        #self.color = (0, 0, 0)
 
         self.comment = "Axis-aligned Right Parallelpiped"
 
-    def clone_down(self):
-        r = Rpp2d([self.cx, self.cy - self.h], [self.w, self.h])
-        r.color = self.color
-        return r
-
-    def clone_up(self):
-        r = Rpp2d([self.cx, self.cy + self.h], [self.w, self.h])
-        r.color = self.color
-        return r
-
-    def clone_right(self):
-        r = Rpp2d([self.cx + self.w, self.cy], [self.w, self.h])
-        r.color = self.color
-        return r
-
-    def clone_left(self):
-        r = Rpp2d([self.cx - self.w, self.cy], [self.w, self.h])
-        r.color = self.color
-        return r
+    # These aren't really used, so I'm going to comment them out for now and possibly remove them later
+    #def clone_down(self):
+    #    r = Rpp2d([self.cx, self.cy - self.h], [self.w, self.h])
+    #    r.color = self.color
+    #    return r
+#
+    #def clone_up(self):
+    #    r = Rpp2d([self.cx, self.cy + self.h], [self.w, self.h])
+    #    r.color = self.color
+    #    return r
+#
+    #def clone_right(self):
+    #    r = Rpp2d([self.cx + self.w, self.cy], [self.w, self.h])
+    #    r.color = self.color
+    #    return r
+#
+    #def clone_left(self):
+    #    r = Rpp2d([self.cx - self.w, self.cy], [self.w, self.h])
+    #    r.color = self.color
+    #    return r
 
     def get_corners(self):
         return [(self.cx - self.w/2, self.cy - self.h/2),
@@ -98,6 +99,17 @@ class Rpp2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Rendera
                              [left, top, width, height], 0)
         pygame.draw.rect(self.visualizer.screen, self.color,
                          [left, top, width, height], 1)
+
+    def clone(self, other):
+        super(Rpp2d, self).clone(other)
+        self.cx, self.cy = other.cx, other.cy
+        self.w, self.h = other.w, other.h
+        self.right, self.top, self.left, self.bottom = other.right, other.top, other.left, other.bottom
+
+    #def get_cloned(self):
+    #    x = Rpp2d()
+    #    x.clone(self)
+    #    return x
 
     def __contains__(self, pt):
         if self.left <= pt[0] <= self.right and self.bottom <= pt[1] <= self.top:

@@ -17,17 +17,29 @@ class CombinatorialBody(object):
     def __contains__(self, item):
         raise Exception("Operator __contains__ not overloaded for this body (" + str(self.__class__.__name__) + ")")
 
-    def clone(self):
-        x = CombinatorialBody()
-        x.comment = self.comment
+    def clone(self, other):
+        self.comment = other.comment
+
+    def get_cloned(self):
+        #x = CombinatorialBody()
+        x = self.__class__()
+        x.clone(self)
         return x
-        #raise Exception("clone() not overloaded for this body (" + str(self.__class__.__name__) + ")")
+
 
 
 class CombinatorialBody2d(CombinatorialBody):
 
     def __init__(self):
         super(CombinatorialBody2d, self).__init__()
+
+    def clone(self, other):
+        super(CombinatorialBody2d, self).clone(other)
+
+    #def get_cloned(self):
+    #    x = CombinatorialBody2d()
+    #    x.clone(self)
+    #    return x
 
     def rotate_about_2d(self, theta, about_point, is_radians):
         raise Exception("rotate_about_2d() not overloaded for this body (" + str(self.__class__.__name__) + ")")

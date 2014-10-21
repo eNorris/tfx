@@ -13,7 +13,7 @@ from geo.combinatorialbody import CombinatorialBody2d
 
 class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
 
-    def __init__(self, refpoint, v1, v2):
+    def __init__(self, refpoint=(0, 0), v1=(1, 0), v2=(0, 1)):
         super(Raw2d, self).__init__()
         self.px, self.py = refpoint
         self.vec1 = v1
@@ -54,13 +54,24 @@ class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
         #self.py += posvec[1] - dy
         #return self
 
-    def get_rotated_about_2d(self, theta, about_point, is_radians):
-        return self.clone().rotate_about_2d(theta, about_point, is_radians)
+    #def get_rotated_about_2d(self, theta, about_point, is_radians):
+    #    return self.clone().rotate_about_2d(theta, about_point, is_radians)
 
-    def clone(self):
-        b = Raw2d((self.px, self.py), self.vec1, self.vec2)
-        b.color = self.color
-        return b
+    def clone(self, other):
+        #b = Raw2d((self.px, self.py), self.vec1, self.vec2)
+        #super(Raw2d, b).clone()
+        #b.color = self.color
+        #return b
+        super(Raw2d, self).clone(other)
+        self.px, self.py = other.px, other.py
+        self.vec1, self.vec2 = other.vec1, other.vec2
+
+    #def get_cloned(self):
+    #    x = Raw2d()
+    #    x.clone(self)
+    #    return x
+
+
 
     def getcorners(self):
         return [(self.px, self.py), (self.px+self.vec1[0], self.py+self.vec1[1]), (self.px+self.vec2[0], self.py+self.vec2[1])]

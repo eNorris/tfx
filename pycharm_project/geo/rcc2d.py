@@ -24,11 +24,16 @@ class Rcc2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Rendera
     def __contains__(self, item):
         return math.sqrt((item[0]-self.cx)**2 + (item[1]-self.cy)**2) <= self.r
 
-    def clone(self):
-        c = Rcc2d(self.r, [self.cx, self.cy])
-        c.comment = self.comment
-        c.visualizer = self.visualizer
-        return c
+    #def clone(self):
+    #    c = Rcc2d(self.r, [self.cx, self.cy])
+    #    c.comment = self.comment
+    #    c.visualizer = self.visualizer
+    #    return c
+
+    def clone(self, other):
+        super(Rcc2d, self).clone(other)
+        self.cx, self.cy = other.cx, other.cy
+        self.r = other.r
 
     def rotate_about_2d(self, theta, pt=(0, 0), is_radians=True):
         self.cx, self.cy = util.get_rotated_about_2d([self.cx, self.cy], theta, pt, is_radians)
