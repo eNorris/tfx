@@ -23,6 +23,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="24" selection-start="435" selection-end="435" vertical-scroll-proportion="0.40236688" vertical-offset="0" max-vertical-offset="1394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="raw2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/raw2d.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -90,10 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rcc2d.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="rcc2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/rcc2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="24" selection-start="906" selection-end="906" vertical-scroll-proportion="0.16765286" vertical-offset="510" max-vertical-offset="1054">
+            <state line="35" column="24" selection-start="906" selection-end="906" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1054">
               <folding />
             </state>
           </provider>
@@ -226,7 +235,7 @@
     <property name="recentsLimit" value="5" />
     <property name="SearchEverywhereHistory" value="" />
     <property name="FullScreen" value="false" />
-    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -724,13 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.28094304" vertical-offset="520" max-vertical-offset="1394">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/visualizer/renderable.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="34" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
@@ -770,7 +772,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/geo/rcc2d.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="24" selection-start="906" selection-end="906" vertical-scroll-proportion="0.16765286" vertical-offset="510" max-vertical-offset="1054">
+        <state line="35" column="24" selection-start="906" selection-end="906" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="24" selection-start="435" selection-end="435" vertical-scroll-proportion="0.40236688" vertical-offset="0" max-vertical-offset="1394">
           <folding />
         </state>
       </provider>
