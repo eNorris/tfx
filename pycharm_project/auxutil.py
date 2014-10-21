@@ -5,6 +5,9 @@ import geo.region
 import geocheck
 import math
 
+from geo.region import Region
+import geo.meshbnds
+
 
 def bowtie_triangle(pt, a, b):
     """
@@ -98,3 +101,52 @@ def automesh(region, size):
             regions.append(newregion)
 
     return regions
+
+
+def automesh2(region, n=(10, 10), d=None):
+    regions = []
+
+    # Get the bounds on the region
+    right, top, left, bottom = region.get_bounds()  # TODO - Write the get_bounds() function
+
+    # Calculate N and D based on the user input
+    if d is None:
+        nx = n[0]
+        ny = n[1]
+        dx = (right-left) / nx
+        dy = (top-bottom) / ny
+    else:
+        dx = d[0]
+        dy = d[1]
+        nx = math.ceil((right-left)/dx)
+        ny = math.ceil((top-bottom)/dy)
+
+    for i in range(nx):
+        for j in range(ny):
+            # Build the mesh element
+            e = rpp2d.Rpp2d((left + i * dx, bottom + j * dy), (dx, dy), False)
+            accept = acceptance(e, region)
+
+            if accept == 1:
+                regions.append(Region(e))
+            elif accept == 0:
+                regions.append(region + e)
+
+    return regions
+
+
+def acceptance(element, region):
+
+    completeaccept = True
+
+    for c in element.get_corners():
+        if not c in region:
+            completeaccept = False
+            break
+
+    if completeaccept:
+        return 1
+
+    b = geo.meshbnds.Boundary(element.left, element.right, element.bottom, element.top)
+
+    return -1
