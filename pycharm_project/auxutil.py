@@ -7,6 +7,7 @@ import math
 
 from geo.region import Region
 import geo.meshbnds
+import geo.rcc2d
 
 
 def bowtie_triangle(pt, a, b):
@@ -123,9 +124,15 @@ def automesh2(region, n=(10, 10), d=None):
 
     for i in range(nx):
         for j in range(ny):
+            ghost_tree = region.ghostcopy()
+
             # Build the mesh element
             e = rpp2d.Rpp2d((left + i * dx, bottom + j * dy), (dx, dy), False)
-            accept = acceptance(e, region)
+
+            recursively_build_acceptance_tree(e, ghost_tree)
+
+            accept = recursively_eval_tree(ghost_tree)
+            #accept = acceptance(e, region)
 
             if accept == 1:
                 regions.append(Region(e))
@@ -135,13 +142,46 @@ def automesh2(region, n=(10, 10), d=None):
     return regions
 
 
-def acceptance(element, region):
+def recursively_build_acceptance_tree(e, ghosttree):
+    if ghosttree.type == Region.BASE:
+        ghosttree.left = acceptance(e, ghosttree.left)
+    else:
+        recursively_build_acceptance_tree(e, ghosttree.left)
+        recursively_build_acceptance_tree(e, ghosttree.right)
+
+def recursively_eval_tree(tree):
+    if tree.type == Region.BASE:
+        return tree.left
+    if tree.type == Region.UNION:
+        return max(tree.left, tree.right)
+    elif tree.type == Region.SUBTRACT:
+        return min(tree.left, -tree.right)
+    elif tree.type == Region.INTERSECT:
+        return min(tree.left, tree.right)
+    else:
+        print("ERROR: Unknown region type")
+
+def acceptance(e, b):
+    if b.__class__ == geo.rcc2d.Rcc2d:
+        return acceptance_rcc2d(e, b)
+    else:
+        return acceptance_poly2d(e, b)
+
+def acceptance_poly2d(element, region):
+    """
+    Returns 1 if the element is completely in the region,
+    -1 if the element is completel outside the region, and
+    0 if the element is partially in the region
+    """
 
     completeaccept = True
 
     for c in element.get_corners():
-        if not c in region:
-            completeaccept = False
+        for b in region.get_all_bodies():
+            if not c in b:
+                completeaccept = False
+                break
+        if not completeaccept:
             break
 
     if completeaccept:

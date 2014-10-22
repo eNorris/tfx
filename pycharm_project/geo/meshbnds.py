@@ -29,7 +29,14 @@ class Boundary(object):
         return intersect_count >= 2
 
     def intersections_circle2d(self, cx, cy, r):
-        return False
+        xmin_dist = min(abs(self.xmin - cx), abs(self.xmax - cx))
+        ymin_dist = min(abs(self.ymin - cy), abs(self.ymax - cy))
+
+        if not xmin_dist**2 + ymin_dist**2 <= r**2:
+            return
+
+        xmin_dist = min(abs(self.xmin - cx), abs(self.xmax - cx))
+        xmin_dist = min(abs(self.xmin - cx), abs(self.xmax - cx))
 
     def build_segments(self, corners):
         segs = []
