@@ -26,7 +26,7 @@
       <file leaf-file-name="auxutil.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/auxutil.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="159" column="41" selection-start="4782" selection-end="4782" vertical-scroll-proportion="0.0" vertical-offset="2842" max-vertical-offset="3349">
+            <state line="176" column="7" selection-start="5263" selection-end="5263" vertical-scroll-proportion="0.0" vertical-offset="2757" max-vertical-offset="3485">
               <folding>
                 <element signature="e#23#51#0" expanded="true" />
               </folding>
@@ -38,7 +38,10 @@
         <entry file="file://$PROJECT_DIR$/geo/meshbnds.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="29" column="0" selection-start="918" selection-end="918" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1428">
-              <folding />
+              <folding>
+                <marker date="1413924065704" expanded="true" signature="47:1872" placeholder="..." />
+                <marker date="1413924065704" expanded="true" signature="967:1304" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,11 +49,8 @@
       <file leaf-file-name="rpp2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/rpp2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="27" selection-start="3523" selection-end="3523" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="2193">
-              <folding>
-                <marker date="1413851771833" expanded="true" signature="259:4263" placeholder="..." />
-                <marker date="1413851771833" expanded="true" signature="3523:3755" placeholder="..." />
-              </folding>
+            <state line="109" column="65" selection-start="3848" selection-end="3848" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2244">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,7 +58,7 @@
       <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="12" selection-start="386" selection-end="386" vertical-scroll-proportion="0.40236688" vertical-offset="0" max-vertical-offset="1700">
+            <state line="17" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.43256998" vertical-offset="0" max-vertical-offset="1717">
               <folding />
             </state>
           </provider>
@@ -67,12 +67,9 @@
       <file leaf-file-name="raw2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/raw2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="5" selection-start="2458" selection-end="2458" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1836">
+            <state line="46" column="19" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1921">
               <folding>
                 <element signature="e#107#118#0" expanded="true" />
-                <marker date="1413851771732" expanded="true" signature="1329:1922" placeholder="..." />
-                <marker date="1413851771732" expanded="true" signature="2098:2380" placeholder="..." />
-                <marker date="1413851771732" expanded="true" signature="2499:2627" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -81,9 +78,10 @@
       <file leaf-file-name="box2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/box2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="39" selection-start="3440" selection-end="3440" vertical-scroll-proportion="0.0" vertical-offset="1669" max-vertical-offset="2380">
+            <state line="113" column="0" selection-start="4195" selection-end="4195" vertical-scroll-proportion="0.0" vertical-offset="1601" max-vertical-offset="2465">
               <folding>
-                <marker date="1413852023524" expanded="true" signature="3400:3536" placeholder="..." />
+                <marker date="1414026788561" expanded="true" signature="284:5348" placeholder="..." />
+                <marker date="1414026788561" expanded="true" signature="4221:4392" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -107,7 +105,7 @@
       <file leaf-file-name="region.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/region.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="17" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="3876">
+            <state line="8" column="20" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4216">
               <folding />
             </state>
           </provider>
@@ -117,12 +115,7 @@
         <entry file="file://$PROJECT_DIR$/visualizer/renderable.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="9" column="34" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-              <folding>
-                <marker date="1413851296978" expanded="true" signature="48:529" placeholder="..." />
-                <marker date="1413851296978" expanded="true" signature="73:251" placeholder="..." />
-                <marker date="1413851296978" expanded="true" signature="280:438" placeholder="..." />
-                <marker date="1413851296978" expanded="true" signature="465:529" placeholder="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -130,10 +123,8 @@
       <file leaf-file-name="rcc2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/rcc2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="24" selection-start="906" selection-end="906" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1054">
-              <folding>
-                <marker date="1413852023517" expanded="true" signature="795:906" placeholder="..." />
-              </folding>
+            <state line="19" column="25" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0" vertical-offset="232" max-vertical-offset="1292">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -167,13 +158,13 @@
         <option value="$PROJECT_DIR$/visualizer/pygamevisualizer.py" />
         <option value="$PROJECT_DIR$/visualizer/renderable.py" />
         <option value="$PROJECT_DIR$/geo/combinatorialbody.py" />
-        <option value="$PROJECT_DIR$/geo/raw2d.py" />
+        <option value="$PROJECT_DIR$/geo/meshbnds.py" />
         <option value="$PROJECT_DIR$/geo/rpp2d.py" />
+        <option value="$PROJECT_DIR$/geo/raw2d.py" />
         <option value="$PROJECT_DIR$/geo/box2d.py" />
         <option value="$PROJECT_DIR$/geo/rcc2d.py" />
-        <option value="$PROJECT_DIR$/geo/meshbnds.py" />
-        <option value="$PROJECT_DIR$/geo/region.py" />
         <option value="$PROJECT_DIR$/auxutil.py" />
+        <option value="$PROJECT_DIR$/geo/region.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -445,17 +436,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24925816" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21025966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39252338" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4390897" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28647926" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28647926" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -481,7 +472,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="54" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="56" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -511,7 +509,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="10" selection-start="1926" selection-end="1926" vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="2516">
           <folding>
-            <marker date="1413852023524" expanded="true" signature="3400:3536" placeholder="..." />
+            <marker date="1414026788561" expanded="true" signature="284:5348" placeholder="..." />
+            <marker date="1414026788561" expanded="true" signature="4221:4392" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -526,9 +525,6 @@
         <state line="68" column="79" selection-start="2362" selection-end="2362" vertical-scroll-proportion="0.0" vertical-offset="926" max-vertical-offset="1632">
           <folding>
             <element signature="e#107#118#0" expanded="true" />
-            <marker date="1413851771732" expanded="true" signature="1329:1922" placeholder="..." />
-            <marker date="1413851771732" expanded="true" signature="2098:2380" placeholder="..." />
-            <marker date="1413851771732" expanded="true" signature="2499:2627" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -536,9 +532,7 @@
     <entry file="file://$PROJECT_DIR$/geo/rcc2d.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="74" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="250" max-vertical-offset="765">
-          <folding>
-            <marker date="1413852023517" expanded="true" signature="795:906" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -588,7 +582,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="78" column="75" selection-start="2577" selection-end="2979" vertical-scroll-proportion="0.0" vertical-offset="1162" max-vertical-offset="1428">
           <folding>
-            <marker date="1413852023524" expanded="true" signature="3400:3536" placeholder="..." />
+            <marker date="1414026788561" expanded="true" signature="284:5348" placeholder="..." />
+            <marker date="1414026788561" expanded="true" signature="4221:4392" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -603,9 +598,6 @@
         <state line="53" column="22" selection-start="1942" selection-end="1942" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1105">
           <folding>
             <element signature="e#107#118#0" expanded="true" />
-            <marker date="1413851771732" expanded="true" signature="1329:1922" placeholder="..." />
-            <marker date="1413851771732" expanded="true" signature="2098:2380" placeholder="..." />
-            <marker date="1413851771732" expanded="true" signature="2499:2627" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -613,9 +605,7 @@
     <entry file="file://$PROJECT_DIR$/geo/rcc2d.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="104" selection-start="955" selection-end="1129" vertical-scroll-proportion="0.0" vertical-offset="367" max-vertical-offset="646">
-          <folding>
-            <marker date="1413852023517" expanded="true" signature="795:906" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -665,7 +655,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="78" column="75" selection-start="2577" selection-end="2979" vertical-scroll-proportion="0.0" vertical-offset="1162" max-vertical-offset="1428">
           <folding>
-            <marker date="1413852023524" expanded="true" signature="3400:3536" placeholder="..." />
+            <marker date="1414026788561" expanded="true" signature="284:5348" placeholder="..." />
+            <marker date="1414026788561" expanded="true" signature="4221:4392" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -680,9 +671,6 @@
         <state line="53" column="22" selection-start="1942" selection-end="1942" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1105">
           <folding>
             <element signature="e#107#118#0" expanded="true" />
-            <marker date="1413851771732" expanded="true" signature="1329:1922" placeholder="..." />
-            <marker date="1413851771732" expanded="true" signature="2098:2380" placeholder="..." />
-            <marker date="1413851771732" expanded="true" signature="2499:2627" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -690,9 +678,7 @@
     <entry file="file://$PROJECT_DIR$/geo/rcc2d.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="104" selection-start="955" selection-end="1129" vertical-scroll-proportion="0.0" vertical-offset="367" max-vertical-offset="646">
-          <folding>
-            <marker date="1413852023517" expanded="true" signature="795:906" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -773,18 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/visualizer/renderable.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="34" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <folding>
-            <marker date="1413851296978" expanded="true" signature="48:529" placeholder="..." />
-            <marker date="1413851296978" expanded="true" signature="73:251" placeholder="..." />
-            <marker date="1413851296978" expanded="true" signature="280:438" placeholder="..." />
-            <marker date="1413851296978" expanded="true" signature="465:529" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/geo/combinatorialbody.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="5" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1071">
@@ -798,72 +772,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/geo/meshbnds.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="918" selection-end="918" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1428">
+          <folding>
+            <marker date="1413924065704" expanded="true" signature="47:1872" placeholder="..." />
+            <marker date="1413924065704" expanded="true" signature="967:1304" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/geo/raw2d.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="5" selection-start="2458" selection-end="2458" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1836">
+        <state line="46" column="19" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1921">
           <folding>
             <element signature="e#107#118#0" expanded="true" />
-            <marker date="1413851771732" expanded="true" signature="1329:1922" placeholder="..." />
-            <marker date="1413851771732" expanded="true" signature="2098:2380" placeholder="..." />
-            <marker date="1413851771732" expanded="true" signature="2499:2627" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/geo/box2d.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="39" selection-start="3440" selection-end="3440" vertical-scroll-proportion="0.0" vertical-offset="1669" max-vertical-offset="2380">
+        <state line="113" column="0" selection-start="4195" selection-end="4195" vertical-scroll-proportion="0.0" vertical-offset="1601" max-vertical-offset="2465">
           <folding>
-            <marker date="1413852023524" expanded="true" signature="3400:3536" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geo/rcc2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="24" selection-start="906" selection-end="906" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1054">
-          <folding>
-            <marker date="1413852023517" expanded="true" signature="795:906" placeholder="..." />
+            <marker date="1414026788561" expanded="true" signature="284:5348" placeholder="..." />
+            <marker date="1414026788561" expanded="true" signature="4221:4392" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/geo/rpp2d.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="27" selection-start="3523" selection-end="3523" vertical-scroll-proportion="0.0" vertical-offset="1533" max-vertical-offset="2193">
-          <folding>
-            <marker date="1413851771833" expanded="true" signature="259:4263" placeholder="..." />
-            <marker date="1413851771833" expanded="true" signature="3523:3755" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geo/meshbnds.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="918" selection-end="918" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1428">
+        <state line="109" column="65" selection-start="3848" selection-end="3848" vertical-scroll-proportion="0.0" vertical-offset="1584" max-vertical-offset="2244">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geo/region.py">
+    <entry file="file://$PROJECT_DIR$/geo/rcc2d.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="17" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="3876">
+        <state line="19" column="25" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0" vertical-offset="232" max-vertical-offset="1292">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/auxutil.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="41" selection-start="4782" selection-end="4782" vertical-scroll-proportion="0.0" vertical-offset="2842" max-vertical-offset="3349">
+        <state line="176" column="7" selection-start="5263" selection-end="5263" vertical-scroll-proportion="0.0" vertical-offset="2757" max-vertical-offset="3485">
           <folding>
             <element signature="e#23#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/visualizer/renderable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="34" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geo/region.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="20" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4216">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="12" selection-start="386" selection-end="386" vertical-scroll-proportion="0.40236688" vertical-offset="0" max-vertical-offset="1700">
+        <state line="17" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.43256998" vertical-offset="0" max-vertical-offset="1717">
           <folding />
         </state>
       </provider>

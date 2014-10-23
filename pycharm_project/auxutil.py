@@ -107,8 +107,12 @@ def automesh(region, size):
 def automesh2(region, n=(10, 10), d=None):
     regions = []
 
+    if not isinstance(region, geo.region.Region):
+        raise TypeError("Type " + region.__class__.__name__ + " cannot be used, must be a geo.region.Region")
+
     # Get the bounds on the region
-    right, top, left, bottom = region.get_bounds()  # TODO - Write the get_bounds() function
+    #tmp_var = region.get_bounds()
+    right, top, left, bottom, minz, maxz = region.get_bounds()  # TODO - Write the get_bounds() function
 
     # Calculate N and D based on the user input
     if d is None:
@@ -169,9 +173,10 @@ def acceptance(e, b):
 
 def acceptance_poly2d(element, region):
     """
-    Returns 1 if the element is completely in the region,
+    Returns:
+     1 if the element is completely in the region,
     -1 if the element is completel outside the region, and
-    0 if the element is partially in the region
+     0 if the element is partially in the region
     """
 
     completeaccept = True
@@ -190,3 +195,6 @@ def acceptance_poly2d(element, region):
     b = geo.meshbnds.Boundary(element.left, element.right, element.bottom, element.top)
 
     return -1
+
+def acceptance_rcc2d(elem, bdy):
+    return False  # TODO - Finish this function

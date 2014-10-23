@@ -13,11 +13,22 @@ import visualizer.renderable
 
 
 class Rcc2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Renderable):
-    def __init__(self, r=1, center=(0, 0)):
+    def __init__(self, r=1.0, center=(0, 0)):
+
+        try:
+            radius = float(r)
+        except ValueError as e:
+            print(e)
+            print("Error, cannot treat a " + r.__class__.__name__ + " as a float value, using zero radius")
+            self.r = 0.0
+        else:
+            self.r = radius
+        #if not isinstance(r, float.__class__):
+        #    raise TypeError("Rcc2d radius must be of type float (" + r.__class__.__name__ + ")")
+
         super(Rcc2d, self).__init__()
         self.cx = center[0]
         self.cy = center[1]
-        self.r = r
 
         self.comment = "Right Circular Cylinder"
 
@@ -41,6 +52,9 @@ class Rcc2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Rendera
 
     def get_rotated_about_2d(self, theta,  pt=(0, 0), is_radians=True):
         return self.clone().rotate_about_2d(theta, pt, is_radians)
+
+    def get_bounds(self):
+        return (self.cx - self.r), (self.cx + self.r), (self.cy - self.r), (self.cy + self.r), 0, 1
 
     def draw2d(self):
         if not graphics or self.visualizer is None:

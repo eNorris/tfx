@@ -46,6 +46,11 @@ class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
         self.vec2 = util.get_rotated_about_2d(self.vec2, theta, pt, is_radians)
         return self
 
+    def get_bounds(self):
+        c = self.getcorners()
+        return min([cc[0] for cc in c]), max([cc[0] for cc in c]), min([cc[1] for cc in c]), max([cc[1] for cc in c]), 0, 1
+
+
         #self.rotate(theta)
         #posvec = [pt[0] - self.px, pt[1] - self.py]
         #dx = posvec[0] * math.cos(theta) - posvec[1] * math.sin(theta)

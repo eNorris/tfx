@@ -8,13 +8,15 @@ try:
 except ImportError:
     graphics = False
 
+import visualizer.renderable
+
 
 class GhostRegion(object):
     def __init__(self):
         self.type = -1
         self.left = self.right = None
 
-class Region:
+class Region(visualizer.renderable.Renderable):
 
     UNION = 0
     INTERSECT = 1
@@ -26,6 +28,9 @@ class Region:
     nextid = 1
 
     def __init__(self, left=None, itype=None, right=None):
+
+        super(Region, self).__init__()
+
         # self.up = None
         self.left = left
         self.type = itype
@@ -193,6 +198,21 @@ class Region:
 
     #def evalpt(self):
     #    return (0, 0, 0)
+
+    def get_bounds(self):
+        bodies = self.get_all_bodies()
+        bounds = bodies.pop().get_bounds()
+
+        for b in bodies:
+            newbounds = b.get_bounds()
+            bounds[0] = min(newbounds[0], bounds[0])  # xmin
+            bounds[1] = max(newbounds[1], bounds[1])  # xmax
+            bounds[2] = min(newbounds[2], bounds[2])  # ymin
+            bounds[3] = max(newbounds[3], bounds[3])  # ymax
+            bounds[4] = min(newbounds[4], bounds[4])  # zmin
+            bounds[5] = max(newbounds[5], bounds[5])  # zmax
+
+        return bounds
 
     def str_rec(self):
         if self.type == Region.BASE:
