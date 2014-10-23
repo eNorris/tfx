@@ -112,7 +112,7 @@ def automesh2(region, n=(10, 10), d=None):
 
     # Get the bounds on the region
     #tmp_var = region.get_bounds()
-    right, top, left, bottom, minz, maxz = region.get_bounds()  # TODO - Write the get_bounds() function
+    left, right, bottom, top, minz, maxz = region.get_bounds()  # TODO - Write the get_bounds() function
 
     # Calculate N and D based on the user input
     if d is None:
@@ -178,7 +178,6 @@ def acceptance_poly2d(element, region):
     -1 if the element is completel outside the region, and
      0 if the element is partially in the region
     """
-
     completeaccept = True
 
     for c in element.get_corners():
@@ -197,4 +196,20 @@ def acceptance_poly2d(element, region):
     return -1
 
 def acceptance_rcc2d(elem, bdy):
-    return False  # TODO - Finish this function
+    """
+    Returns:
+     1 if the element is completely in the region,
+    -1 if the element is completel outside the region, and
+     0 if the element is partially in the region
+    """
+    xmin_dist = min(abs(elem.left - bdy.cx), abs(elem.right - bdy.cx))
+    xmax_dist = max(abs(elem.left - bdy.cx), abs(elem.right - bdy.cx))
+
+    ymin_dist = min(abs(elem.top - bdy.cy), abs(elem.bottom - bdy.cy))
+    ymax_dist = max(abs(elem.top - bdy.cy), abs(elem.bottom - bdy.cy))
+
+    if xmin_dist**2 + ymin_dist**2 > bdy.r**2:
+        return -1
+    if xmax_dist**2 + ymax_dist**2 < bdy.r**2:
+        return 1
+    return 0

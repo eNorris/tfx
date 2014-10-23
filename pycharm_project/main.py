@@ -13,7 +13,7 @@ import auxutil
 # Play around region
 
 boxy = geo.region.Region(geo.rcc2d.Rcc2d(10))
-boxies = auxutil.automesh2(boxy, (2, 3))
+boxies = auxutil.automesh2(boxy, (10, 5))
 
 vis = pygamevisualizer.Visualizer()
 vis.register(boxies)
