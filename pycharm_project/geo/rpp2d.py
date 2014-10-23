@@ -86,7 +86,7 @@ class Rpp2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Rendera
             self.right = self.left + self.w
             self.top = self.bottom + self.h
 
-    def draw2d(self):
+    def draw2d(self, screen=None):
         if not graphics or self.visualizer is None:
             return
         left = int(self.left * self.visualizer.scale + self.visualizer.gx)
@@ -94,11 +94,18 @@ class Rpp2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Rendera
         width = int(self.w * self.visualizer.scale)
         height = int(self.h * self.visualizer.scale)
 
-        if self.fillcolor[3] != 0:
-            pygame.draw.rect(self.visualizer.screen, self.fillcolor,
-                             [left, top, width, height], 0)
-        pygame.draw.rect(self.visualizer.screen, self.color,
-                         [left, top, width, height], 1)
+        if screen is None:
+            if self.fillcolor[3] != 0:
+                pygame.draw.rect(self.visualizer.screen, self.fillcolor,
+                                 [left, top, width, height], 0)
+            pygame.draw.rect(self.visualizer.screen, self.color,
+                             [left, top, width, height], 1)
+        else:
+            if self.fillcolor[3] != 0:
+                pygame.draw.rect(screen, self.fillcolor,
+                                 [left, top, width, height], 0)
+            pygame.draw.rect(screen, self.color,
+                             [left, top, width, height], 1)
 
     def clone(self, other):
         super(Rpp2d, self).clone(other)

@@ -85,7 +85,7 @@ class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
         c = self.getcorners()
         return (c[0][0] + c[1][0] + c[2][0])/3, (c[0][1] + c[1][1] + c[2][1])/3
 
-    def draw2d(self):
+    def draw2d(self, screen=None):
         if not graphics or self.visualizer is None:
             return
         d = self.getcorners()
@@ -94,8 +94,12 @@ class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
 
         #pygame.draw.rect(self.visualizer.screen, self.color,
         #                 [int(self.left), 400-int(self.top), int(self.w), int(self.h)], 1)
-        pygame.draw.aalines(self.visualizer.screen, self.color, True,
-                            [[int(k[0]), 400-int(k[1])] for k in d], True)
+        if screen is None:
+            pygame.draw.aalines(self.visualizer.screen, self.color, True,
+                                [[int(k[0]), 400-int(k[1])] for k in d], True)
+        else:
+            pygame.draw.aalines(screen, self.color, True,
+                                [[int(k[0]), 400-int(k[1])] for k in d], True)
 
     def __str__(self):
         pt = (self.px, self.py)

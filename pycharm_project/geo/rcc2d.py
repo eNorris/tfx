@@ -56,15 +56,17 @@ class Rcc2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Rendera
     def get_bounds(self):
         return (self.cx - self.r), (self.cx + self.r), (self.cy - self.r), (self.cy + self.r), 0, 1
 
-    def draw2d(self):
+    def draw2d(self, screen=None):
         if not graphics or self.visualizer is None:
             return
         centerx = int(self.cx * self.visualizer.scale + self.visualizer.gx)
         centery = int((400 - self.cy * self.visualizer.scale) + self.visualizer.gy)
         radius = int(self.r * self.visualizer.scale)
         if radius >= 2:
-            #pygame.draw.circle(self.visualizer.screen, (150, 150, 150), [centerx, centery], radius, 0)
-            pygame.draw.circle(self.visualizer.screen, self.color, [centerx, centery], radius, 2)
+            if screen is None:
+                pygame.draw.circle(self.visualizer.screen, self.color, [centerx, centery], radius, 1)
+            else:
+                pygame.draw.circle(screen, self.color, [centerx, centery], radius, 1)
 
     def __str__(self):
         return "  " + str(self.id) + ": RCC: " + \

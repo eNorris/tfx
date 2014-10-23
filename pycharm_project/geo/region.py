@@ -224,19 +224,32 @@ class Region(visualizer.renderable.Renderable):
         if self.type == Region.SUBTRACT:
             return self.left.str_rec() + "-" + self.right.str_rec()
 
-    def draw2d(self):
+    def draw2d(self, surf=None):
         if not graphics or self.visualizer is None:
             return
 
-        # TODO - Need to fix this
+        tsurf = pygame.Surface((640, 480))
         if self.type == Region.BASE:
-            self.left.draw2d()
-        else:
-            self.left.draw2d()
-            self.right.draw2d()
+            pass
 
-        if self.drawevals:
-            for e in self.evalpoints:
-                sx = int(e[0] * self.visualizer.scale + self.visualizer.gx)
-                sy = int((400 - e[1] * self.visualizer.scale) + self.visualizer.gy)
-                pygame.draw.circle(self.visualizer.screen, (255, 0, 255), [sx, sy], 3, 0)
+        elif self.type == Region.UNION:
+            pass
+        elif self.type == Region.INTERSECT:
+            pass
+        elif self.type == Region.SUBTRACT:
+            pass
+        else:
+            raise Exception("Illegal node type!")
+
+        # TODO - Need to fix this
+        # if self.type == Region.BASE:
+        #     self.left.draw2d()
+        # else:
+        #     self.left.draw2d()
+        #     self.right.draw2d()
+#
+        # if self.drawevals:
+        #     for e in self.evalpoints:
+        #         sx = int(e[0] * self.visualizer.scale + self.visualizer.gx)
+        #         sy = int((400 - e[1] * self.visualizer.scale) + self.visualizer.gy)
+        #         pygame.draw.circle(self.visualizer.screen, (255, 0, 255), [sx, sy], 3, 0)
