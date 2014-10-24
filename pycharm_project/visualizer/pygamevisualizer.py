@@ -57,6 +57,24 @@ class Visualizer:
             for d in drawables:
                 self.unregister(d)
 
+    def screen_to_xy(self, screenx, screeny=None):
+        if screeny is None:
+            return (screenx[0] - self.gx) / self.scale, (-screenx[1] + 400 + self.gy) / self.scale
+        else:
+            return (screenx - self.gx) / self.scale, (-screeny + 400 + self.gy) / self.scale
+
+    def xy_to_screen(self, x, y=None):
+        if y is None:
+            return self.scale * x[0] + self.gx, 400 + self.gy - self.scale * x[1]
+        else:
+            return self.scale * x + self.gx, 400 + self.gy - self.scale * y
+
+    def xy_to_screen_px(self, x, y=None):
+        if y is None:
+            return int(self.scale * x[0] + self.gx), int(400 + self.gy - self.scale * x[1])
+        else:
+            return int(self.scale * x + self.gx), int(400 + self.gy - self.scale * y )
+
     def launch(self):
         if not graphics: return
         #b = Box2d.Box2d((0, 0), (12, 0), (0, 12))
@@ -80,10 +98,11 @@ class Visualizer:
                 d.draw2d()
 
             font = pygame.font.SysFont('Calibri', 15, True, False)
-            text = font.render(
-                str((pygame.mouse.get_pos()[0] - self.gx) / self.scale) + \
-                ", " + str(-(pygame.mouse.get_pos()[1]-400 - self.gy) / self.scale),
-                True, (0, 0, 0))
+            sx, sy = self.screen_to_xy(pygame.mouse.get_pos())
+            text = font.render(str(sx) + ", " + str(sy), True, (0, 0, 0))
+                #str((pygame.mouse.get_pos()[0] - self.gx) / self.scale) + \
+                #", " + str(-(pygame.mouse.get_pos()[1]-400 - self.gy) / self.scale),
+                #True, (0, 0, 0))
             self.screen.blit(text, [0, 385])
             #pygame.draw.rect(b.visualizer.screen, (220, 220, 220), [0, 0, 100, 600], 0)
             #b.draw2d()
