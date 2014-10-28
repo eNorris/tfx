@@ -108,7 +108,8 @@ class Visualizer:
         pygame.display.flip()
 
     def launch(self):
-        if not graphics: return
+        if not graphics:
+            return
 
         self.draw_all()
 

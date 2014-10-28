@@ -89,23 +89,24 @@ class Rpp2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Rendera
     def draw2d(self, screen=None):
         if not graphics or self.visualizer is None:
             return
-        left = int(self.left * self.visualizer.scale + self.visualizer.gx)
-        top = int(400 - self.top * self.visualizer.scale + self.visualizer.gy)
-        width = int(self.w * self.visualizer.scale)
-        height = int(self.h * self.visualizer.scale)
-
-        if screen is None:
-            if self.fillcolor[3] != 0:
-                pygame.draw.rect(self.visualizer.screen, self.fillcolor,
-                                 [left, top, width, height], 0)
-            pygame.draw.rect(self.visualizer.screen, self.color,
-                             [left, top, width, height], 1)
-        else:
-            if self.fillcolor[3] != 0:
-                pygame.draw.rect(screen, self.fillcolor,
-                                 [left, top, width, height], 0)
-            pygame.draw.rect(screen, self.color,
-                             [left, top, width, height], 1)
+        raise Exception("Rpp2d::draw2d() is no longer used")
+        # left = int(self.left * self.visualizer.scale + self.visualizer.gx)
+        # top = int(400 - self.top * self.visualizer.scale + self.visualizer.gy)
+        # width = int(self.w * self.visualizer.scale)
+        # height = int(self.h * self.visualizer.scale)
+        #
+        # if screen is None:
+        #     if self.fillcolor[3] != 0:
+        #         pygame.draw.rect(self.visualizer.screen, self.fillcolor,
+        #                          [left, top, width, height], 0)
+        #     pygame.draw.rect(self.visualizer.screen, self.color,
+        #                      [left, top, width, height], 1)
+        # else:
+        #     if self.fillcolor[3] != 0:
+        #         pygame.draw.rect(screen, self.fillcolor,
+        #                          [left, top, width, height], 0)
+        #     pygame.draw.rect(screen, self.color,
+        #                      [left, top, width, height], 1)
 
     def clone(self, other):
         super(Rpp2d, self).clone(other)

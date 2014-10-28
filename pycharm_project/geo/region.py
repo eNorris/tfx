@@ -250,6 +250,8 @@ class Region(visualizer.renderable.Renderable):
         if not graphics or self.visualizer is None:
             return
 
+        raise Exception("This function is no longer used.")
+
         #tsurf = pygame.Surface((640, 480))
         #if self.type == Region.BASE:
         #    pass
@@ -264,14 +266,14 @@ class Region(visualizer.renderable.Renderable):
         #    raise Exception("Illegal node type!")
 
         # TODO - Need to fix this
-        if self.type == Region.BASE:
-            self.left.draw2d()
-        else:
-            self.left.draw2d()
-            self.right.draw2d()
-
-        if self.drawevals:
-            for e in self.evalpoints:
-                sx = int(e[0] * self.visualizer.scale + self.visualizer.gx)
-                sy = int((400 - e[1] * self.visualizer.scale) + self.visualizer.gy)
-                pygame.draw.circle(self.visualizer.screen, (255, 0, 255), [sx, sy], 3, 0)
+        #if self.type == Region.BASE:
+        #    self.left.draw2d()
+        #else:
+        #    self.left.draw2d()
+        #    self.right.draw2d()
+#
+        #if self.drawevals:
+        #    for e in self.evalpoints:
+        #        sx = int(e[0] * self.visualizer.scale + self.visualizer.gx)
+        #        sy = int((400 - e[1] * self.visualizer.scale) + self.visualizer.gy)
+        #        pygame.draw.circle(self.visualizer.screen, (255, 0, 255), [sx, sy], 3, 0)

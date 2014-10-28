@@ -88,18 +88,21 @@ class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
     def draw2d(self, screen=None):
         if not graphics or self.visualizer is None:
             return
-        d = self.getcorners()
 
-        d = [(q[0] * self.visualizer.scale + self.visualizer.gx, q[1] * self.visualizer.scale - self.visualizer.gy) for q in d]
+        raise Exception("Raw2d::draw2d is no longer used")
 
-        #pygame.draw.rect(self.visualizer.screen, self.color,
-        #                 [int(self.left), 400-int(self.top), int(self.w), int(self.h)], 1)
-        if screen is None:
-            pygame.draw.aalines(self.visualizer.screen, self.color, True,
-                                [[int(k[0]), 400-int(k[1])] for k in d], True)
-        else:
-            pygame.draw.aalines(screen, self.color, True,
-                                [[int(k[0]), 400-int(k[1])] for k in d], True)
+        #d = self.getcorners()
+        #
+        #d = [(q[0] * self.visualizer.scale + self.visualizer.gx, q[1] * self.visualizer.scale - self.visualizer.gy) for q in d]
+        #
+        ##pygame.draw.rect(self.visualizer.screen, self.color,
+        ##                 [int(self.left), 400-int(self.top), int(self.w), int(self.h)], 1)
+        #if screen is None:
+        #    pygame.draw.aalines(self.visualizer.screen, self.color, True,
+        #                        [[int(k[0]), 400-int(k[1])] for k in d], True)
+        #else:
+        #    pygame.draw.aalines(screen, self.color, True,
+        #                        [[int(k[0]), 400-int(k[1])] for k in d], True)
 
     def __str__(self):
         pt = (self.px, self.py)
