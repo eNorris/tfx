@@ -41,10 +41,10 @@ class Visualizer:
         if not graphics: return
         self.drawables.add(drawable)
         drawable.visualizer = self
-        try:
-            drawable.registervis()
-        except AttributeError:
-            pass
+        #try:
+        #    drawable.registervis()
+        #except AttributeError:
+        #    pass
 
     def unregister(self, drawables):
         if not graphics: return
@@ -75,48 +75,62 @@ class Visualizer:
         else:
             return int(self.scale * x + self.gx), int(400 + self.gy - self.scale * y )
 
-    def launch(self):
-        if not graphics: return
-        #b = Box2d.Box2d((0, 0), (12, 0), (0, 12))
-        #print(str(b))
-        #b.set_pos((50, 50))
-        #self.register(b)
+    def draw_all(self):
+        self.screen.fill((220, 220, 220))
+        surf = pygame.Surface((600, 400), pygame.SRCALPHA)
+        pixarry = pygame.PixelArray(surf)
 
         for d in self.drawables:
-            d.draw2d()
+            print(d)
+            left, right, bottom, top, zmin, zmax = d.get_bounds()
+            lefti, topi = self.xy_to_screen_px(left, bottom)
+            righti, bottomi = self.xy_to_screen_px(right, top)
+
+            for i in range(lefti, righti+1):
+                for j in range(bottomi, topi+1):
+                    center = self.screen_to_xy(i + .5, j + .5)
+                    #print("center = " + str(center))
+                    if center in d:
+                        #print("IN!")
+                        pixarry[i][j] = d.fillcolor  #(255, 255, 0, 255)
+                    else:
+                        pixarry[i][j] = (0, 0, 0, 0)
+
+        del pixarry
+
+        self.screen.blit(surf, [0, 0], area=None, special_flags=0)
+
+        font = pygame.font.SysFont('Calibri', 15, True, False)
+        sx, sy = self.screen_to_xy(pygame.mouse.get_pos())
+        text = font.render(str(sx) + ", " + str(sy), True, (0, 0, 0))
+        self.screen.blit(text, [0, 385])
+
         pygame.display.flip()
 
-        pause_and_wait = True
-        #time = 2
-        while pause_and_wait:
-            #b.rotate_about(-.01, (100, -time))
-            #time += 5
-            #b.translate([0, 3])
-            #print(b)
-            self.screen.fill((220, 220, 220))
-            for d in self.drawables:
-                d.draw2d()
+    def launch(self):
+        if not graphics: return
 
-            font = pygame.font.SysFont('Calibri', 15, True, False)
-            sx, sy = self.screen_to_xy(pygame.mouse.get_pos())
-            text = font.render(str(sx) + ", " + str(sy), True, (0, 0, 0))
-                #str((pygame.mouse.get_pos()[0] - self.gx) / self.scale) + \
-                #", " + str(-(pygame.mouse.get_pos()[1]-400 - self.gy) / self.scale),
-                #True, (0, 0, 0))
-            self.screen.blit(text, [0, 385])
-            #pygame.draw.rect(b.visualizer.screen, (220, 220, 220), [0, 0, 100, 600], 0)
-            #b.draw2d()
+        self.draw_all()
+
+        pause_and_wait = True
+        while pause_and_wait:
+            #self.screen.fill((220, 220, 220))
+            #for d in self.drawables:
+            #    d.draw2d()
+            self.draw_all()
+
+            #font = pygame.font.SysFont('Calibri', 15, True, False)
+            #sx, sy = self.screen_to_xy(pygame.mouse.get_pos())
+            #text = font.render(str(sx) + ", " + str(sy), True, (0, 0, 0))
+            #self.screen.blit(text, [0, 385])
             self.clock.tick(30)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pause_and_wait = False
                 elif event.type == pygame.MOUSEMOTION:
-                    #print("MOVE")
                     if self.active:
                         dx = pygame.mouse.get_pos()[0] - self.lx
                         dy = pygame.mouse.get_pos()[1] - self.ly
-                        #dx *= self.scale
-                        #dy *= self.scale
                         self.gx += dx
                         self.gy += dy
                     self.lx, self.ly = pygame.mouse.get_pos()
@@ -125,7 +139,6 @@ class Visualizer:
                     if button in [4, 5]:
                         rx = self.gx - pygame.mouse.get_pos()[0]
                         ry = self.gy - (pygame.mouse.get_pos()[1] - 400)
-                        #print(pygame.mouse.get_pos())
                         rxnew, rynew = 0, 0
                         if button == 4:
                             self.scale *= 1.2
@@ -137,12 +150,7 @@ class Visualizer:
                             rynew = ry / 1.2
                         self.gx = self.gx - rx + rxnew
                         self.gy = self.gy - ry + rynew
-                    #print("scale = " + str(self.scale))
-                    #print("ACTIVE")
-                    #print(event.button)
-                    #print(pygame.mouse.get_pressed())
                     self.active = True
                 elif event.type == pygame.MOUSEBUTTONUP:
-                    #print("INACTIVE")
                     self.active = False
-            pygame.display.flip()
+            #pygame.display.flip()

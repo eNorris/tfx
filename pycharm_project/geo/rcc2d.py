@@ -54,7 +54,7 @@ class Rcc2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Rendera
         return self.clone().rotate_about_2d(theta, pt, is_radians)
 
     def get_bounds(self):
-        return (self.cx - self.r), (self.cx + self.r), (self.cy - self.r), (self.cy + self.r), 0, 1
+        return [(self.cx - self.r), (self.cx + self.r), (self.cy - self.r), (self.cy + self.r), 0, 1]
 
     def draw2d(self, screen=None):
         if not graphics or self.visualizer is None:

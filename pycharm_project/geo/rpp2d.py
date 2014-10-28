@@ -114,7 +114,7 @@ class Rpp2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Rendera
         self.right, self.top, self.left, self.bottom = other.right, other.top, other.left, other.bottom
 
     def get_bounds(self):
-        return self.left, self.right, self.bottom, self.top, 0, 1
+        return [self.left, self.right, self.bottom, self.top, 0, 1]
 
     #def get_cloned(self):
     #    x = Rpp2d()

@@ -126,8 +126,13 @@ def automesh2(region, n=(10, 10), d=None):
         nx = math.ceil((right-left)/dx)
         ny = math.ceil((top-bottom)/dy)
 
+
+
     for i in range(nx):
         for j in range(ny):
+
+            # Build the ghost tree structure to represent the geometry
+            # This can't be moved outside the loop because the ghost_tree is mutated by the acceptance building
             ghost_tree = region.ghostcopy()
 
             # Build the mesh element
@@ -208,8 +213,8 @@ def acceptance_rcc2d(elem, bdy):
     ymin_dist = min(abs(elem.top - bdy.cy), abs(elem.bottom - bdy.cy))
     ymax_dist = max(abs(elem.top - bdy.cy), abs(elem.bottom - bdy.cy))
 
-    if xmin_dist**2 + ymin_dist**2 > bdy.r**2:
+    if xmin_dist**2 + ymin_dist**2 >= bdy.r**2:
         return -1
-    if xmax_dist**2 + ymax_dist**2 < bdy.r**2:
+    if xmax_dist**2 + ymax_dist**2 <= bdy.r**2:
         return 1
     return 0

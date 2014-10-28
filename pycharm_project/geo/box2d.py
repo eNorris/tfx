@@ -114,8 +114,8 @@ class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
 
     def get_bounds(self):
         c = self.getcorners()
-        return min([cc[0] for cc in c]), max([cc[0] for cc in c]), \
-               min([cc[1] for cc in c]), max([cc[1] for cc in c]), 0, 1
+        return [min([cc[0] for cc in c]), max([cc[0] for cc in c]),
+               min([cc[1] for cc in c]), max([cc[1] for cc in c]), 0, 1]
 
     def draw2d(self, screen=None):
         if not graphics or self.visualizer is None:

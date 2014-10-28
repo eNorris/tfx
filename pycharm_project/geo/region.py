@@ -181,14 +181,14 @@ class Region(visualizer.renderable.Renderable):
 
         return self
 
-    def registervis(self):
-        if self.visualizer is None:
-            return
-        if self.type == Region.BASE:
-            self.visualizer.register(self.left)
-        else:
-            self.left.registervis()
-            self.right.registervis()
+    #def registervis(self):
+    #    if self.visualizer is None:
+    #        return
+    #    if self.type == Region.BASE:
+    #        self.visualizer.register(self.left)
+    #    else:
+    #        self.left.registervis()
+    #        self.right.registervis()
 
     def get_all_bodies(self):
         if self.type == Region.BASE:
@@ -199,7 +199,7 @@ class Region(visualizer.renderable.Renderable):
     #def evalpt(self):
     #    return (0, 0, 0)
 
-    def get_bounds(self):
+    def get_bounds_old(self):
         bodies = self.get_all_bodies()
         bounds = bodies.pop().get_bounds()
 
@@ -213,6 +213,28 @@ class Region(visualizer.renderable.Renderable):
             bounds[5] = max(newbounds[5], bounds[5])  # zmax
 
         return bounds
+
+    def get_bounds(self):
+        if self.type == Region.BASE:
+            return self.left.get_bounds()
+
+        lxmin, lxmax, lymin, lymax, lzmin, lzmax = self.left.get_bounds()
+        rxmin, rxmax, rymin, rymax, rzmin, rzmax = self.right.get_bounds()
+
+        if self.type == Region.INTERSECT:
+            return [max(lxmin, rxmin), min(lxmax, rxmax),
+                    max(lymin, rymin), min(lymax, rymax),
+                    0, 1]
+        elif self.type == Region.SUBTRACT:
+            return [lxmin, lxmax,
+                    lymin, lymax,
+                    0, 1]
+        elif self.type == Region.UNION:
+            return [min(lxmin, rxmin), max(lxmax, rxmax),
+                    min(lymin, rymin), max(lymax, rymax),
+                    0, 1]
+        else:
+            raise Exception("Region::get_bounds(): unknown type")
 
     def str_rec(self):
         if self.type == Region.BASE:
@@ -228,28 +250,28 @@ class Region(visualizer.renderable.Renderable):
         if not graphics or self.visualizer is None:
             return
 
-        tsurf = pygame.Surface((640, 480))
-        if self.type == Region.BASE:
-            pass
-
-        elif self.type == Region.UNION:
-            pass
-        elif self.type == Region.INTERSECT:
-            pass
-        elif self.type == Region.SUBTRACT:
-            pass
-        else:
-            raise Exception("Illegal node type!")
+        #tsurf = pygame.Surface((640, 480))
+        #if self.type == Region.BASE:
+        #    pass
+#
+        #elif self.type == Region.UNION:
+        #    pass
+        #elif self.type == Region.INTERSECT:
+        #    pass
+        #elif self.type == Region.SUBTRACT:
+        #    pass
+        #else:
+        #    raise Exception("Illegal node type!")
 
         # TODO - Need to fix this
-        # if self.type == Region.BASE:
-        #     self.left.draw2d()
-        # else:
-        #     self.left.draw2d()
-        #     self.right.draw2d()
-#
-        # if self.drawevals:
-        #     for e in self.evalpoints:
-        #         sx = int(e[0] * self.visualizer.scale + self.visualizer.gx)
-        #         sy = int((400 - e[1] * self.visualizer.scale) + self.visualizer.gy)
-        #         pygame.draw.circle(self.visualizer.screen, (255, 0, 255), [sx, sy], 3, 0)
+        if self.type == Region.BASE:
+            self.left.draw2d()
+        else:
+            self.left.draw2d()
+            self.right.draw2d()
+
+        if self.drawevals:
+            for e in self.evalpoints:
+                sx = int(e[0] * self.visualizer.scale + self.visualizer.gx)
+                sy = int((400 - e[1] * self.visualizer.scale) + self.visualizer.gy)
+                pygame.draw.circle(self.visualizer.screen, (255, 0, 255), [sx, sy], 3, 0)
