@@ -22,16 +22,16 @@ class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
         self.validate()
 
     def __contains__(self, item):
-        c = self.getcorners()
+        c = self.get_corners()
         if len(c) < 3:
             return False
         v1 = c[0][0] - c[-1][0], c[0][1] - c[-1][1]
         v2 = c[0][0] - item[0], c[0][1] - item[1]
-        positive = v1[0] * v2[1] - v1[1] * v2[0] >= 0
+        positive = v1[0] * v2[1] - v1[1] * v2[0] > 0
         for i in range(1, len(c)):
             v1 = c[i][0] - c[i-1][0], c[i][1] - c[i-1][1]
             v2 = c[i][0] - item[0], c[i][1] - item[1]
-            if (v1[0] * v2[1] - v1[1] * v2[0] >= 0) != positive:
+            if (v1[0] * v2[1] - v1[1] * v2[0] > 0) != positive:
                 return False
         return True
 
@@ -47,7 +47,7 @@ class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
         return self
 
     def get_bounds(self):
-        c = self.getcorners()
+        c = self.get_corners()
         return [min([cc[0] for cc in c]), max([cc[0] for cc in c]), min([cc[1] for cc in c]), max([cc[1] for cc in c]), 0, 1]
 
 
@@ -78,11 +78,11 @@ class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
 
 
 
-    def getcorners(self):
+    def get_corners(self):
         return [(self.px, self.py), (self.px+self.vec1[0], self.py+self.vec1[1]), (self.px+self.vec2[0], self.py+self.vec2[1])]
 
     def centroid(self):
-        c = self.getcorners()
+        c = self.get_corners()
         return (c[0][0] + c[1][0] + c[2][0])/3, (c[0][1] + c[1][1] + c[2][1])/3
 
     def draw2d(self, screen=None):

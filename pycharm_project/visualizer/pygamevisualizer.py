@@ -79,26 +79,32 @@ class Visualizer:
         self.screen.fill((220, 220, 220))
         surf = pygame.Surface((600, 400), pygame.SRCALPHA)
         pixarry = pygame.PixelArray(surf)
+        #surfarry = pygame.surfarray.pixels2d(surf)  #pygame.surfarray.array2d(surf)
 
         for d in self.drawables:
-            print(d)
+            #print(d)
             left, right, bottom, top, zmin, zmax = d.get_bounds()
             lefti, topi = self.xy_to_screen_px(left, bottom)
             righti, bottomi = self.xy_to_screen_px(right, top)
 
-            for i in range(lefti, righti+1):
-                for j in range(bottomi, topi+1):
+            #print((righti-lefti, topi-bottomi))
+
+            for i in range(max(0, lefti), min(righti+1, 599)):
+                for j in range(max(0, bottomi), min(topi+1,399)):
                     center = self.screen_to_xy(i + .5, j + .5)
                     #print("center = " + str(center))
                     if center in d:
                         #print("IN!")
-                        pixarry[i][j] = d.fillcolor  #(255, 255, 0, 255)
+                        pixarry[i][j] = d.fillcolor
+                        #surfarry[i][j] = 234234  #d.fillcolor
                     else:
                         pixarry[i][j] = (0, 0, 0, 0)
+                        #surfarry[i][j] = 0  #(0, 0, 0, 0)
 
         del pixarry
 
         self.screen.blit(surf, [0, 0], area=None, special_flags=0)
+        #pygame.surfarray.blit_array(self.screen, surfarry)
 
         font = pygame.font.SysFont('Calibri', 15, True, False)
         sx, sy = self.screen_to_xy(pygame.mouse.get_pos())

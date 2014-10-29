@@ -7,12 +7,19 @@ import makephantom
 import geo.region
 import geo.rcc2d
 import geo.rpp2d
+import geo.raw2d
 import geocheck
 import auxutil
 
 # Play around region
 
-boxy = geo.region.Region(geo.rcc2d.Rcc2d(10))
+if auxutil.intersects((-4,4), (4,1), (-3,-3), (3,3)):
+    print("passed")
+else:
+    print("failed")
+
+boxy = geo.region.Region(geo.raw2d.Raw2d((0, 0), (10, 0), (0, 10)))
+#boxy = geo.region.Region(geo.rcc2d.Rcc2d(10))
 boxies = auxutil.automesh2(boxy, (10, 10))
 
 vis = pygamevisualizer.Visualizer()

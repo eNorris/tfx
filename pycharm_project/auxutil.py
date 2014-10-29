@@ -174,9 +174,45 @@ def acceptance(e, b):
     if b.__class__ == geo.rcc2d.Rcc2d:
         return acceptance_rcc2d(e, b)
     else:
-        return acceptance_poly2d(e, b)
+        return acceptance_poly2d_body(e, b)
 
-def acceptance_poly2d(element, region):
+def acceptance_poly2d_body(element, body):
+    """
+    Returns:
+     1 if the element is completely in the region,
+    -1 if the element is completel outside the region, and
+     0 if the element is partially in the region
+    """
+    completeaccept = True
+
+    print("auxutil.accept_body: checking...")
+
+    ecorners = element.get_corners()
+
+    for c in ecorners:
+        if not c in body:
+            completeaccept = False
+            break
+
+    if completeaccept:
+        return 1
+
+    bcorners = body.get_corners()
+
+    count = 0
+    for i in range(-1, len(ecorners)-2):
+        for j in range(-1, len(bcorners)-2):
+            if intersects(ecorners[i], ecorners[i+1], bcorners[i], bcorners[i+1]):
+                print("TRUE!")
+                count += 1
+                if count >= 2:
+                    return 0
+
+    #b = geo.meshbnds.Boundary(element.left, element.right, element.bottom, element.top)
+
+    return -1
+
+def acceptance_poly2d_region(element, region):
     """
     Returns:
      1 if the element is completely in the region,
@@ -218,3 +254,40 @@ def acceptance_rcc2d(elem, bdy):
     if xmax_dist**2 + ymax_dist**2 <= bdy.r**2:
         return 1
     return 0
+
+
+def intersects(line1start, line1end, line2start, line2end):
+
+    x1, y1 = line1start
+    x2, y2 = line1end
+    x3, y3 = line2start
+    x4, y4 = line2end
+
+    dx1 = x2-x1
+    dx3 = x4-x3
+    dy1 = y2-y1
+    dy3 = y4-y3
+
+    # The two equations are <dx1, dy1> t1 + <x1, y1>
+    #                   and <dx3, dy3> t3 + <x3, y3>
+    # Which yields
+    # dx1 t1 + x1 = dx3 t3 + x3
+    # dy1 t1 + y1 = dy3 t3 + y3
+    #
+    # Solving simultaneously for t1:
+
+    denom = dx3*(dx1*dy3 - dy1)
+    if denom < 1e-10:
+        return False
+
+    t1 = ((x3-x1)*dy3 + (y1-y3)*dx3) / denom
+
+    if not 0 <= t1 <= 1:
+        return False
+
+    # Can't be a vertical line by the time we get here
+    if dx3 < 1e-10:
+        return False
+    t3 = (dx1*t1 + x1 - x3)/dx3
+
+    return 0 <= t3 <= 1
