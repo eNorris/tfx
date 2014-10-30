@@ -126,8 +126,6 @@ def automesh2(region, n=(10, 10), d=None):
         nx = math.ceil((right-left)/dx)
         ny = math.ceil((top-bottom)/dy)
 
-
-
     for i in range(nx):
         for j in range(ny):
 
@@ -144,9 +142,13 @@ def automesh2(region, n=(10, 10), d=None):
             #accept = acceptance(e, region)
 
             if accept == 1:
-                regions.append(Region(e))
+                newregion = Region(e)
+                newregion.matid = region.matid
+                regions.append(newregion)
             elif accept == 0:
-                regions.append(region + e)
+                newregion = region + e
+                newregion.matid = region.matid
+                regions.append(newregion)
 
     return regions
 
@@ -227,22 +229,35 @@ def acceptance_poly2d_body(element, body):
             #if not element.left < x < element.right:
             if not element.bottom < y < element.top:
                 continue
-
-        if dx > 0:
-            txmin, txmax = (element.left - x)/dx, (element.right - x)/dx
         else:
-            txmax, txmin = (element.left - x)/dx, (element.right - x)/dx
+            print(str(abs(dy)) + " > 1e-10")
 
-        tmin = max(0, txmin)
-        tmax = min(1, txmax)
+        print("Here dy = " + str(dy))
 
-        if dy > 0:
-            tymin, tymax = (element.bottom - y)/dy, (element.top - y)/dy
-        else:
-            tymax, tymin = (element.bottom - y)/dy, (element.top - y)/dy
+        tmin, tmax = 0, 1
 
-        tmin = max(tmin, tymin)
-        tmax = min(tmax, tymax)
+        if abs(dx) >= 1e-10:
+            if dx > 0:
+                txmin, txmax = (element.left - x)/dx, (element.right - x)/dx
+            else:
+                txmax, txmin = (element.left - x)/dx, (element.right - x)/dx
+
+            tmin = max(tmin, txmin)
+            tmax = min(tmax, txmax)
+
+        if dy == 0:
+            print(abs(dy))
+            print(dy)
+            print(abs(dy) < 1e-10)
+
+        if abs(dy) >= 1e-10:
+            if dy > 0:
+                tymin, tymax = (element.bottom - y)/dy, (element.top - y)/dy
+            else:
+                tymax, tymin = (element.bottom - y)/dy, (element.top - y)/dy
+
+            tmin = max(tmin, tymin)
+            tmax = min(tmax, tymax)
 
         # If true, some part of the line segment was inside the RPP
         if tmin < tmax:
@@ -367,3 +382,19 @@ def intersects(line1start, line1end, line2start, line2end):
     t3 = (dx1*t1 + x1 - x3)/dx3
 
     return 0 <= t3 <= 1
+
+
+def sliceregion(radius, theta, is_radians=True):
+
+    if not is_radians:
+        theta *= math.pi / 180
+
+    tant = math.tan(theta)
+    cost2 = math.cos(theta/2)
+    sint2 = math.sin(theta/2)
+
+    slicebody = geo.raw2d.Raw2d(refpoint=(-radius * sint2, radius * cost2),
+                                v1=(radius * sint2, -radius * cost2),
+                                v2=(radius * cost2 * tant, radius * sint2 * tant))
+
+    return geo.region.Region(slicebody)

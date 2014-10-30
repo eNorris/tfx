@@ -30,7 +30,7 @@ class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
         self.comment = "Arbitrary Box"
 
     def __contains__(self, item):
-        c = self.getcorners()
+        c = self.get_corners()
         if len(c) < 3:
             return False
         v1 = c[0][0] - c[-1][0], c[0][1] - c[-1][1]
@@ -102,7 +102,7 @@ class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
         self.x, self.y = other.x, other.y
         self.vec1, self.vec2 = other.vec1, other.vec2
 
-    def getcorners(self):
+    def get_corners(self):
         return [(self.x, self.y),
             (self.x + self.vec1[0], self.y + self.vec1[1]),
             (self.x + self.vec1[0] + self.vec2[0], self.y + self.vec1[1] + self.vec2[1]),
@@ -113,14 +113,14 @@ class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
                # (self.cx - self.vec1[0] + self.vec2[0], self.cy - self.vec1[1] + self.vec2[1])]
 
     def get_bounds(self):
-        c = self.getcorners()
+        c = self.get_corners()
         return [min([cc[0] for cc in c]), max([cc[0] for cc in c]),
                min([cc[1] for cc in c]), max([cc[1] for cc in c]), 0, 1]
 
     def draw2d(self, screen=None):
         if not graphics or self.visualizer is None:
             return
-        d = self.getcorners()
+        d = self.get_corners()
 
         d = [(q[0] * self.visualizer.scale + self.visualizer.gx, q[1] * self.visualizer.scale - self.visualizer.gy ) for q in d]
 

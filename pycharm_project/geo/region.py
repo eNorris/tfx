@@ -44,12 +44,13 @@ class Region(visualizer.renderable.Renderable):
         self.evalpoints = []
         #self.visualizer = None
 
+        # If there is no data to add, do nothing further
         if left is None:
             return
 
         if right is None:
             if isinstance(left, Region):
-                print("WARNING: region.py::RegionNode::init(): Useless node detected")
+                print("WARNING: region.py::Region::init(): Useless node detected")
             #if isinstance(left, Region):
             #    self.left = left.node
             else:

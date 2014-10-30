@@ -8,7 +8,7 @@ class Renderable(object):
     def __init__(self):
         super(Renderable, self).__init__()
         self.visualizer = None
-        self.color = (0, 0, 0)
+        #self.color = (0, 0, 0)
         self.fillcolor = self.rand_hue()
         self.linecolor = (0, 0, 0)
 
@@ -23,10 +23,12 @@ class Renderable(object):
         x.clone(self)
         return x
 
-    def rand_color(self):
+    @staticmethod
+    def rand_color():
         return random.randint(0, 255), random.randint(0, 255), random.randint(0, 255), 255
 
-    def rand_hue(self):
+    @staticmethod
+    def rand_hue():
         x = random.randint(0,2)
         c = random.randint(0, 255)
         if x == 0:
