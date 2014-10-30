@@ -13,31 +13,28 @@ import auxutil
 
 # Play around region
 
-if auxutil.intersects((-4,4), (4,1), (-3,-3), (3,3)):
-    print("passed")
-else:
-    print("failed")
+# boxy = geo.region.Region(geo.raw2d.Raw2d((0, 0), (10, 0), (0, 10))) - geo.rcc2d.Rcc2d(5)
+# #boxy = geo.region.Region(geo.rcc2d.Rcc2d(10))
+# boxies = auxutil.automesh2(boxy, (30, 30))
+#
+# print("accepted: " + str(len(boxies)))
+#
+# vis = pygamevisualizer.Visualizer()
+# vis.register(boxies)
+# #vis.register(boxy)
+# vis.launch()
+#
+# exit()
 
-boxy = geo.region.Region(geo.raw2d.Raw2d((0, 0), (10, 0), (0, 10)))
-#boxy = geo.region.Region(geo.rcc2d.Rcc2d(10))
-boxies = auxutil.automesh2(boxy, (10, 10))
+# The phantom itself is a 16 cm radius cylindrical phantom centered at (0, 0)
+phantom = geo.rcc2d.Rcc2d(16)
+phantomregions = auxutil.automesh2(phantom, (10, 10))  # Mesh into 10x10 squares
 
-vis = pygamevisualizer.Visualizer()
-vis.register(boxies)
-#vis.register(boxy)
-vis.launch()
-
-exit()
-
-
-
-
-
-
+# 
 
 
 # Create the regions
-phantomregions = makephantom.makephantom()
+#phantomregions = makephantom.makephantom()
 sliceregions = makephantom.makeslice()
 externregions = makephantom.makeoutter()
 
@@ -65,18 +62,18 @@ writer.close()
 # Create the visualiser
 vis = pygamevisualizer.Visualizer()
 
-b = geo.rpp2d.Rpp2d((10, 5), (4, 10))
-
-tomesh = sliceregions[4]
-sliceregions = sliceregions[:3]
-subs = auxutil.automesh(tomesh, 2.0)
-sliceregions.extend(subs)
+#b = geo.rpp2d.Rpp2d((10, 5), (4, 10))
+#
+#tomesh = sliceregions[4]
+#sliceregions = sliceregions[:3]
+#subs = auxutil.automesh(tomesh, 2.0)
+#sliceregions.extend(subs)
 
 #cylregion = geo.region.Region(geo.rcc2d.Rcc2d(10.0)) - geo.rcc2d.Rcc2d(8.0) | geo.rpp2d.Rpp2d((10, 5), (4, 10))
 #meshed = auxutil.automesh(cylregion, 1.0)
 for r in sliceregions:
     vis.register(r)
-    vis.register(r.get_all_bodies())
+    #vis.register(r.get_all_bodies())
 
 vis.launch()
 

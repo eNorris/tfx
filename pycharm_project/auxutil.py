@@ -158,17 +158,22 @@ def recursively_build_acceptance_tree(e, ghosttree):
         recursively_build_acceptance_tree(e, ghosttree.left)
         recursively_build_acceptance_tree(e, ghosttree.right)
 
+
 def recursively_eval_tree(tree):
     if tree.type == Region.BASE:
         return tree.left
     if tree.type == Region.UNION:
-        return max(tree.left, tree.right)
+        return max(recursively_eval_tree(tree.left), recursively_eval_tree(tree.right))
+        #return max(tree.left, tree.right)
     elif tree.type == Region.SUBTRACT:
-        return min(tree.left, -tree.right)
+        #return min(tree.left, -(tree.right))
+        return min(recursively_eval_tree(tree.left), -recursively_eval_tree(tree.right))
     elif tree.type == Region.INTERSECT:
-        return min(tree.left, tree.right)
+        return min(recursively_eval_tree(tree.left), recursively_eval_tree(tree.right))
+        #return min(tree.left, tree.right)
     else:
         print("ERROR: Unknown region type")
+
 
 def acceptance(e, b):
     if b.__class__ == geo.rcc2d.Rcc2d:
@@ -176,7 +181,78 @@ def acceptance(e, b):
     else:
         return acceptance_poly2d_body(e, b)
 
+
 def acceptance_poly2d_body(element, body):
+    """
+    Returns:
+     1 if the element is completely in the region,
+    -1 if the element is completel outside the region, and
+     0 if the element is partially in the region
+    """
+    completeaccept = True
+
+    ecorners = element.get_corners()
+
+    # This assumes the body is CONVEX and not an arbitrary polygon
+
+    for c in ecorners:
+        if not c in body:
+            completeaccept = False
+            break
+
+    if completeaccept:
+        return 1
+
+    bcorners = body.get_corners()
+
+    if not isinstance(element, geo.rpp2d.Rpp2d):
+        raise Exception("Sorry, auxutil.accept_poly2d_body only works with Rpp2d bodies right now. Bummer.")
+
+    #tmin, tmax = 0, 1
+
+    for i in range(-1, len(bcorners)-1):
+        x = bcorners[i][0]
+        y = bcorners[i][1]
+        dx = bcorners[i+1][0] - x
+        dy = bcorners[i+1][1] - y
+
+        # line is defined by   <dx, dy> t + <x, y>
+
+        # First handle the edge cases of an orthogonal edge
+        if abs(dx) < 1e-10:
+            #if not element.bottom < y < element.top:
+            if not element.left < x < element.right:
+                continue
+        if abs(dy) < 1e-10:
+            #if not element.left < x < element.right:
+            if not element.bottom < y < element.top:
+                continue
+
+        if dx > 0:
+            txmin, txmax = (element.left - x)/dx, (element.right - x)/dx
+        else:
+            txmax, txmin = (element.left - x)/dx, (element.right - x)/dx
+
+        tmin = max(0, txmin)
+        tmax = min(1, txmax)
+
+        if dy > 0:
+            tymin, tymax = (element.bottom - y)/dy, (element.top - y)/dy
+        else:
+            tymax, tymin = (element.bottom - y)/dy, (element.top - y)/dy
+
+        tmin = max(tmin, tymin)
+        tmax = min(tmax, tymax)
+
+        # If true, some part of the line segment was inside the RPP
+        if tmin < tmax:
+            return 0
+
+    # If no intersections were found, reject
+
+    return -1
+
+def acceptance_poly2d_body_old(element, body):
     """
     Returns:
      1 if the element is completely in the region,

@@ -31,7 +31,7 @@ class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
         for i in range(1, len(c)):
             v1 = c[i][0] - c[i-1][0], c[i][1] - c[i-1][1]
             v2 = c[i][0] - item[0], c[i][1] - item[1]
-            if (v1[0] * v2[1] - v1[1] * v2[0] > 0) != positive:
+            if (v1[0] * v2[1] - v1[1] * v2[0] > 1e-10) != positive:
                 return False
         return True
 

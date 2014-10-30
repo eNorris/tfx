@@ -143,6 +143,16 @@ class Visualizer:
                     self.lx, self.ly = pygame.mouse.get_pos()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     button = event.button  # 1 = left, 2 = middle, 3 = right, 4 = wheel up, 5 = wheel down
+                    if button == 1:
+                        self.active = True
+                    if button == 3:
+                        foundone = False
+                        for d in self.drawables:
+                            if self.screen_to_xy(pygame.mouse.get_pos()) in d:
+                                foundone = True
+                                print(d)
+                        if not foundone:
+                            print("VOID")
                     if button in [4, 5]:
                         rx = self.gx - pygame.mouse.get_pos()[0]
                         ry = self.gy - (pygame.mouse.get_pos()[1] - 400)
@@ -157,7 +167,7 @@ class Visualizer:
                             rynew = ry / 1.2
                         self.gx = self.gx - rx + rxnew
                         self.gy = self.gy - ry + rynew
-                    self.active = True
+                    #self.active = True
                 elif event.type == pygame.MOUSEBUTTONUP:
                     self.active = False
             #pygame.display.flip()
