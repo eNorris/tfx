@@ -56,7 +56,7 @@ def makeslice2():
     bowtie9 = auxutil.fliptie(bowtie4)
     bowtie10 = auxutil.fliptie(bowtie5)
     #bowtieregion = geo.region.Region(basebox) | topbox | botbox | bowtie1 | bowtie2 | bowtie3 | bowtie4 | bowtie5 | bowtie6 | bowtie7 | bowtie8 | bowtie9 | bowtie10
-    bowtieregion = geo.region.Region(basebox)
+    bowtieregion = geo.region.Region(basebox) | topbox
     bowtieregion.matid = "H"
     bowtieregion.drawevals = True
     bowtieregion.evalpoints.extend([(46.5, 3.8), (46.5, -3.8), (44.5, 0)])
