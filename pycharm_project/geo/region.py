@@ -31,7 +31,6 @@ class Region(visualizer.renderable.Renderable):
 
         super(Region, self).__init__()
 
-        # self.up = None
         self.left = left
         self.type = itype
         self.right = right
@@ -42,7 +41,6 @@ class Region(visualizer.renderable.Renderable):
         self.doeval = False
         self.drawevals = False
         self.evalpoints = []
-        #self.visualizer = None
 
         # If there is no data to add, do nothing further
         if left is None:
@@ -131,9 +129,12 @@ class Region(visualizer.renderable.Renderable):
             raise Exception("Unknown region combination type: " + str(self.type))
 
     def __str__(self):
-        return "  " + str(self.id) + ": " + self.matid + ": " + self.str_rec() + ": " + self.comment
+        return "  " + str(self.id) + ": " + self.matid + ": " + self.str_transware() + ": " + self.comment
 
-    def clone(self):
+    def clone(self, other):
+
+        if True:
+            raise Exception("Sorry, the logic for cloning regions isn't implemented...")
 
         if self.type == Region.BASE:
             x = Region(self.left.clone(), self.type, None)
@@ -145,7 +146,6 @@ class Region(visualizer.renderable.Renderable):
         x.doeval = self.doeval
         x.drawevals = self.drawevals
         x.evalpoints = [k for k in self.evalpoints]
-        #x.visualizer = self.visualizer
 
         return x
 
@@ -182,23 +182,12 @@ class Region(visualizer.renderable.Renderable):
 
         return self
 
-    #def registervis(self):
-    #    if self.visualizer is None:
-    #        return
-    #    if self.type == Region.BASE:
-    #        self.visualizer.register(self.left)
-    #    else:
-    #        self.left.registervis()
-    #        self.right.registervis()
-
     def get_all_bodies(self):
         if self.type == Region.BASE:
             return set([self.left])
         else:
             return self.left.get_all_bodies() | (self.right.get_all_bodies())
 
-    #def evalpt(self):
-    #    return (0, 0, 0)
 
     def get_bounds_old(self):
         bodies = self.get_all_bodies()
@@ -237,7 +226,29 @@ class Region(visualizer.renderable.Renderable):
         else:
             raise Exception("Region::get_bounds(): unknown type")
 
-    def str_rec(self):
+    def str_rec(self, parens=False):
+        if parens:
+            if self.type == Region.BASE:
+                return str(self.left.id)
+            if self.type == Region.UNION:
+                return "(" + self.left.str_rec(parens) + "|" + self.right.str_rec(parens) + ")"
+            if self.type == Region.INTERSECT:
+                return "(" + self.left.str_rec(parens) + "+" + self.right.str_rec(parens) + ")"
+            if self.type == Region.SUBTRACT:
+                return "(" + self.left.str_rec(parens) + "-" + self.right.str_rec(parens) + ")"
+        else:
+            if self.type == Region.BASE:
+                return str(self.left.id)
+            if self.type == Region.UNION:
+                return self.left.str_rec() + "|" + self.right.str_rec()
+            if self.type == Region.INTERSECT:
+                return self.left.str_rec() + "+" + self.right.str_rec()
+            if self.type == Region.SUBTRACT:
+                return self.left.str_rec() + "-" + self.right.str_rec()
+
+    def str_transware(self):
+        if not self.is_left_adjusted():
+            self.left_adjust()
         if self.type == Region.BASE:
             return str(self.left.id)
         if self.type == Region.UNION:
@@ -247,34 +258,23 @@ class Region(visualizer.renderable.Renderable):
         if self.type == Region.SUBTRACT:
             return self.left.str_rec() + "-" + self.right.str_rec()
 
+
     def draw2d(self, surf=None):
         if not graphics or self.visualizer is None:
             return
 
         raise Exception("This function is no longer used.")
 
-        #tsurf = pygame.Surface((640, 480))
-        #if self.type == Region.BASE:
-        #    pass
-#
-        #elif self.type == Region.UNION:
-        #    pass
-        #elif self.type == Region.INTERSECT:
-        #    pass
-        #elif self.type == Region.SUBTRACT:
-        #    pass
-        #else:
-        #    raise Exception("Illegal node type!")
 
-        # TODO - Need to fix this
-        #if self.type == Region.BASE:
-        #    self.left.draw2d()
-        #else:
-        #    self.left.draw2d()
-        #    self.right.draw2d()
-#
-        #if self.drawevals:
-        #    for e in self.evalpoints:
-        #        sx = int(e[0] * self.visualizer.scale + self.visualizer.gx)
-        #        sy = int((400 - e[1] * self.visualizer.scale) + self.visualizer.gy)
-        #        pygame.draw.circle(self.visualizer.screen, (255, 0, 255), [sx, sy], 3, 0)
+    def is_left_adjusted(self):
+        if self.right is not None and self.right.type != Region.BASE:
+            return False
+
+        if self.left is not None and isinstance(self.left, Region):
+            return self.left.is_left_adjusted()
+
+        return True
+
+    def left_adjust(self):
+
+        print("I don't know how to left adjust!" + self.str_rec(True))

@@ -32,10 +32,14 @@ class PartsWriter:
 
     def collapse_simplify(self, objects):
         index = 1
-        sortedlist = sorted(objects, key=lambda o: o.id)
-        for obj in sortedlist:
-            obj.id = index
-            index += 1
+
+        try:
+            sortedlist = sorted(objects, key=lambda o: o.id)
+            for obj in sortedlist:
+                obj.id = index
+                index += 1
+        except TypeError:
+            pass
 
     def writeheaders(self):
         if self.file is None:
@@ -50,11 +54,17 @@ class PartsWriter:
         self.file.write(partname + ": " + comment + "\n")
 
         bodies = set()
-        for r in regions:
-            bodies.update(r.get_all_bodies())
+        try:
+            for r in regions:
+                bodies.update(r.get_all_bodies())
+        except TypeError:
+            bodies.update(regions.get_all_bodies())
 
         bodies = sorted(bodies, key=lambda x: x.id)
-        regions = sorted(regions, key=lambda x: x.id)
+        try:
+            regions = sorted(regions, key=lambda x: x.id)
+        except TypeError:
+            pass
 
         self.collapse_simplify(bodies)
         self.collapse_simplify(regions)
