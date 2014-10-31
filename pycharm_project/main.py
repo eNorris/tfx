@@ -21,7 +21,7 @@ sliceregions = makephantom.makeslice2()
 
 # The external region makes the whole thing fit in a -75, 75 x -75, 75 box
 airinner = geo.rcc2d.Rcc2d(74)
-airoutter = geo.rpp2d.Rpp2d(dims=(150, 150))
+airoutter = geo.rpp2d.Rpp2d(dims=(160, 160))
 externregions = [geo.region.Region(airoutter) - airinner]
 externregions[0].matid = 'G'  # Sets the material id to 'G' which is air
 
