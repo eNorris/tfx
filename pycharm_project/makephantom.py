@@ -67,13 +67,13 @@ def makeslice2():
 
     air = auxutil.sliceregion(74, 360/16, is_radians=False)
     airbound = rcc2d.Rcc2d(74)
-    airregion = air + airbound - phantom - upcolreg - downcolreg - filterreg# - bowtieregion
+    airregion = air + airbound - phantom - upcolreg - downcolreg - filterreg - bowtieregion
     airregion.matid = "G"
     airregion.drawevals = True
     airregion.evalpoints.extend([(30, 0, 0)])
     #airregions = auxutil.automesh(airregion, (10, 10))
 
-    regions.extend([upcolreg, downcolreg, filterreg, ])#bowtieregion])
+    regions.extend([upcolreg, downcolreg, filterreg, bowtieregion])
     regions.extend([airregion])
 
     return regions
