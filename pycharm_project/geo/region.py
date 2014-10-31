@@ -265,6 +265,41 @@ class Region(visualizer.renderable.Renderable):
 
         raise Exception("This function is no longer used.")
 
+    def is_left_adjustable(self):
+
+        # If the left isn't adjustable, the whole tree isn't
+        if self.left is not None:
+            if self.left.type != Region.BASE:
+                if not self.left.is_left_adjustable():
+                    return False
+
+        # Same for the right
+        if self.right is not None:
+            if self.right.type != Region.BASE:
+                if not self.right.is_left_adjustable():
+                    return False
+
+        # The only way _this_ node cannot be adjustable is if it is a subtraction operator and there is a
+        # intersection or subtraction on the right
+        if self.type == Region.SUBTRACT:
+            return self.right.is_left_adjustable_safe()
+
+        return True
+
+    def is_left_adjustable_safe(self):
+        # Look left and loo right
+        if self.left is not None and self.left.type != Region.BASE:
+            if not self.left.is_left_adjustable_safe():
+                return False
+        if self.right is not None and self.right.type != Region.BASE:
+            if not self.right.is_left_adjustable_safe():
+                return False
+
+        # This node is only safe it it is either a base node or a union node
+        if self.type != Region.BASE and self.type != Region.UNION:
+            return False
+
+        return True
 
     def is_left_adjusted(self):
         if self.right is not None and self.right.type != Region.BASE:

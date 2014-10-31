@@ -26,7 +26,7 @@
       <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="38" selection-start="1218" selection-end="1218" vertical-scroll-proportion="0.0" vertical-offset="164" max-vertical-offset="816">
+            <state line="31" column="38" selection-start="1218" selection-end="1218" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="816">
               <folding>
                 <element signature="e#50#89#0" expanded="true" />
               </folding>
@@ -37,7 +37,7 @@
       <file leaf-file-name="makephantom.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/makephantom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="25" selection-start="2695" selection-end="2695" vertical-scroll-proportion="0.50097847" vertical-offset="934" max-vertical-offset="1462">
+            <state line="64" column="56" selection-start="2432" selection-end="2432" vertical-scroll-proportion="0.33268103" vertical-offset="918" max-vertical-offset="1462">
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -48,12 +48,8 @@
       <file leaf-file-name="region.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/region.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="238" column="13" selection-start="7629" selection-end="7629" vertical-scroll-proportion="0.0" vertical-offset="3737" max-vertical-offset="4862">
-              <folding>
-                <marker date="1414700219402" expanded="true" signature="312:9094" placeholder="..." />
-                <marker date="1414700219402" expanded="true" signature="7093:8060" placeholder="..." />
-                <marker date="1414700219402" expanded="true" signature="8090:8560" placeholder="..." />
-              </folding>
+            <state line="295" column="28" selection-start="9852" selection-end="9852" vertical-scroll-proportion="0.0" vertical-offset="4844" max-vertical-offset="5457">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,9 +141,9 @@
         <option value="$PROJECT_DIR$/geo/box2d.py" />
         <option value="$PROJECT_DIR$/visualizer/renderable.py" />
         <option value="$PROJECT_DIR$/auxutil.py" />
-        <option value="$PROJECT_DIR$/geo/region.py" />
         <option value="$PROJECT_DIR$/partswriter.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/geo/region.py" />
         <option value="$PROJECT_DIR$/makephantom.py" />
       </list>
     </option>
@@ -484,11 +480,7 @@
     <entry file="file://$PROJECT_DIR$/geo/region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="27" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="3570">
-          <folding>
-            <marker date="1414700219402" expanded="true" signature="312:9094" placeholder="..." />
-            <marker date="1414700219402" expanded="true" signature="7093:8060" placeholder="..." />
-            <marker date="1414700219402" expanded="true" signature="8090:8560" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -552,11 +544,7 @@
     <entry file="file://$PROJECT_DIR$/geo/region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="117" column="23" selection-start="3380" selection-end="3380" vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="3349">
-          <folding>
-            <marker date="1414700219402" expanded="true" signature="312:9094" placeholder="..." />
-            <marker date="1414700219402" expanded="true" signature="7093:8060" placeholder="..." />
-            <marker date="1414700219402" expanded="true" signature="8090:8560" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -620,11 +608,7 @@
     <entry file="file://$PROJECT_DIR$/geo/region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="25" selection-start="538" selection-end="538" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="3281">
-          <folding>
-            <marker date="1414700219402" expanded="true" signature="312:9094" placeholder="..." />
-            <marker date="1414700219402" expanded="true" signature="7093:8060" placeholder="..." />
-            <marker date="1414700219402" expanded="true" signature="8090:8560" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -769,17 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geo/region.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="238" column="13" selection-start="7629" selection-end="7629" vertical-scroll-proportion="0.0" vertical-offset="3737" max-vertical-offset="4862">
-          <folding>
-            <marker date="1414700219402" expanded="true" signature="312:9094" placeholder="..." />
-            <marker date="1414700219402" expanded="true" signature="7093:8060" placeholder="..." />
-            <marker date="1414700219402" expanded="true" signature="8090:8560" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partswriter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="71" column="0" selection-start="2108" selection-end="2108" vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="1649">
@@ -796,9 +769,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/geo/region.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="295" column="28" selection-start="9852" selection-end="9852" vertical-scroll-proportion="0.0" vertical-offset="4844" max-vertical-offset="5457">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/makephantom.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="25" selection-start="2695" selection-end="2695" vertical-scroll-proportion="0.50097847" vertical-offset="934" max-vertical-offset="1462">
+        <state line="64" column="56" selection-start="2432" selection-end="2432" vertical-scroll-proportion="0.33268103" vertical-offset="918" max-vertical-offset="1462">
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
