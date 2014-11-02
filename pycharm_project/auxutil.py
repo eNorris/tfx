@@ -1,6 +1,6 @@
 __author__ = 'Edward'
 
-from geo import rpp2d, raw2d
+from geo import rpp2d, raw2d, box2d
 import geo.region
 import math
 
@@ -66,11 +66,12 @@ def automesh(region, n=(10, 10), d=None):
             #accept = acceptance(e, region)
 
             if accept == 1:
-                newregion = Region(e)
+                newregion = transform_rpp_to_box(e)  #Region(e)
                 newregion.matid = region.matid
                 regions.append(newregion)
             elif accept == 0:
-                newregion = region + e
+                #newregion = region + e
+                newregion = region + transform_rpp_to_box(e)
                 newregion.matid = region.matid
                 regions.append(newregion)
 
@@ -216,3 +217,6 @@ def sliceregion(radius, theta, is_radians=True):
                                 v2=(radius * cost2 * tant, radius * sint2 * tant))
 
     return geo.region.Region(slicebody)
+
+def transform_rpp_to_box(input):
+    return geo.region.Region(box2d.Box2d((input.left, input.bottom), (0, input.top-input.bottom), (input.right-input.left, 0), False))
