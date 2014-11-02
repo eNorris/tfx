@@ -8,7 +8,7 @@ E=PHANTOM/
   1: RCC: 0, 0, 0, 0, 0, 1, 16.0 :: Right Circular Cylinder/
   1: E: 1: /
 slice_part: A 1/16 slice
-0, 3, 7, 6, 0/
+0, 3, 7, 5, 0/
 F=COLLIMATOR, G=AIR, H=ALUM/
   1: BOX: -2.0822682022069827, 50.0, 0, 0.0, 3.0, 0, -7.863350166775916, 8.881784197001252e-16, 0, 0, 0, 1 :: Arbitrary Box/
   2: BOX: 2.08226820220699, 50.0, 0, 0.0, 3.0, 0, 7.863350166775916, -8.881784197001252e-16, 0, 0, 0, 1 :: Arbitrary Box/
@@ -20,9 +20,8 @@ F=COLLIMATOR, G=AIR, H=ALUM/
   1: F: 1: /
   2: F: 2: /
   3: H: 3: /
-  5: H: 4: /
-  5: H: 4: /
-  6: G: 6+7-5-1-2-3-4: /
+  4: H: 4: /
+  5: G: 6+7-5-1-2-3-4: /
 extern_part: Fills out to RPP boundary
 0, 1, 2, 1, 0/
 G=AIR/

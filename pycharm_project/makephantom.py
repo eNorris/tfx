@@ -76,7 +76,7 @@ def makeslice2():
     airregion.evalpoints.extend([(30, 0, 0)])
     #airregions = auxutil.automesh(airregion, (10, 10))
 
-    regions.extend([upcolreg, downcolreg, filterreg, bowtieregion, bowtieregion])
+    regions.extend([upcolreg, downcolreg, filterreg, bowtieregion])
     regions.extend([airregion])
 
     return regions
