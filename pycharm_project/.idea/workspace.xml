@@ -37,7 +37,7 @@
       <file leaf-file-name="makephantom.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/makephantom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="65" selection-start="3079" selection-end="3079" vertical-scroll-proportion="0.6997793" vertical-offset="1009" max-vertical-offset="1513">
+            <state line="74" column="20" selection-start="2900" selection-end="2900" vertical-scroll-proportion="0.54966885" vertical-offset="1009" max-vertical-offset="1513">
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -149,8 +149,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="412" />
-    <option name="y" value="213" />
+    <option name="x" value="358" />
+    <option name="y" value="71" />
     <option name="width" value="1239" />
     <option name="height" value="831" />
   </component>
@@ -414,7 +414,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="412" y="213" width="1239" height="831" extended-state="0" />
+    <frame x="358" y="71" width="1239" height="831" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -778,7 +778,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/makephantom.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="65" selection-start="3079" selection-end="3079" vertical-scroll-proportion="0.6997793" vertical-offset="1009" max-vertical-offset="1513">
+        <state line="74" column="20" selection-start="2900" selection-end="2900" vertical-scroll-proportion="0.54966885" vertical-offset="1009" max-vertical-offset="1513">
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
