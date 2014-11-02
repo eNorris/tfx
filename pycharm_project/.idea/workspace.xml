@@ -37,7 +37,7 @@
       <file leaf-file-name="makephantom.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/makephantom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="19" selection-start="2043" selection-end="2043" vertical-scroll-proportion="0.5613208" vertical-offset="714" max-vertical-offset="1496">
+            <state line="67" column="34" selection-start="2597" selection-end="2597" vertical-scroll-proportion="0.2869757" vertical-offset="1009" max-vertical-offset="1513">
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -66,7 +66,7 @@
       <file leaf-file-name="box2d.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/box2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="0" selection-start="750" selection-end="750" vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="2533">
+            <state line="16" column="76" selection-start="307" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="2533">
               <folding />
             </state>
           </provider>
@@ -149,10 +149,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="351" />
-    <option name="y" value="43" />
+    <option name="x" value="210" />
+    <option name="y" value="29" />
     <option name="width" value="1239" />
-    <option name="height" value="802" />
+    <option name="height" value="831" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -414,7 +414,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="351" y="43" width="1239" height="802" extended-state="0" />
+    <frame x="210" y="29" width="1239" height="831" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -425,7 +425,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35113484" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31203565" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2991453" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -730,13 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geo/box2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="750" selection-end="750" vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="2533">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/auxutil.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="62" selection-start="1079" selection-end="1079" vertical-scroll-proportion="0.0" vertical-offset="385" max-vertical-offset="3791">
@@ -776,9 +769,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/geo/box2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="76" selection-start="307" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="2533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/makephantom.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="19" selection-start="2043" selection-end="2043" vertical-scroll-proportion="0.5613208" vertical-offset="714" max-vertical-offset="1496">
+        <state line="67" column="34" selection-start="2597" selection-end="2597" vertical-scroll-proportion="0.2869757" vertical-offset="1009" max-vertical-offset="1513">
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>

@@ -42,6 +42,7 @@ def makeslice2():
     filterreg.evalpoints.append((49.55, 0))
 
     # Define the bowtie region
+    bowtiebox = box2d.Box2d((44.0, -5.0), (5.0, 0.0), (0.0, 10.0), False)
     basebox = box2d.Box2d((44.5, 0), (1, 0), (0, 10))
     # topbox = box2d.Box2d((47, 3.725), (4, 0), (0, 2.55))
     topbox = box2d.Box2d((46.95, 3.725), (4.1, 0), (0, 2.55))
@@ -57,7 +58,7 @@ def makeslice2():
     bowtie9 = auxutil.fliptie(bowtie4)
     bowtie10 = auxutil.fliptie(bowtie5)
     #bowtieregion = geo.region.Region(basebox) | topbox | botbox | bowtie1 | bowtie2 | bowtie3 | bowtie4 | bowtie5 | bowtie6 | bowtie7 | bowtie8 | bowtie9 | bowtie10
-    bowtieregion = geo.region.Region(basebox) | topbox
+    bowtieregion = geo.region.Region(bowtiebox)
     bowtieregion.matid = "H"
     bowtieregion.drawevals = True
     bowtieregion.evalpoints.extend([(46.5, 3.8), (46.5, -3.8), (44.5, 0)])
@@ -69,13 +70,13 @@ def makeslice2():
 
     air = auxutil.sliceregion(74, 360/16, is_radians=False)
     airbound = rcc2d.Rcc2d(74)
-    airregion = air + airbound - phantom - upcolreg - downcolreg - filterreg - bowtieregion
+    airregion = air + airbound - phantom - upcolreg - downcolreg - filterreg - bowtiebox
     airregion.matid = "G"
     airregion.drawevals = True
     airregion.evalpoints.extend([(30, 0, 0)])
     #airregions = auxutil.automesh(airregion, (10, 10))
 
-    regions.extend([upcolreg, downcolreg, filterreg, bowtieregion])
+    regions.extend([upcolreg, downcolreg, filterreg, bowtieregion, bowtieregion])
     regions.extend([airregion])
 
     return regions
