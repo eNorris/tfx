@@ -69,7 +69,8 @@ class PartsWriter:
         self.collapse_simplify(bodies)
         self.collapse_simplify(regions)
 
-        evalregions = [x for x in regions if x.doeval]
+        #evalregions = [x for x in regions if x.doeval]
+        evalregions = [x for x in regions if True]
         evalpointcount = sum(len(x.evalpoints) for x in evalregions)
         thispartmats = sorted(list(set([k.matid for k in regions])))
         self.file.write("0, " + str(len(thispartmats)) + ", " + str(len(bodies)) + ", " + str(len(regions)) + ", " +

@@ -8,6 +8,8 @@ from geo.region import Region
 import geo.meshbnds
 import geo.rcc2d
 
+import random
+
 
 def bowtie_triangle(pt, a, b):
     """
@@ -68,11 +70,13 @@ def automesh(region, n=(10, 10), d=None):
             if accept == 1:
                 newregion = transform_rpp_to_box(e)  #Region(e)
                 newregion.matid = region.matid
+                add_scatter(newregion)
                 regions.append(newregion)
             elif accept == 0:
                 #newregion = region + e
                 newregion = region + transform_rpp_to_box(e)
                 newregion.matid = region.matid
+                add_scatter(newregion)
                 regions.append(newregion)
 
     return regions
@@ -219,4 +223,33 @@ def sliceregion(radius, theta, is_radians=True):
     return geo.region.Region(slicebody)
 
 def transform_rpp_to_box(input):
-    return geo.region.Region(box2d.Box2d((input.left, input.bottom), (0, input.top-input.bottom), (input.right-input.left, 0), False))
+    box = geo.region.Region(box2d.Box2d((input.left, input.bottom), (0, input.top-input.bottom), (input.right-input.left, 0), False))
+    #box.evalpoints = input.evalpoints
+    return box
+
+
+def add_scatter(region):
+    # TODO All primitives should have a centroid that is naively accepted if the arg is a BASE
+    left, right, bottom, top, zmin, zmax = region.get_bounds()
+
+    fires = 0
+    TRIES = 10000
+    accepts = []
+
+    while fires < TRIES and len(accepts) < 1000:
+        fires += 1
+        x, y = left + random.random() * (right - left), bottom + random.random() * (top - bottom)
+        if (x, y) in region:
+            accepts.append([x, y])
+
+    if len(accepts) == 0:
+        raise Exception("auxutil::add_scatter(): Failed to find a single scatter point after " + str(TRIES) + " tries!")
+
+    xbar = sum(pt[0] for pt in accepts) / len(accepts)
+    ybar = sum(pt[1] for pt in accepts) / len(accepts)
+
+    # Try to find the average center, but otherwise, for example, if there's a hole, just take one at random
+    if (xbar, ybar) in region:
+        region.evalpoints.append([xbar, ybar, 0.5])
+    else:
+        region.evalpoints.append([accepts[0][0], accepts[0][1], 0.5])

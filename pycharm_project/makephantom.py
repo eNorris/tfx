@@ -26,20 +26,20 @@ def makeslice2():
     upcolreg = geo.region.Region(upcol)
     upcolreg.matid = "F"
     upcolreg.drawevals = True
-    upcolreg.evalpoints.append((51.5, (colwidth + holewidth)/2))
+    upcolreg.evalpoints.append((51.5, (colwidth + holewidth)/2, 0.5))
 
     downcol = box2d.Box2d((50, -holewidth), (3, 0), (0, -(colwidth-holewidth)), False)
     downcolreg = geo.region.Region(downcol)
     downcolreg.matid = "F"
     downcolreg.drawevals = True
-    downcolreg.evalpoints.append((51.5, -(colwidth + holewidth)/2))
+    downcolreg.evalpoints.append((51.5, -(colwidth + holewidth)/2, 0.5))
 
     # Define the flat filter region
     flatfilter = box2d.Box2d((49.55, 0), (.1, 0), (0, 10), True)
     filterreg = geo.region.Region(flatfilter)
     filterreg.matid = "H"
     filterreg.drawevals = True
-    filterreg.evalpoints.append((49.55, 0))
+    filterreg.evalpoints.append((49.55, 0, 0.5))
 
     # Define the bowtie region
     bowtiebox = box2d.Box2d((44.0, -5.0), (5.0, 0.0), (0.0, 10.0), False)
@@ -61,7 +61,7 @@ def makeslice2():
     bowtieregion = geo.region.Region(bowtiebox)
     bowtieregion.matid = "H"
     bowtieregion.drawevals = True
-    bowtieregion.evalpoints.extend([(46.5, 3.8), (46.5, -3.8), (44.5, 0)])
+    bowtieregion.evalpoints.extend([(46.5, 3.8, 0.5), (46.5, -3.8, 0.5), (44.5, 0, 0.5)])
 
     phantom = rcc2d.Rcc2d(16.0)
 
@@ -73,7 +73,7 @@ def makeslice2():
     airregion = air + airbound - phantom - upcolreg - downcolreg - filterreg - bowtiebox
     airregion.matid = "G"
     airregion.drawevals = True
-    airregion.evalpoints.extend([(30, 0, 0)])
+    airregion.evalpoints.extend([(30, 0, 0.5)])
     airregions = auxutil.automesh(airregion, (10, 10))
 
     regions.extend([upcolreg, downcolreg, filterreg, bowtieregion])

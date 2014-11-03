@@ -16,6 +16,6 @@ def get_rotated_about_2d(pt, theta, aboutpt=(0, 0), is_radians=True):
     result[1] += posvec[1] - dy
 
     # Append all other dimensions unmodified
-    result.extend(pt[2:-1])
+    result.extend(pt[2:])
 
     return result
