@@ -6,7 +6,7 @@ import geo.region
 import auxutil
 
 
-def makeslice2():
+def makeslice():
     srcpts = 16
     beamangle = math.radians(55)
 
@@ -58,14 +58,45 @@ def makeslice2():
     bowtie9 = auxutil.fliptie(bowtie4)
     bowtie10 = auxutil.fliptie(bowtie5)
     #bowtieregion = geo.region.Region(basebox) | topbox | botbox | bowtie1 | bowtie2 | bowtie3 | bowtie4 | bowtie5 | bowtie6 | bowtie7 | bowtie8 | bowtie9 | bowtie10
-    bowtieregion = geo.region.Region(bowtiebox)
-    bowtieregion.matid = "H"
-    bowtieregion.drawevals = True
-    bowtieregion.evalpoints.extend([(46.5, 3.8, 0.5), (46.5, -3.8, 0.5), (44.5, 0, 0.5)])
+
+    #bowtieregion = geo.region.Region(bowtiebox)
+    #bowtieregion.matid = "H"
+    #bowtieregion.drawevals = True
+    #bowtieregion.evalpoints.extend([(46.5, 3.8, 0.5), (46.5, -3.8, 0.5), (44.5, 0, 0.5)])
+    bt1region = geo.region.Region(basebox)
+    bt2region = geo.region.Region(topbox)
+    bt3region = geo.region.Region(botbox)
+    bt4region = geo.region.Region(bowtie5)
+    bt5region = geo.region.Region(bowtie4) - bowtie5
+    bt6region = geo.region.Region(bowtie3) - bowtie4 - bowtie5
+    bt7region = geo.region.Region(bowtie2) - bowtie3 - bowtie4 - bowtie5
+    bt8region = geo.region.Region(bowtie1) - bowtie2 - bowtie3 - bowtie4 - bowtie5
+    bt9region = geo.region.Region(bowtie6) - bowtie7 - bowtie8 - bowtie9 - bowtie10
+    bt10region = geo.region.Region(bowtie7) - bowtie8 - bowtie9 - bowtie10
+    bt11region = geo.region.Region(bowtie8) - bowtie9 - bowtie10
+    bt12region = geo.region.Region(bowtie9) - bowtie10
+    bt13region = geo.region.Region(bowtie10)
+    btgapregion = geo.region.Region(bowtiebox) - basebox - topbox - botbox - bowtie1 - bowtie2 - bowtie3 - bowtie4 - \
+        bowtie5 - bowtie6 - bowtie7 - bowtie8 - bowtie9 - bowtie10
+
+    for btr in [bt1region, bt2region, bt3region, bt4region, bt5region, bt6region, bt7region, bt8region, bt9region,
+                bt10region, bt11region, bt12region, bt13region]:
+        btr.matid = "H"
+        btr.drawevals = True
+        auxutil.add_scatter(btr)
+
+    btgapregion.matid = "G"
+    btgapregion.drawevals = True
+    auxutil.add_scatter(btgapregion)
 
     phantom = rcc2d.Rcc2d(16.0)
 
-    for r in [upcolreg, downcolreg, filterreg, bowtieregion]:
+    # These have to be rotated together since they share bodies
+    auxutil.rotate_regions([bt1region, bt2region, bt3region, bt4region, bt5region, bt6region, bt7region, bt8region,
+                            bt9region, bt10region, bt11region, bt12region, bt13region, btgapregion], 90, is_radians=False)
+
+    for r in [upcolreg, downcolreg, filterreg]:
+        # This is okay since none of these regions mutually share bodies
         r.rotate_about_2d(90, is_radians=False)
 
     air = auxutil.sliceregion(74, 360/16, is_radians=False)
@@ -76,7 +107,8 @@ def makeslice2():
     airregion.evalpoints.extend([(30, 0, 0.5)])
     airregions = auxutil.automesh(airregion, (10, 10))
 
-    regions.extend([upcolreg, downcolreg, filterreg, bowtieregion])
+    regions.extend([upcolreg, downcolreg, filterreg, bt1region, bt2region, bt3region, bt4region, bt5region, bt6region,
+                    bt7region, bt8region, bt9region, bt10region, bt11region, bt12region, bt13region, btgapregion])
     regions.extend(airregions)
 
     return regions
