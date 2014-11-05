@@ -109,7 +109,8 @@ def makeslice():
 
     regions.extend([upcolreg, downcolreg, filterreg, bt1region, bt2region, bt3region, bt4region, bt5region, bt6region,
                     bt7region, bt8region, bt9region, bt10region, bt11region, bt12region, bt13region, btgapregion])
-    regions.extend(airregions)
+    # Change back to meshed version later!
+    regions.extend([airregion])
 
     return regions
 
