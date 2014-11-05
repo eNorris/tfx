@@ -14,7 +14,7 @@ import math
 # The phantom itself is a 16 cm radius cylindrical phantom centered at (0, 0)
 phantom = geo.region.Region(geo.rcc2d.Rcc2d(16))
 phantom.matid = 'E'                                   # Set the material id to 'E' which is Phantom PMMA
-phantomregions = auxutil.automesh(phantom, (10, 10))  # Mesh into 10x10 squares
+phantomregions = auxutil.automesh(phantom, (32, 32))  # Mesh into 10x10 squares
 
 # The slice is a 1/16 slice that contains a collimator, botwtie filter, and flat filter
 # The air region is meshed into smaller RPP regions
