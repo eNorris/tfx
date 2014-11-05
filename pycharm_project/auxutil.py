@@ -7,6 +7,7 @@ import math
 from geo.region import Region
 import geo.meshbnds
 import geo.rcc2d
+import util
 
 import random
 
@@ -261,3 +262,6 @@ def rotate_regions(regionlist, theta, aboutpt=(0, 0), is_radians=True):
         bodies.update(r.get_all_bodies())
     for b in bodies:
         b.rotate_about_2d(theta, aboutpt, is_radians)
+
+    for r in regionlist:
+        r.evalpoints = [util.get_rotated_about_2d(x, theta, aboutpt, is_radians) for x in r.evalpoints]

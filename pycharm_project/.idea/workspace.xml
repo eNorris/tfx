@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="1" selection-start="2133" selection-end="2133" vertical-scroll-proportion="0.7011719" vertical-offset="423" max-vertical-offset="935">
+            <state line="54" column="1" selection-start="2133" selection-end="2133" vertical-scroll-proportion="0.0" vertical-offset="423" max-vertical-offset="935">
               <folding />
             </state>
           </provider>
@@ -41,11 +41,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auxutil.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="auxutil.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/auxutil.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="262" column="52" selection-start="8175" selection-end="8175" vertical-scroll-proportion="0.0" vertical-offset="3891" max-vertical-offset="4420">
-              <folding />
+            <state line="13" column="0" selection-start="185" selection-end="185" vertical-scroll-proportion="-7.5996094" vertical-offset="4112" max-vertical-offset="4624">
+              <folding>
+                <element signature="e#23#58#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,7 +55,7 @@
       <file leaf-file-name="region.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/region.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="185" column="9" selection-start="5452" selection-end="5452" vertical-scroll-proportion="0.0" vertical-offset="3165" max-vertical-offset="5763">
+            <state line="196" column="109" selection-start="5918" selection-end="6019" vertical-scroll-proportion="0.0" vertical-offset="2956" max-vertical-offset="5763">
               <folding />
             </state>
           </provider>
@@ -148,8 +150,8 @@
         <option value="$PROJECT_DIR$/util.py" />
         <option value="$PROJECT_DIR$/visualizer/pygamevisualizer.py" />
         <option value="$PROJECT_DIR$/geo/region.py" />
-        <option value="$PROJECT_DIR$/auxutil.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/auxutil.py" />
       </list>
     </option>
   </component>
@@ -761,24 +763,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="1" selection-start="2133" selection-end="2133" vertical-scroll-proportion="0.0" vertical-offset="423" max-vertical-offset="935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/geo/region.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="9" selection-start="5452" selection-end="5452" vertical-scroll-proportion="0.0" vertical-offset="3063" max-vertical-offset="5763">
+        <state line="196" column="109" selection-start="5918" selection-end="6019" vertical-scroll-proportion="0.0" vertical-offset="2956" max-vertical-offset="5763">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/auxutil.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="262" column="52" selection-start="8175" selection-end="8175" vertical-scroll-proportion="0.0" vertical-offset="3891" max-vertical-offset="4420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="1" selection-start="2133" selection-end="2133" vertical-scroll-proportion="0.7011719" vertical-offset="423" max-vertical-offset="935">
-          <folding />
+        <state line="13" column="0" selection-start="185" selection-end="185" vertical-scroll-proportion="-7.5996094" vertical-offset="4112" max-vertical-offset="4624">
+          <folding>
+            <element signature="e#23#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
