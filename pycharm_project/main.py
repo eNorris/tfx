@@ -35,7 +35,7 @@ externregions[0].matid = 'G'  # Sets the material id to 'G' which is air
 # Write the file
 writer = partswriter.PartsWriter("./phantom.parts", {'E': "PHANTOM", 'F': "COLLIMATOR", 'G': "AIR", 'H': "ALUM"},
                                  override_existing=True)
-writer.write("phantom_part", phantomregions, comment="The phantom istelf meshed into squares")
+writer.write("phantom_part", [phantom], comment="The phantom istelf meshed into squares")
 #writer.write("slice_part",   sliceregions,   comment="A 1/16 slice")
 
 for i in range(0, 16):
