@@ -105,7 +105,7 @@ def makeslice():
     airregion.evalpoints.extend([(30, 0, 0.5)])
     airregions = auxutil.automesh(airregion, (10, 10))
 
-    regions.append(bowtieregion)
+    regions.extend([upcolreg, downcolreg, filterreg, bowtieregion])
     #regions.extend([upcolreg, downcolreg, filterreg, bt1region, bt2region, bt3region, bt4region, bt5region, bt6region,
     #                bt7region, bt8region, bt9region, bt10region, bt11region, bt12region, bt13region, btgapregion])
     # Change back to meshed version later!
