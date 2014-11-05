@@ -44,8 +44,8 @@ def makeslice():
     # Define the bowtie region
     bowtiebox = box2d.Box2d((44.0, -5.0), (5.0, 0.0), (0.0, 10.0), False)
     basebox = box2d.Box2d((44.5, 0), (1, 0), (0, 10))
-    # topbox = box2d.Box2d((47, 3.725), (4, 0), (0, 2.55))
-    topbox = box2d.Box2d((46.95, 3.725), (4.1, 0), (0, 2.55))
+    topbox = box2d.Box2d((47, 3.725), (4, 0), (0, 2.55))
+    # topbox = box2d.Box2d((46.95, 3.725), (4.1, 0), (0, 2.55))
     botbox = box2d.Box2d((47, -3.725), (4, 0), (0, 2.55))
     bowtie1 = auxutil.bowtie_triangle((45, 2.45), (45, 0), (45.5, .919))
     bowtie2 = auxutil.bowtie_triangle((45, 2.45), (45.5, .919), (46, 1.302))
