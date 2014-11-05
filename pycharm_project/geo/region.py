@@ -183,19 +183,19 @@ class Region(visualizer.renderable.Renderable):
         return x.rotate_about_2d(theta, aboutpt, is_radians)
 
     def rotate_about_2d(self, theta, aboutpt=(0, 0), is_radians=True):
-        print("region.py::rotate_about_2d() [186]: rotating...")
+        #print("region.py::rotate_about_2d() [186]: rotating...")
         if self.type == Region.BASE:
-            print("base")
+            #print("base")
             print(self.left.__class__.__name__)
             self.left.rotate_about_2d(theta, aboutpt, is_radians)
-            print("returned from recursion")
+            #print("returned from recursion")
         else:
-            print("branch")
+            #print("branch")
             self.left.rotate_about_2d(theta, aboutpt, is_radians)
             self.right.rotate_about_2d(theta, aboutpt, is_radians)
 
         self.evalpoints = [util.get_rotated_about_2d(x, theta, aboutpt, is_radians) for x in self.evalpoints]
-        print("Going up...")
+        #print("Going up...")
 
         return self
 

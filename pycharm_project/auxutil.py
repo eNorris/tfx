@@ -253,3 +253,11 @@ def add_scatter(region):
         region.evalpoints.append([xbar, ybar, 0.5])
     else:
         region.evalpoints.append([accepts[0][0], accepts[0][1], 0.5])
+
+
+def rotate_regions(regionlist, theta, aboutpt=(0, 0), is_radians=True):
+    bodies = set()
+    for r in regionlist:
+        bodies.update(r.get_all_bodies())
+    for b in bodies:
+        b.rotate_about_2d(theta, aboutpt, is_radians)

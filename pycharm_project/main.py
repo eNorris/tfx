@@ -40,17 +40,18 @@ writer.write("phantom_part", [phantom], comment="The phantom istelf meshed into 
 
 for i in range(0, 16):
     writer.write("slice_part" + str(i+1), sliceregions, comment="1/16 slice number " + str(i+1))
-    for r in sliceregions:
-        print("rotating a new region..." + str(r))
-        r.rotate_about_2d((math.pi / 180) * (1/16))
-        print("finished with the region")
+    auxutil.rotate_regions(sliceregions, 360/16, is_radians=False)
+    #for r in sliceregions:
+        #print("rotating a new region..." + str(r))
+        #r.rotate_about_2d(360/16, aboutpt=(0, 0), is_radians=False)
+        #print("finished with the region")
 
 writer.write("extern_part",  externregions,  comment="Fills out to RPP boundary")
 writer.close()
 
 # Create the visualiser
-vis = pygamevisualizer.Visualizer()
-vis.register(sliceregions)
-vis.launch()
+#vis = pygamevisualizer.Visualizer()
+#vis.register(sliceregions)
+#vis.launch()
 
 
