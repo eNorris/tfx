@@ -10,7 +10,8 @@ except ImportError:
 class Visualizer:
 
     def __init__(self):
-        if not graphics: return
+        if not graphics:
+            return
         pygame.init()
 
         self.screen_size = (600, 400)
@@ -28,7 +29,8 @@ class Visualizer:
         self.active = False
 
     def register(self, drawables):
-        if not graphics: return
+        if not graphics:
+            return
         try:
             _ = iter(drawables)
         except TypeError:
@@ -38,7 +40,8 @@ class Visualizer:
                 self.register(d)
 
     def registerthis(self, drawable):
-        if not graphics: return
+        if not graphics:
+            return
         self.drawables.add(drawable)
         drawable.visualizer = self
         #try:
@@ -47,7 +50,8 @@ class Visualizer:
         #    pass
 
     def unregister(self, drawables):
-        if not graphics: return
+        if not graphics:
+            return
         try:
             _ = iter(drawables)
         except TypeError:
@@ -73,7 +77,7 @@ class Visualizer:
         if y is None:
             return int(self.scale * x[0] + self.gx), int(400 + self.gy - self.scale * x[1])
         else:
-            return int(self.scale * x + self.gx), int(400 + self.gy - self.scale * y )
+            return int(self.scale * x + self.gx), int(400 + self.gy - self.scale * y)
 
     def draw_all(self):
         self.screen.fill((220, 220, 220))
@@ -90,7 +94,7 @@ class Visualizer:
             #print((righti-lefti, topi-bottomi))
 
             for i in range(max(0, lefti), min(righti+1, 599)):
-                for j in range(max(0, bottomi), min(topi+1,399)):
+                for j in range(max(0, bottomi), min(topi+1, 399)):
                     center = self.screen_to_xy(i + .5, j + .5)
                     #print("center = " + str(center))
                     if center in d:

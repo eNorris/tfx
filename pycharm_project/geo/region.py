@@ -133,21 +133,31 @@ class Region(visualizer.renderable.Renderable):
 
     def clone(self, other):
 
-        if True:
-            raise Exception("Sorry, the logic for cloning regions isn't implemented...")
+        raise Exception("Region cloning logic  hangs sometimes for no reason. So fix it or don't use it.")
 
-        if self.type == Region.BASE:
-            x = Region(self.left.clone(), self.type, None)
-        else:
-            x = Region(self.left.clone(), self.type, self.right.clone())
+        #print("cloning... id = " + str(other.id) + ", type = " + str(other.__class__.__name__))
+        #
+        #k = other.id
+        #
+        #left = other.left
+        #right = other.right
+        #
+        #if other.type == Region.BASE:
+        #    self.left = left.__class__()  #Region()
+        #    self.left.clone(left)
+        #else:
+        #    self.left = Region()
+        #    self.right = Region()
+        #    self.left.clone(left)
+        #    self.right.clone(right)
+        #
+        #self.type = other.type
+        #self.matid = other.matid
+        #self.comment = other.comment
+        #self.doeval = other.doeval
+        #self.drawevals = other.drawevals
+        #self.evalpoints = [x for x in other.evalpoints]
 
-        x.matid = self.matid
-        x.comment = self.comment
-        x.doeval = self.doeval
-        x.drawevals = self.drawevals
-        x.evalpoints = [k for k in self.evalpoints]
-
-        return x
 
     def clonedeep(self):
         c = Region(self.left, self.type, self.right)
@@ -168,17 +178,24 @@ class Region(visualizer.renderable.Renderable):
         return r
 
     def get_rotated_about_2d(self, theta, aboutpt=(0, 0), is_radians=True):
-        x = self.clone()
+        x = Region()
+        x.clone(self)
         return x.rotate_about_2d(theta, aboutpt, is_radians)
 
     def rotate_about_2d(self, theta, aboutpt=(0, 0), is_radians=True):
+        print("region.py::rotate_about_2d() [186]: rotating...")
         if self.type == Region.BASE:
+            print("base")
+            print(self.left.__class__.__name__)
             self.left.rotate_about_2d(theta, aboutpt, is_radians)
+            print("returned from recursion")
         else:
+            print("branch")
             self.left.rotate_about_2d(theta, aboutpt, is_radians)
             self.right.rotate_about_2d(theta, aboutpt, is_radians)
 
         self.evalpoints = [util.get_rotated_about_2d(x, theta, aboutpt, is_radians) for x in self.evalpoints]
+        print("Going up...")
 
         return self
 
@@ -212,6 +229,7 @@ class Region(visualizer.renderable.Renderable):
         rxmin, rxmax, rymin, rymax, rzmin, rzmax = self.right.get_bounds()
 
         if self.type == Region.INTERSECT:
+            #return [max(lxmin, rxmin), min(lxmax, rxmax),
             return [max(lxmin, rxmin), min(lxmax, rxmax),
                     max(lymin, rymin), min(lymax, rymax),
                     0, 1]
