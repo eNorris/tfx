@@ -43,57 +43,55 @@ def makeslice():
 
     # Define the bowtie region
     bowtiebox = box2d.Box2d((44.0, -5.0), (5.0, 0.0), (0.0, 10.0), False)
-    basebox = box2d.Box2d((44.5, 0), (1, 0), (0, 10))
-    topbox = box2d.Box2d((47, 3.725), (4, 0), (0, 2.55))
-    # topbox = box2d.Box2d((46.95, 3.725), (4.1, 0), (0, 2.55))
-    botbox = box2d.Box2d((47, -3.725), (4, 0), (0, 2.55))
-    bowtie1 = auxutil.bowtie_triangle((45, 2.45), (45, 0), (45.5, .919))
-    bowtie2 = auxutil.bowtie_triangle((45, 2.45), (45.5, .919), (46, 1.302))
-    bowtie3 = auxutil.bowtie_triangle((45, 2.45), (46, 1.302), (47, 1.808))
-    bowtie4 = auxutil.bowtie_triangle((45, 2.45), (47, 1.808), (48, 2.162))
-    bowtie5 = auxutil.bowtie_triangle((45, 2.45), (48, 2.162), (49, 2.45))
-    bowtie6 = auxutil.fliptie(bowtie1)
-    bowtie7 = auxutil.fliptie(bowtie2)
-    bowtie8 = auxutil.fliptie(bowtie3)
-    bowtie9 = auxutil.fliptie(bowtie4)
-    bowtie10 = auxutil.fliptie(bowtie5)
-    #bowtieregion = geo.region.Region(basebox) | topbox | botbox | bowtie1 | bowtie2 | bowtie3 | bowtie4 | bowtie5 | bowtie6 | bowtie7 | bowtie8 | bowtie9 | bowtie10
+    #basebox = box2d.Box2d((44.5, 0), (1, 0), (0, 10))
+    #topbox = box2d.Box2d((47, 3.725), (4, 0), (0, 2.55))
+    #botbox = box2d.Box2d((47, -3.725), (4, 0), (0, 2.55))
+    #bowtie1 = auxutil.bowtie_triangle((45, 2.45), (45, 0), (45.5, .919))
+    #bowtie2 = auxutil.bowtie_triangle((45, 2.45), (45.5, .919), (46, 1.302))
+    #bowtie3 = auxutil.bowtie_triangle((45, 2.45), (46, 1.302), (47, 1.808))
+    #bowtie4 = auxutil.bowtie_triangle((45, 2.45), (47, 1.808), (48, 2.162))
+    #bowtie5 = auxutil.bowtie_triangle((45, 2.45), (48, 2.162), (49, 2.45))
+    #bowtie6 = auxutil.fliptie(bowtie1)
+    #bowtie7 = auxutil.fliptie(bowtie2)
+    #bowtie8 = auxutil.fliptie(bowtie3)
+    #bowtie9 = auxutil.fliptie(bowtie4)
+    #bowtie10 = auxutil.fliptie(bowtie5)
+#
+    #bt1region = geo.region.Region(basebox)
+    #bt2region = geo.region.Region(topbox)
+    #bt3region = geo.region.Region(botbox)
+    #bt4region = geo.region.Region(bowtie5)
+    #bt5region = geo.region.Region(bowtie4) - bowtie5
+    #bt6region = geo.region.Region(bowtie3) - bowtie4 - bowtie5
+    #bt7region = geo.region.Region(bowtie2) - bowtie3 - bowtie4 - bowtie5
+    #bt8region = geo.region.Region(bowtie1) - bowtie2 - bowtie3 - bowtie4 - bowtie5
+    #bt9region = geo.region.Region(bowtie6) - bowtie7 - bowtie8 - bowtie9 - bowtie10
+    #bt10region = geo.region.Region(bowtie7) - bowtie8 - bowtie9 - bowtie10
+    #bt11region = geo.region.Region(bowtie8) - bowtie9 - bowtie10
+    #bt12region = geo.region.Region(bowtie9) - bowtie10
+    #bt13region = geo.region.Region(bowtie10)
+    #btgapregion = geo.region.Region(bowtiebox) - basebox - topbox - botbox - bowtie1 - bowtie2 - bowtie3 - bowtie4 - \
+    #    bowtie5 - bowtie6 - bowtie7 - bowtie8 - bowtie9 - bowtie10
+#
+    #for btr in [bt1region, bt2region, bt3region, bt4region, bt5region, bt6region, bt7region, bt8region, bt9region,
+    #            bt10region, bt11region, bt12region, bt13region]:
+    #    btr.matid = "H"
+    #    btr.drawevals = True
+    #    auxutil.add_scatter(btr)
 
-    #bowtieregion = geo.region.Region(bowtiebox)
-    #bowtieregion.matid = "H"
-    #bowtieregion.drawevals = True
-    #bowtieregion.evalpoints.extend([(46.5, 3.8, 0.5), (46.5, -3.8, 0.5), (44.5, 0, 0.5)])
-    bt1region = geo.region.Region(basebox)
-    bt2region = geo.region.Region(topbox)
-    bt3region = geo.region.Region(botbox)
-    bt4region = geo.region.Region(bowtie5)
-    bt5region = geo.region.Region(bowtie4) - bowtie5
-    bt6region = geo.region.Region(bowtie3) - bowtie4 - bowtie5
-    bt7region = geo.region.Region(bowtie2) - bowtie3 - bowtie4 - bowtie5
-    bt8region = geo.region.Region(bowtie1) - bowtie2 - bowtie3 - bowtie4 - bowtie5
-    bt9region = geo.region.Region(bowtie6) - bowtie7 - bowtie8 - bowtie9 - bowtie10
-    bt10region = geo.region.Region(bowtie7) - bowtie8 - bowtie9 - bowtie10
-    bt11region = geo.region.Region(bowtie8) - bowtie9 - bowtie10
-    bt12region = geo.region.Region(bowtie9) - bowtie10
-    bt13region = geo.region.Region(bowtie10)
-    btgapregion = geo.region.Region(bowtiebox) - basebox - topbox - botbox - bowtie1 - bowtie2 - bowtie3 - bowtie4 - \
-        bowtie5 - bowtie6 - bowtie7 - bowtie8 - bowtie9 - bowtie10
+    #btgapregion.matid = "G"
+    #btgapregion.drawevals = True
+    #auxutil.add_scatter(btgapregion)
 
-    for btr in [bt1region, bt2region, bt3region, bt4region, bt5region, bt6region, bt7region, bt8region, bt9region,
-                bt10region, bt11region, bt12region, bt13region]:
-        btr.matid = "H"
-        btr.drawevals = True
-        auxutil.add_scatter(btr)
-
-    btgapregion.matid = "G"
-    btgapregion.drawevals = True
-    auxutil.add_scatter(btgapregion)
+    bowtieregion = geo.region.Region(bowtiebox)
+    bowtieregion.matid = "G"
+    auxutil.add_scatter(bowtieregion)
 
     phantom = rcc2d.Rcc2d(16.0)
 
     # These have to be rotated together since they share bodies
-    auxutil.rotate_regions([bt1region, bt2region, bt3region, bt4region, bt5region, bt6region, bt7region, bt8region,
-                            bt9region, bt10region, bt11region, bt12region, bt13region, btgapregion], 90, is_radians=False)
+    #auxutil.rotate_regions([bt1region, bt2region, bt3region, bt4region, bt5region, bt6region, bt7region, bt8region,
+    #                        bt9region, bt10region, bt11region, bt12region, bt13region, btgapregion], 90, is_radians=False)
 
     for r in [upcolreg, downcolreg, filterreg]:
         # This is okay since none of these regions mutually share bodies
@@ -107,8 +105,9 @@ def makeslice():
     airregion.evalpoints.extend([(30, 0, 0.5)])
     airregions = auxutil.automesh(airregion, (10, 10))
 
-    regions.extend([upcolreg, downcolreg, filterreg, bt1region, bt2region, bt3region, bt4region, bt5region, bt6region,
-                    bt7region, bt8region, bt9region, bt10region, bt11region, bt12region, bt13region, btgapregion])
+    regions.append(bowtieregion)
+    #regions.extend([upcolreg, downcolreg, filterreg, bt1region, bt2region, bt3region, bt4region, bt5region, bt6region,
+    #                bt7region, bt8region, bt9region, bt10region, bt11region, bt12region, bt13region, btgapregion])
     # Change back to meshed version later!
     regions.extend([airregion])
 
