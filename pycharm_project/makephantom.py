@@ -99,7 +99,7 @@ def makeslice():
 
     air = auxutil.sliceregion(74, 360/16, is_radians=False)
     airbound = rcc2d.Rcc2d(74)
-    airregion = air + airbound - phantom #- upcolreg - downcolreg - filterreg - bowtiebox
+    airregion = air + airbound - phantom - upcolreg - downcolreg - filterreg - bowtiebox
     airregion.matid = "G"
     airregion.drawevals = True
     airregion.evalpoints.extend([(0, 30, 0.5)])
