@@ -49,6 +49,8 @@ for i in range(0, 16):
 writer.write("extern_part",  externregions,  comment="Fills out to RPP boundary")
 writer.close()
 
+print("region count = " + str(16 * len(sliceregions) + 2))
+
 # Create the visualiser
 #vis = pygamevisualizer.Visualizer()
 #vis.register(sliceregions)

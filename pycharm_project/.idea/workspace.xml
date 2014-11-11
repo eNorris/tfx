@@ -26,7 +26,7 @@
       <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="44" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="935">
+            <state line="51" column="56" selection-start="2097" selection-end="2097" vertical-scroll-proportion="0.0" vertical-offset="421" max-vertical-offset="969">
               <folding />
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file leaf-file-name="makephantom.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/makephantom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="47" selection-start="4443" selection-end="4443" vertical-scroll-proportion="0.5569307" vertical-offset="1509" max-vertical-offset="2023">
+            <state line="107" column="4" selection-start="4454" selection-end="4454" vertical-scroll-proportion="0.46287128" vertical-offset="1581" max-vertical-offset="2023">
               <folding />
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file leaf-file-name="combinatorialbody.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/combinatorialbody.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="31" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1071">
+            <state line="18" column="0" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1071">
               <folding />
             </state>
           </provider>
@@ -154,8 +154,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="783" />
-    <option name="y" value="19" />
+    <option name="x" value="568" />
+    <option name="y" value="15" />
     <option name="width" value="1066" />
     <option name="height" value="802" />
   </component>
@@ -419,8 +419,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="783" y="19" width="1066" height="802" extended-state="0" />
-    <editor active="false" />
+    <frame x="568" y="15" width="1066" height="802" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -699,13 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geo/combinatorialbody.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="31" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="4" max-vertical-offset="1071">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="30" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
@@ -758,16 +751,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/geo/combinatorialbody.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1071">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="44" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="935">
+        <state line="51" column="56" selection-start="2097" selection-end="2097" vertical-scroll-proportion="0.0" vertical-offset="421" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/makephantom.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="47" selection-start="4443" selection-end="4443" vertical-scroll-proportion="0.5569307" vertical-offset="1509" max-vertical-offset="2023">
+        <state line="107" column="4" selection-start="4454" selection-end="4454" vertical-scroll-proportion="0.46287128" vertical-offset="1581" max-vertical-offset="2023">
           <folding />
         </state>
       </provider>

@@ -103,9 +103,9 @@ def makeslice():
     airregion.matid = "G"
     airregion.drawevals = True
     airregion.evalpoints.extend([(0, 30, 0.5)])
-    airregions = auxutil.automesh(airregion, (11, 11))
+    airregions = auxutil.automesh(airregion, (4, 4))
 
-    #regions.extend([upcolreg, downcolreg, filterreg, bowtieregion])
+    regions.extend([upcolreg, downcolreg, filterreg, bowtieregion])
     #regions.extend([upcolreg, downcolreg, filterreg, bt1region, bt2region, bt3region, bt4region, bt5region, bt6region,
     #                bt7region, bt8region, bt9region, bt10region, bt11region, bt12region, bt13region, btgapregion])
     # Change back to meshed version later!
