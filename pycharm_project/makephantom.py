@@ -93,13 +93,13 @@ def makeslice():
     #auxutil.rotate_regions([bt1region, bt2region, bt3region, bt4region, bt5region, bt6region, bt7region, bt8region,
     #                        bt9region, bt10region, bt11region, bt12region, bt13region, btgapregion], 90, is_radians=False)
 
-    for r in [upcolreg, downcolreg, filterreg]:
+    for r in [upcolreg, downcolreg, filterreg, bowtieregion]:
         # This is okay since none of these regions mutually share bodies
         r.rotate_about_2d(90, is_radians=False)
 
     air = auxutil.sliceregion(74, 360/16, is_radians=False)
     airbound = rcc2d.Rcc2d(74)
-    airregion = air + airbound - phantom - upcolreg - downcolreg - filterreg - bowtieregion
+    airregion = air + airbound - phantom - upcolreg - downcolreg - filterreg - bowtiebox
     airregion.matid = "G"
     airregion.drawevals = True
     airregion.evalpoints.extend([(0, 30, 0.5)])
