@@ -102,7 +102,7 @@ def makeslice():
     airregion = air + airbound - phantom #- upcolreg - downcolreg - filterreg - bowtiebox
     airregion.matid = "G"
     airregion.drawevals = True
-    airregion.evalpoints.extend([(30, 0, 0.5)])
+    airregion.evalpoints.extend([(0, 30, 0.5)])
     airregions = auxutil.automesh(airregion, (10, 10))
 
     #regions.extend([upcolreg, downcolreg, filterreg, bowtieregion])
