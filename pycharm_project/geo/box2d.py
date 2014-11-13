@@ -14,7 +14,7 @@ import visualizer.renderable
 
 class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
 
-    def __init__(self, pos=(0, 0), vec1=(1, 0), vec2=(0, 1), provide_center=True):
+    def __init__(self, pos=(0, 0), vec1=(1, 0), vec2=(0, 1), provide_center=True, comment=None):
         super(Box2d, self).__init__()
 
         if provide_center:
@@ -27,7 +27,10 @@ class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
             self.vec1 = vec1
             self.vec2 = vec2
 
-        self.comment = "Arbitrary Box"
+        if comment is not None:
+            self.comment = comment
+        else:
+            self.comment = "Arbitrary Box"
 
     def __contains__(self, item):
         c = self.get_corners()
