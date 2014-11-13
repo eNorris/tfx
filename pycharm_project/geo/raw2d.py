@@ -13,12 +13,16 @@ from geo.combinatorialbody import CombinatorialBody2d
 
 class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
 
-    def __init__(self, refpoint=(0, 0), v1=(1, 0), v2=(0, 1)):
+    def __init__(self, refpoint=(0, 0), v1=(1, 0), v2=(0, 1), comment=None):
         super(Raw2d, self).__init__()
         self.px, self.py = refpoint
         self.vec1 = v1
         self.vec2 = v2
-        self.comment = "Right Angle Wedge"
+
+        if comment is not None:
+            self.comment = comment
+        else:
+            self.comment = "Right Angle Wedge"
         self.validate()
 
     def __contains__(self, item):
