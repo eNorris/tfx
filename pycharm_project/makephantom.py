@@ -146,15 +146,17 @@ def makeslice3d():
     outcol = box2d.Box2d((50, 5), (10, 0), (0, -10), False, comment="Collimator outter bounds")
     incol = box2d.Box2d((50, 2.08227), (5, 0), (0, -4.16454), False, comment="Collimator hole")
 
-    outcolreg = geo.region.Region(outcol)
+    incolreg = geo.region.Region(incol)
+    incolreg.matid = "G"
+    incolreg.drawevals = True
+    incolreg.evalpoints.append((53, 0, 0.5))
+
+    outcolreg = geo.region.Region(outcol)-incol
     outcolreg.matid = "F"
     outcolreg.drawevals = True
     outcolreg.evalpoints.append((57, 0, 0.5))
 
-    incolreg = outcolreg - incol
-    incolreg.matid = "G"
-    incolreg.drawevals = True
-    incolreg.evalpoints.append((53, 0, 0.5))
+
 
     # Define the flat filter region
     flatfilter = box2d.Box2d((49.55, 0), (.1, 0), (0, 10), True, comment="Flat filter")
@@ -222,7 +224,7 @@ def makeslice3d():
 
     air = auxutil.sliceregion(74, 360/16, is_radians=False)
     airbound = rcc2d.Rcc2d(74)
-    airregion = air + airbound - phantom - outcolreg - filterreg - bowtiebox
+    airregion = air + airbound - phantom - outcol - filterreg - bowtiebox
     airregion.matid = "G"
     airregion.drawevals = True
     airregion.evalpoints.extend([(0, 30, 0.5)])
