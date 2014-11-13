@@ -18,7 +18,7 @@ phantomregions = auxutil.automesh(phantom, (31, 31))  # Mesh into 10x10 squares
 
 # The slice is a 1/16 slice that contains a collimator, botwtie filter, and flat filter
 # The air region is meshed into smaller RPP regions
-sliceregions = makephantom.makeslice()
+sliceregions = makephantom.makeslice2d()
 
 # Duplicate the slice region 16 times, once in each slice direction
 #sliceregions_list = []
