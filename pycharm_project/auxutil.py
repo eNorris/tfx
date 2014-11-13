@@ -61,7 +61,8 @@ def automesh(region, n=(10, 10), d=None):
             ghost_tree = region.ghostcopy()
 
             # Build the mesh element
-            e = rpp2d.Rpp2d((left + i * dx, bottom + j * dy), (dx, dy), False)
+            e = rpp2d.Rpp2d((left + i * dx, bottom + j * dy), (dx, dy), False,
+                            comment="Mesh element " + str(i) + ", " + str(j))
 
             recursively_build_acceptance_tree(e, ghost_tree)
 
@@ -224,7 +225,8 @@ def sliceregion(radius, theta, is_radians=True):
     return geo.region.Region(slicebody)
 
 def transform_rpp_to_box(input):
-    box = geo.region.Region(box2d.Box2d((input.left, input.bottom), (0, input.top-input.bottom), (input.right-input.left, 0), False))
+    box = geo.region.Region(box2d.Box2d((input.left, input.bottom), (0, input.top-input.bottom),
+                                        (input.right-input.left, 0), False, comment=input.comment))
     #box.evalpoints = input.evalpoints
     return box
 

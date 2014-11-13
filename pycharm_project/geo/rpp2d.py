@@ -12,7 +12,7 @@ import visualizer.renderable
 
 
 class Rpp2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Renderable):
-    def __init__(self, loc=(0, 0), dims=(1, 1), provide_center=True):
+    def __init__(self, loc=(0, 0), dims=(1, 1), provide_center=True, comment=None):
         super(Rpp2d, self).__init__()
         self.w = dims[0]
         self.h = dims[1]
@@ -32,7 +32,10 @@ class Rpp2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Rendera
             self.top = self.bottom + self.h
         #self.color = (0, 0, 0)
 
-        self.comment = "Axis-aligned Right Parallelpiped"
+        if comment is not None:
+            self.comment = comment
+        else:
+            self.comment = "Axis-aligned Right Parallelpiped"
 
     # These aren't really used, so I'm going to comment them out for now and possibly remove them later
     #def clone_down(self):
