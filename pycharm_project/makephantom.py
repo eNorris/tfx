@@ -56,7 +56,7 @@ def makeslice2d():
     bowtie8 = auxutil.fliptie(bowtie3)
     bowtie9 = auxutil.fliptie(bowtie4)
     bowtie10 = auxutil.fliptie(bowtie5)
-#
+
     bt1region = geo.region.Region(basebox)
     bt2region = geo.region.Region(topbox)
     bt3region = geo.region.Region(botbox)
@@ -72,7 +72,7 @@ def makeslice2d():
     bt13region = geo.region.Region(bowtie10)
     btgapregion = geo.region.Region(bowtiebox) - basebox - topbox - botbox - bowtie1 - bowtie2 - bowtie3 - bowtie4 - \
         bowtie5 - bowtie6 - bowtie7 - bowtie8 - bowtie9 - bowtie10
-#
+
     for btr in [bt1region, bt2region, bt3region, bt4region, bt5region, bt6region, bt7region, bt8region, bt9region,
                 bt10region, bt11region, bt12region, bt13region]:
         btr.matid = "H"
@@ -143,8 +143,8 @@ def makeslice3d():
     #downcolreg.drawevals = True
     #downcolreg.evalpoints.append((51.5, -(colwidth + holewidth)/2, 0.5))
 
-    outcol = box2d.Box2d((50, 5), (10, 0), (0, -10), False)
-    incol = box2d.Box2d((50, 2.08227), (5, 0), (0, -4.16454), False)
+    outcol = box2d.Box2d((50, 5), (10, 0), (0, -10), False, comment="Collimator outter bounds")
+    incol = box2d.Box2d((50, 2.08227), (5, 0), (0, -4.16454), False, comment="Collimator hole")
 
     outcolreg = geo.region.Region(outcol)
     outcolreg.matid = "F"
@@ -157,17 +157,17 @@ def makeslice3d():
     incolreg.evalpoints.append((53, 0, 0.5))
 
     # Define the flat filter region
-    flatfilter = box2d.Box2d((49.55, 0), (.1, 0), (0, 10), True)
+    flatfilter = box2d.Box2d((49.55, 0), (.1, 0), (0, 10), True, comment="Flat filter")
     filterreg = geo.region.Region(flatfilter)
     filterreg.matid = "H"
     filterreg.drawevals = True
     filterreg.evalpoints.append((49.55, 0, 0.5))
 
     # Define the bowtie region
-    bowtiebox = box2d.Box2d((44.0, -5.0), (5.0, 0.0), (0.0, 10.0), False)
-    basebox = box2d.Box2d((44.5, 0), (1, 0), (0, 10))
-    topbox = box2d.Box2d((47, 3.725), (4, 0), (0, 2.55))
-    botbox = box2d.Box2d((47, -3.725), (4, 0), (0, 2.55))
+    bowtiebox = box2d.Box2d((44.0, -5.0), (5.0, 0.0), (0.0, 10.0), False, comment="Bowtie bounding box")
+    basebox = box2d.Box2d((44.5, 0), (1, 0), (0, 10), comment="Bowtie back piece")
+    topbox = box2d.Box2d((47, 3.725), (4, 0), (0, 2.55), comment="Bowtie left part")
+    botbox = box2d.Box2d((47, -3.725), (4, 0), (0, 2.55), comment="Bowtie right part")
     bowtie1 = auxutil.bowtie_triangle((45, 2.45), (45, 0), (45.5, .919))
     bowtie2 = auxutil.bowtie_triangle((45, 2.45), (45.5, .919), (46, 1.302))
     bowtie3 = auxutil.bowtie_triangle((45, 2.45), (46, 1.302), (47, 1.808))
@@ -232,6 +232,5 @@ def makeslice3d():
                     bt7region, bt8region, bt9region, bt10region, bt11region, bt12region, bt13region, btgapregion])
     # Change back to meshed version later!
     regions.extend(airregions)
-
 
     return regions
