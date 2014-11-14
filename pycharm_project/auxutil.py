@@ -36,6 +36,9 @@ def fliptie(tie):
 
 
 def automesh(region, n=(10, 10), d=None):
+
+    print("auxutil.py::automesh(): Begin on " + region.comment + " region")
+
     regions = []
 
     if not isinstance(region, geo.region.Region):
@@ -170,11 +173,6 @@ def acceptance_poly2d_body(element, body):
 
             tmin = max(tmin, txmin)
             tmax = min(tmax, txmax)
-
-        if dy == 0:
-            print(abs(dy))
-            print(dy)
-            print(abs(dy) < 1e-10)
 
         if abs(dy) >= 1e-10:
             if dy > 0:
@@ -317,3 +315,29 @@ def replace_body(region, oribdy, newbdy):
     else:
         replace_body(region.left, oribdy, newbdy)
         replace_body(region.right, oribdy, newbdy)
+
+
+def layerize(regions, layercount):
+    if layercount < 2:
+        raise Exception("auxutil.py::layerize(): Can't make less than two layers.")
+
+    print("Beginning to layerize...")
+
+    layeredregions = []
+
+    for r in regions:
+        left, right, bot, top, zmin, zmax = r.get_bounds()
+        dl = (zmax - zmin)/layercount
+        for i in range(math.ceil(dl)):
+            if i * dl + zmin > zmax - 1E-10:
+                break
+            p = geo.Box3d.BoxZaligned((left, bot, zmin + i*dl), (right-left, 0), (0, top-bot), dl,
+                                      False, str(i) + " layer of " + r.comment)
+            q = r+p
+            q.matid = r.matid
+            q.drawevals = r.drawevals
+            for evpt in r.evalpoints:
+                q.evalpoints.append((evpt[0], evpt[1], (i + .5)*dl + zmin))
+            layeredregions.append(q)
+
+    return layeredregions

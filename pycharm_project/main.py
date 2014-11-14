@@ -16,6 +16,7 @@ phantom = geo.region.Region(geo.rcc2d.Rcc2d(16))
 phantom.matid = 'E'                                   # Set the material id to 'E' which is Phantom PMMA
 phantomregions = auxutil.automesh(phantom, (31, 31))  # Mesh into 10x10 squares
 phantomregions = auxutil.extend_2d_to_3d(phantomregions, 15.0)
+phantomregions = auxutil.layerize(phantomregions, 5)
 
 # The slice is a 1/16 slice that contains a collimator, botwtie filter, and flat filter
 # The air region is meshed into smaller RPP regions
@@ -26,11 +27,6 @@ for r in sliceregions:
         if b.comment == "Collimator hole":
             b.l = 0.14814
             b.z = -0.14814/2
-
-# Duplicate the slice region 16 times, once in each slice direction
-#sliceregions_list = []
-#for i in range(0,16):
-#    sliceregions_list.append([x.get_rotated_about_2d(2*math.pi/16 * i) for x in sliceregions])
 
 # The external region makes the whole thing fit in a -75, 75 x -75, 75 box
 airinner = geo.rcc2d.Rcc2d(74)
@@ -49,10 +45,6 @@ writer.write("phantom_part", phantomregions, comment="The phantom istelf meshed 
 for i in range(0, 16):
     writer.write("slice_part" + str(i+1), sliceregions, comment="1/16 slice number " + str(i+1))
     auxutil.rotate_regions(sliceregions, 360/16, is_radians=False)
-    #for r in sliceregions:
-        #print("rotating a new region..." + str(r))
-        #r.rotate_about_2d(360/16, aboutpt=(0, 0), is_radians=False)
-        #print("finished with the region")
 
 writer.write("extern_part",  externregions,  comment="Fills out to RPP boundary")
 writer.close()
