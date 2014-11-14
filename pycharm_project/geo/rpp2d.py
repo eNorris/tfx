@@ -37,27 +37,6 @@ class Rpp2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Rendera
         else:
             self.comment = "Axis-aligned Right Parallelpiped"
 
-    # These aren't really used, so I'm going to comment them out for now and possibly remove them later
-    #def clone_down(self):
-    #    r = Rpp2d([self.cx, self.cy - self.h], [self.w, self.h])
-    #    r.color = self.color
-    #    return r
-#
-    #def clone_up(self):
-    #    r = Rpp2d([self.cx, self.cy + self.h], [self.w, self.h])
-    #    r.color = self.color
-    #    return r
-#
-    #def clone_right(self):
-    #    r = Rpp2d([self.cx + self.w, self.cy], [self.w, self.h])
-    #    r.color = self.color
-    #    return r
-#
-    #def clone_left(self):
-    #    r = Rpp2d([self.cx - self.w, self.cy], [self.w, self.h])
-    #    r.color = self.color
-    #    return r
-
     def get_corners(self):
         return [(self.cx - self.w/2, self.cy - self.h/2),
                 (self.cx + self.w/2, self.cy - self.h/2),
@@ -93,23 +72,6 @@ class Rpp2d(combinatorialbody.CombinatorialBody2d, visualizer.renderable.Rendera
         if not graphics or self.visualizer is None:
             return
         raise Exception("Rpp2d::draw2d() is no longer used")
-        # left = int(self.left * self.visualizer.scale + self.visualizer.gx)
-        # top = int(400 - self.top * self.visualizer.scale + self.visualizer.gy)
-        # width = int(self.w * self.visualizer.scale)
-        # height = int(self.h * self.visualizer.scale)
-        #
-        # if screen is None:
-        #     if self.fillcolor[3] != 0:
-        #         pygame.draw.rect(self.visualizer.screen, self.fillcolor,
-        #                          [left, top, width, height], 0)
-        #     pygame.draw.rect(self.visualizer.screen, self.color,
-        #                      [left, top, width, height], 1)
-        # else:
-        #     if self.fillcolor[3] != 0:
-        #         pygame.draw.rect(screen, self.fillcolor,
-        #                          [left, top, width, height], 0)
-        #     pygame.draw.rect(screen, self.color,
-        #                      [left, top, width, height], 1)
 
     def clone(self, other):
         super(Rpp2d, self).clone(other)
