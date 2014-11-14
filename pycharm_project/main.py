@@ -21,6 +21,11 @@ phantomregions = auxutil.extend_2d_to_3d(phantomregions, 15.0)
 # The air region is meshed into smaller RPP regions
 sliceregions = makephantom.makeslice3d()
 sliceregions = auxutil.extend_2d_to_3d(sliceregions, 15.0)
+for r in sliceregions:
+    for b in r.get_all_bodies():
+        if b.comment == "Collimator hole":
+            b.l = 0.14814
+            break
 
 # Duplicate the slice region 16 times, once in each slice direction
 #sliceregions_list = []
