@@ -46,25 +46,6 @@ class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
                 return False
         return True
 
-        # Based this off some code I found online by Jonas Elfstrom
-        # http://stackoverflow.com/questions/2752725/finding-whether-a-point-lies-inside-a-rectangle-or-not
-        # corners = self.getcorners()
-        # ax, ay = corners[0]
-        # bx, by = corners[1]
-        # dx, dy = corners[2]
-#
-        # bax = bx - ax
-        # bay = by - ay
-        # dax = dx - ax
-        # day = dy - ay
-#
-        # if (item[0] - ax) * bax + (item[1] - ay) * bay < 0.0:  return False
-        # if (item[0] - bx) * bax + (item[1] - by) * bay > 0.0:  return False
-        # if (item[0] - ax) * dax + (item[1] - ay) * day < 0.0:  return False
-        # if (item[0] - dx) * dax + (item[1] - dy) * day > 0.0:  return False
-#
-        # return True
-
     def center(self):
         return self.x + (self.vec1[0] + self.vec2[0])/2, self.y + (self.vec1[1] + self.vec2[1])/2
 
@@ -95,11 +76,6 @@ class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
         self.y += translation[1]
         return self
 
-    #def clone(self):
-    #    b = Box2d([self.x, self.y], self.vec1, self.vec2, False)
-    #    b.color = self.color
-    #    return b
-
     def clone(self, other):
         super(Box2d, self).clone(other)
         self.x, self.y = other.x, other.y
@@ -110,10 +86,6 @@ class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
             (self.x + self.vec1[0], self.y + self.vec1[1]),
             (self.x + self.vec1[0] + self.vec2[0], self.y + self.vec1[1] + self.vec2[1]),
             (self.x + self.vec2[0], self.y + self.vec2[1])]
-               #[(self.cx - self.vec1[0] - self.vec2[0], self.cy - self.vec1[1] - self.vec2[1]),
-               #(self.cx + self.vec1[0] - self.vec2[0], self.cy + self.vec1[1] - self.vec2[1]),
-               # (self.cx + self.vec1[0] + self.vec2[0], self.cy + self.vec1[1] + self.vec2[1]),
-               # (self.cx - self.vec1[0] + self.vec2[0], self.cy - self.vec1[1] + self.vec2[1])]
 
     def get_bounds(self):
         c = self.get_corners()
@@ -127,8 +99,6 @@ class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
 
         d = [(q[0] * self.visualizer.scale + self.visualizer.gx, q[1] * self.visualizer.scale - self.visualizer.gy ) for q in d]
 
-        #pygame.draw.rect(self.visualizer.screen, self.color,
-        #                 [int(self.left), 400-int(self.top), int(self.w), int(self.h)], 1)
         if screen is None:
             pygame.draw.aalines(self.visualizer.screen, self.color, True,
                                 [[int(k[0]), 400-int(k[1])] for k in d], True)
