@@ -54,33 +54,10 @@ class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
         c = self.get_corners()
         return [min([cc[0] for cc in c]), max([cc[0] for cc in c]), min([cc[1] for cc in c]), max([cc[1] for cc in c]), 0, 1]
 
-
-        #self.rotate(theta)
-        #posvec = [pt[0] - self.px, pt[1] - self.py]
-        #dx = posvec[0] * math.cos(theta) - posvec[1] * math.sin(theta)
-        #dy = posvec[0] * math.sin(theta) + posvec[1] * math.cos(theta)
-        #self.px += posvec[0] - dx
-        #self.py += posvec[1] - dy
-        #return self
-
-    #def get_rotated_about_2d(self, theta, about_point, is_radians):
-    #    return self.clone().rotate_about_2d(theta, about_point, is_radians)
-
     def clone(self, other):
-        #b = Raw2d((self.px, self.py), self.vec1, self.vec2)
-        #super(Raw2d, b).clone()
-        #b.color = self.color
-        #return b
         super(Raw2d, self).clone(other)
         self.px, self.py = other.px, other.py
         self.vec1, self.vec2 = other.vec1, other.vec2
-
-    #def get_cloned(self):
-    #    x = Raw2d()
-    #    x.clone(self)
-    #    return x
-
-
 
     def get_corners(self):
         return [(self.px, self.py), (self.px+self.vec1[0], self.py+self.vec1[1]), (self.px+self.vec2[0], self.py+self.vec2[1])]
@@ -94,19 +71,6 @@ class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
             return
 
         raise Exception("Raw2d::draw2d is no longer used")
-
-        #d = self.getcorners()
-        #
-        #d = [(q[0] * self.visualizer.scale + self.visualizer.gx, q[1] * self.visualizer.scale - self.visualizer.gy) for q in d]
-        #
-        ##pygame.draw.rect(self.visualizer.screen, self.color,
-        ##                 [int(self.left), 400-int(self.top), int(self.w), int(self.h)], 1)
-        #if screen is None:
-        #    pygame.draw.aalines(self.visualizer.screen, self.color, True,
-        #                        [[int(k[0]), 400-int(k[1])] for k in d], True)
-        #else:
-        #    pygame.draw.aalines(screen, self.color, True,
-        #                        [[int(k[0]), 400-int(k[1])] for k in d], True)
 
     def __str__(self):
         pt = (self.px, self.py)
