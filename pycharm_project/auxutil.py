@@ -7,6 +7,7 @@ import math
 from geo.region import Region
 import geo.meshbnds
 import geo.rcc2d
+import geo.rcc3d
 import util
 
 import random
@@ -224,9 +225,10 @@ def sliceregion(radius, theta, is_radians=True):
 
     return geo.region.Region(slicebody)
 
-def transform_rpp_to_box(input):
-    box = geo.region.Region(box2d.Box2d((input.left, input.bottom), (0, input.top-input.bottom),
-                                        (input.right-input.left, 0), False, comment=input.comment))
+
+def transform_rpp_to_box(iinput):
+    box = geo.region.Region(box2d.Box2d((iinput.left, iinput.bottom), (0, iinput.top-iinput.bottom),
+                                        (iinput.right-iinput.left, 0), False, comment=iinput.comment))
     #box.evalpoints = input.evalpoints
     return box
 
@@ -236,17 +238,17 @@ def add_scatter(region):
     left, right, bottom, top, zmin, zmax = region.get_bounds()
 
     fires = 0
-    TRIES = 10000
+    tries = 10000
     accepts = []
 
-    while fires < TRIES and len(accepts) < 1000:
+    while fires < tries and len(accepts) < 1000:
         fires += 1
         x, y = left + random.random() * (right - left), bottom + random.random() * (top - bottom)
         if (x, y) in region:
             accepts.append([x, y])
 
     if len(accepts) == 0:
-        raise Exception("auxutil::add_scatter(): Failed to find a single scatter point after " + str(TRIES) + " tries!")
+        raise Exception("auxutil::add_scatter(): Failed to find a single scatter point after " + str(tries) + " tries!")
 
     xbar = sum(pt[0] for pt in accepts) / len(accepts)
     ybar = sum(pt[1] for pt in accepts) / len(accepts)
@@ -267,3 +269,45 @@ def rotate_regions(regionlist, theta, aboutpt=(0, 0), is_radians=True):
 
     for r in regionlist:
         r.evalpoints = [util.get_rotated_about_2d(x, theta, aboutpt, is_radians) for x in r.evalpoints]
+
+
+def extend_2d_to_3d(regions, height):
+    bodies = set()
+
+    for r in regions:
+        for b in r.get_all_bodies():
+            bodies.add(b)
+
+    for b in bodies:
+        eb = extend(b, height)
+        replace_bodies(regions, b, eb)
+
+    return regions
+
+
+def extend(body, height):
+    b = None
+    if isinstance(body, geo.rcc2d.Rcc2d):
+        b = geo.rcc3d.Rcc_zaligned(body.r, height, (body.cx, body.cy, 0), body.comment + "-Extended")
+    elif isinstance(body, geo.raw2d.Raw2d):
+        pass
+    elif isinstance(body, geo.box2d.Box2d):
+        pass
+    else:
+        raise Exception("Non Extendible region " + str(body.__class__.__name__))
+
+    return b
+
+
+def replace_bodies(regions, oribdy, newbdy):
+    for r in regions:
+        replace_body(r, oribdy, newbdy)
+
+
+def replace_body(region, oribdy, newbdy):
+    if region.type == Region.BASE:
+        if region.left is oribdy:
+            region.left = newbdy
+    else:
+        replace_body(region.left, oribdy, newbdy)
+        replace_body(region.right, oribdy, newbdy)
