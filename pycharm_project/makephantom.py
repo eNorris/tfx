@@ -156,8 +156,6 @@ def makeslice3d():
     outcolreg.drawevals = True
     outcolreg.evalpoints.append((57, 0, 0.5))
 
-
-
     # Define the flat filter region
     flatfilter = box2d.Box2d((49.55, 0), (.1, 0), (0, 10), True, comment="Flat filter")
     filterreg = geo.region.Region(flatfilter)

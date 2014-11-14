@@ -15,10 +15,12 @@ import math
 phantom = geo.region.Region(geo.rcc2d.Rcc2d(16))
 phantom.matid = 'E'                                   # Set the material id to 'E' which is Phantom PMMA
 phantomregions = auxutil.automesh(phantom, (31, 31))  # Mesh into 10x10 squares
+phantomregions = auxutil.extend_2d_to_3d(phantomregions, 15.0)
 
 # The slice is a 1/16 slice that contains a collimator, botwtie filter, and flat filter
 # The air region is meshed into smaller RPP regions
 sliceregions = makephantom.makeslice3d()
+sliceregions = auxutil.extend_2d_to_3d(sliceregions, 15.0)
 
 # Duplicate the slice region 16 times, once in each slice direction
 #sliceregions_list = []
@@ -30,6 +32,7 @@ airinner = geo.rcc2d.Rcc2d(74)
 airoutter = geo.rpp2d.Rpp2d(dims=(160, 160))
 externregions = [geo.region.Region(airoutter) - airinner]
 externregions[0].matid = 'G'  # Sets the material id to 'G' which is air
+externregions = auxutil.extend_2d_to_3d(externregions, 15.0)
 
 
 # Write the file

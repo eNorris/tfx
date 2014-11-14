@@ -8,6 +8,9 @@ from geo.region import Region
 import geo.meshbnds
 import geo.rcc2d
 import geo.rcc3d
+import geo.raw3d
+import geo.Box3d
+import geo.rpp3d
 import util
 
 import random
@@ -288,11 +291,14 @@ def extend_2d_to_3d(regions, height):
 def extend(body, height):
     b = None
     if isinstance(body, geo.rcc2d.Rcc2d):
-        b = geo.rcc3d.Rcc_zaligned(body.r, height, (body.cx, body.cy, 0), body.comment + "-Extended")
+        b = geo.rcc3d.RccZaligned(body.r, height, (body.cx, body.cy, 0), body.comment + "-Extended")
     elif isinstance(body, geo.raw2d.Raw2d):
-        pass
+        b = geo.raw3d.RawZaligned((body.px, body.py, -height/2),
+                                  body.vec1, body.vec2, height, body.comment + "-Extended")
     elif isinstance(body, geo.box2d.Box2d):
-        pass
+        b = geo.Box3d.BoxZaligned((body.x, body.y, -height/2), body.vec1, body.vec2, height, False, body.comment)
+    elif isinstance(body, geo.rpp2d.Rpp2d):
+        b = geo.rpp3d.RppZaligned((body.left, body.bottom, -height/2), (body.w, body.h, height), False, body.comment)
     else:
         raise Exception("Non Extendible region " + str(body.__class__.__name__))
 
