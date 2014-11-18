@@ -12,6 +12,8 @@ class RawZaligned(geo.raw2d.Raw2d):
         self.l = height
 
     def __contains__(self, item):
+        if len(item) == 2:
+            return super(RawZaligned, self).__contains__(item)
         return self.pz <= item[2] <= self.pz + self.l and super(RawZaligned, self).__contains__(item)
 
     def clone(self, other):

@@ -6,6 +6,8 @@ try:
 except ImportError:
     graphics = False
 
+import Point
+
 
 class Visualizer:
 
@@ -80,35 +82,35 @@ class Visualizer:
             return int(self.scale * x + self.gx), int(400 + self.gy - self.scale * y)
 
     def draw_all(self):
-        self.screen.fill((220, 220, 220))
+        #self.screen.fill((220, 220, 220))
+        self.screen.fill((50, 50, 50))
         surf = pygame.Surface((600, 400), pygame.SRCALPHA)
         pixarry = pygame.PixelArray(surf)
-        #surfarry = pygame.surfarray.pixels2d(surf)  #pygame.surfarray.array2d(surf)
 
         for d in self.drawables:
-            #print(d)
-            left, right, bottom, top, zmin, zmax = d.get_bounds()
-            lefti, topi = self.xy_to_screen_px(left, bottom)
-            righti, bottomi = self.xy_to_screen_px(right, top)
 
-            #print((righti-lefti, topi-bottomi))
+            if isinstance(d, Point.Point2d):
+                i,j = self.xy_to_screen_px(d[0], d[1])
+                if 0 <= i < 600 and 0 <= j < 400:
+                    pixarry[i][j] = d.color
+            else:
+                left, right, bottom, top, zmin, zmax = d.get_bounds()
+                lefti, topi = self.xy_to_screen_px(left, bottom)
+                righti, bottomi = self.xy_to_screen_px(right, top)
 
-            for i in range(max(0, lefti), min(righti+1, 599)):
-                for j in range(max(0, bottomi), min(topi+1, 399)):
-                    center = self.screen_to_xy(i + .5, j + .5)
-                    #print("center = " + str(center))
-                    if center in d:
-                        #print("IN!")
-                        pixarry[i][j] = d.fillcolor
-                        #surfarry[i][j] = 234234  #d.fillcolor
-                    else:
-                        pixarry[i][j] = (0, 0, 0, 0)
-                        #surfarry[i][j] = 0  #(0, 0, 0, 0)
+                for i in range(max(0, lefti), min(righti+1, 599)):
+                    for j in range(max(0, bottomi), min(topi+1, 399)):
+                        center = self.screen_to_xy(i + .5, j + .5)
+                        if center in d:
+                            pixarry[i][j] = d.fillcolor
+                        else:
+                            pixarry[i][j] = (0, 0, 0, 0)
 
         del pixarry
 
         self.screen.blit(surf, [0, 0], area=None, special_flags=0)
-        #pygame.surfarray.blit_array(self.screen, surfarry)
+        
+        del surf
 
         font = pygame.font.SysFont('Calibri', 15, True, False)
         sx, sy = self.screen_to_xy(pygame.mouse.get_pos())
@@ -125,15 +127,8 @@ class Visualizer:
 
         pause_and_wait = True
         while pause_and_wait:
-            #self.screen.fill((220, 220, 220))
-            #for d in self.drawables:
-            #    d.draw2d()
             self.draw_all()
 
-            #font = pygame.font.SysFont('Calibri', 15, True, False)
-            #sx, sy = self.screen_to_xy(pygame.mouse.get_pos())
-            #text = font.render(str(sx) + ", " + str(sy), True, (0, 0, 0))
-            #self.screen.blit(text, [0, 385])
             self.clock.tick(30)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -152,9 +147,10 @@ class Visualizer:
                     if button == 3:
                         foundone = False
                         for d in self.drawables:
-                            if self.screen_to_xy(pygame.mouse.get_pos()) in d:
-                                foundone = True
-                                print(d)
+                            if not isinstance(d, Point.Point2d):
+                                if self.screen_to_xy(pygame.mouse.get_pos()) in d:
+                                    foundone = True
+                                    print(d)
                         if not foundone:
                             print("VOID")
                     if button in [4, 5]:

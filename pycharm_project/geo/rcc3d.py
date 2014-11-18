@@ -12,6 +12,8 @@ class RccZaligned(geo.rcc2d.Rcc2d):
         self.l = length
         
     def __contains__(self, item):
+        if len(item) == 2:
+            return math.sqrt((item[0]-self.cx)**2 + (item[1]-self.cy)**2) <= self.r
         return math.sqrt((item[0]-self.cx)**2 + (item[1]-self.cy)**2) <= self.r and abs(item[2] - self.cz) <= self.l/2
 
     def clone(self, other):

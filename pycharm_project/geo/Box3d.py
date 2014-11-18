@@ -16,6 +16,8 @@ class BoxZaligned(geo.box2d.Box2d):
         self.l = height
 
     def __contains__(self, item):
+        if len(item) == 2:
+            return super(BoxZaligned, self).__contains__(item)
         return self.z <= item[2] <= self.z + self.l and super(BoxZaligned, self).__contains__(item)
 
     def clone(self, other):
