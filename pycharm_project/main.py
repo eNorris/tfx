@@ -25,7 +25,8 @@ sliceregions = auxutil.extend_2d_to_3d(sliceregions, 15.0)
 for r in sliceregions:
     for b in r.get_all_bodies():
         if b.comment == "Collimator hole":
-            b.l = 0.14814
+            #b.l = 0.14814
+            b.l = 2.0
             b.z = -0.14814/2
 
 # The external region makes the whole thing fit in a -75, 75 x -75, 75 box
