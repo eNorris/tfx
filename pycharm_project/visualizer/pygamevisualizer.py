@@ -109,7 +109,7 @@ class Visualizer:
         del pixarry
 
         self.screen.blit(surf, [0, 0], area=None, special_flags=0)
-        
+
         del surf
 
         font = pygame.font.SysFont('Calibri', 15, True, False)
