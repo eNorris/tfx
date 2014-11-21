@@ -130,19 +130,6 @@ def makeslice3d():
     if holewidth > colwidth:
         print("WARNING: Collimator hole exceeds collimator size!")
 
-    # Define the collimator regions
-    #upcol = box2d.Box2d((50, holewidth), (3, 0), (0, (colwidth-holewidth)), False)
-    #upcolreg = geo.region.Region(upcol)
-    #upcolreg.matid = "F"
-    #upcolreg.drawevals = True
-    #upcolreg.evalpoints.append((51.5, (colwidth + holewidth)/2, 0.5))
-    #
-    #downcol = box2d.Box2d((50, -holewidth), (3, 0), (0, -(colwidth-holewidth)), False)
-    #downcolreg = geo.region.Region(downcol)
-    #downcolreg.matid = "F"
-    #downcolreg.drawevals = True
-    #downcolreg.evalpoints.append((51.5, -(colwidth + holewidth)/2, 0.5))
-
     outcol = box2d.Box2d((50, 5), (10, 0), (0, -10), False, comment="Collimator outter bounds")
     incol = box2d.Box2d((50, 2.08227), (5, 0), (0, -4.16454), False, comment="Collimator hole")
 
