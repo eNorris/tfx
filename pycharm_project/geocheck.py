@@ -73,7 +73,51 @@ def check(regions, checkval, visualizer=None):
             visualizer.registerthis(p)
 
     print("100.0% Complete - Total time to completion: " + "{0:.1f}".format((nowtime - starttime)/60) + " min (" +
-                  "{0:.1f}".format(nowtime - starttime) + " sec)")
+          "{0:.1f}".format(nowtime - starttime) + " sec) Total errors found: " + str(errcount))
+
+def check_domain(regions, checkval, pos1=(0, 0, 0), pos2=(0, 0, 0), visualizer=None):
+    starttime = time.time()
+    lasttime = starttime
+    writefile = open("./geocheck.log", 'w')
+    errcount = 0
+    nowtime = 0
+    print("Checking geometry (" + str(checkval) + ") points: ")
+    for i in range(checkval):
+        nowtime = time.time()
+        if nowtime - lasttime > 1:
+            lasttime = nowtime
+            eta = (checkval - i) * (nowtime - starttime) / i
+            print("{0:.2f}".format(100 * i / checkval) + "% complete - " + str(errcount) + " errors detected so far (" +
+                  "{0:.4f}".format(errcount/i) + "% error rate) - ETA: " + "{0:.1f}".format(eta/60) + " min (" +
+                  "{0:.1f}".format(eta) + " sec)")
+        dx = random.random() * (pos2[0] - pos1[0])
+        dy = random.random() * (pos2[1] - pos1[1])
+        dz = random.random() * (pos2[2] - pos1[2])
+        p = Point.Point3d((pos1[0] + dx, pos1[1] + dy, pos1[2] + dz))
+        p.dodraw = True
+        p.color = (255, 0, 0)
+        counts = 0
+        for r in regions:
+            if p in r:
+                counts += 1
+                if counts == 1:
+                    p.color = (0, 255, 0)
+                else:
+                    p.color = (255, 0, 0)
+        if counts != 1:
+            writefile.write("WARNING: Error point: " + str(p) + "\n")
+            writefile.write("Contained by " + str(counts) + " regions" + "\n")
+            errcount += 1
+            #print("WARNING: Error point: " + str(p))
+            #print("Contained by " + str(counts) + " regions")
+        else:
+            writefile.write("okay: " + str(p) + "\n")
+        if visualizer is not None:
+            visualizer.registerthis(p)
+
+    print("100.0% Complete - Total time to completion: " + "{0:.1f}".format((nowtime - starttime)/60) + " min (" +
+          "{0:.1f}".format(nowtime - starttime) + " sec) Total errors found: " + str(errcount))
+
 
 def points_in_circle(n=1, r=1.0, center=(0, 0)):
     count = 0
@@ -141,3 +185,17 @@ def volumecheck(regions, checkval):
                   "{0:.1f}".format(nowtime - starttime) + " sec)")
     print("Done with volume check")
     writefile.close()
+
+def get_super_bounds(regions):
+    xmin, xmax, ymin, ymax, zmin, zmax = 0, 0, 0, 0, 0, 0
+
+    for r in regions:
+        xminl, xmaxl, yminl, ymaxl, zminl, zmaxl = r.get_bounds()
+        xmin = min(xmin, xminl)
+        ymax = max(xmax, xmaxl)
+        ymin = min(ymin, yminl)
+        xmax = max(ymax, ymaxl)
+        zmin = min(zmin, zminl)
+        zmax = max(zmax, zmaxl)
+
+    return xmin, xmax, ymin, ymax, zmin, zmax
