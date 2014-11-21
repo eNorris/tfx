@@ -232,15 +232,15 @@ class Region(visualizer.renderable.Renderable):
             #return [max(lxmin, rxmin), min(lxmax, rxmax),
             return [max(lxmin, rxmin), min(lxmax, rxmax),
                     max(lymin, rymin), min(lymax, rymax),
-                    0, 1]
+                    max(lzmin, rzmin), min(lzmax, rzmax)]
         elif self.type == Region.SUBTRACT:
             return [lxmin, lxmax,
                     lymin, lymax,
-                    0, 1]
+                    lzmin, lzmax]
         elif self.type == Region.UNION:
             return [min(lxmin, rxmin), max(lxmax, rxmax),
                     min(lymin, rymin), max(lymax, rymax),
-                    0, 1]
+                    min(lzmin, rzmin), max(lzmax, rzmax),]
         else:
             raise Exception("Region::get_bounds(): unknown type")
 
