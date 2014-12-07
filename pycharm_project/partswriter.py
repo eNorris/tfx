@@ -99,7 +99,6 @@ class PartsWriter:
             if regionsdone % 10 == 0:
                 print("Finished " + str(regionsdone) + "/" + str(len(regions)))
             self.gatfile.write("'" + partname + ":1." + str(r.id) + "', 2=" + str(util.calc_volume(r, 1000)) + "/\n")
-        self.gatfile.write("/")
 
         for r in evalregions:
             for pt in r.evalpoints:
@@ -110,3 +109,6 @@ class PartsWriter:
             self.file.close()
         if self.rmap is not None:
             self.rmap.close()
+        if self.gatfile is not None:
+            self.gatfile.write("/")
+            self.gatfile.close()
