@@ -40,7 +40,7 @@ externregions[0].matid = 'G'  # Sets the material id to 'G' which is air
 # Create the visualiser
 vis = pygamevisualizer.Visualizer()
 #vis.register(phantomregions)
-geocheck.check_domain(sliceregions, 20000, (-.1, 44.8, -7.5), (.1, 45.2, 7.5), vis)
+geocheck.check_domain(sliceregions, 2000, (-.1, 44.8, -7.5), (.1, 45.2, 7.5), vis)
 #geocheck.check(phantomregions, 500, vis)
 #geocheck.volumecheck(phantomregions, 1000)
 print("Phantom Bounds = " + str(geocheck.get_super_bounds(phantomregions)))
