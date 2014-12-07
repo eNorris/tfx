@@ -51,14 +51,14 @@ vis.launch()
 # Write the file
 writer = partswriter.PartsWriter("./phantom.parts", {'E': "PHANTOM", 'F': "COLLIMATOR", 'G': "AIR", 'H': "ALUM"},
                                  override_existing=True)
-writer.write("phantom_part", phantomregions, comment="The phantom istelf meshed into squares")
+writer.write("phantom_part", phantomregions, gatregion="PHANTOM", comment="The phantom istelf meshed into squares")
 #writer.write("slice_part",   sliceregions,   comment="A 1/16 slice")
 
 for i in range(0, 16):
-    writer.write("slice_part" + str(i+1), sliceregions, comment="1/16 slice number " + str(i+1))
+    writer.write("slice_part" + str(i+1), sliceregions, gatregion="SLICE" + str(i+1), comment="1/16 slice number " + str(i+1))
     auxutil.rotate_regions(sliceregions, 360/16, is_radians=False)
 
-writer.write("extern_part",  externregions,  comment="Fills out to RPP boundary")
+writer.write("extern_part",  externregions,  gatregion="BOUNDS", comment="Fills out to RPP boundary")
 writer.close()
 
 print("region count = " + str(16 * len(sliceregions) + 2))

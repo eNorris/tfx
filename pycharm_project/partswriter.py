@@ -53,7 +53,7 @@ class PartsWriter:
 
         self.gatfile.write("GAT\n")
 
-    def write(self, partname, regions, comment=""):
+    def write(self, partname, regions, gatregion=None, comment=""):
 
         self.file.write(partname + ": " + comment + "\n")
 
@@ -91,18 +91,29 @@ class PartsWriter:
             #self.gatfile.write("'" + partname + ":1." + str(r.id) + "', 2=" + str(util.calc_volume(r, 1000)) + "/\n")
         self.file.write(self.generate_evals(evalregions))
 
-        print("PartsWriter: calculating volumes for GAT file:")
-        regioncount = len(regions)
-        regionsdone = 0
-        for r in regions:
-            regionsdone += 1
-            if regionsdone % 10 == 0:
-                print("Finished " + str(regionsdone) + "/" + str(len(regions)))
-            self.gatfile.write("'" + partname + ":1." + str(r.id) + "', 2=" + str(util.calc_volume(r, 1000)) + "/\n")
+        if gatregion is not None:
+            print("PartsWriter: calculating volumes for GAT file:")
+            regioncount = len(regions)
+            regionsdone = 0
+            for r in regions:
+                regionsdone += 1
+                if regionsdone % 10 == 0:
+                    print("Finished " + str(regionsdone) + "/" + str(len(regions)))
+                self.gatfile.write("'" + gatregion + ":1." + str(r.id) + "', 2=" + str(util.calc_volume(r, 1000)) + "/\n")
 
         for r in evalregions:
             for pt in r.evalpoints:
                 self.rmap.write(str(r.id) + "\t" + str(pt[0]) + "\t" + str(pt[1]) + "\t" + str(pt[2]) + "\n")
+
+    #def write_gatfile(self, partname, regions):
+    #    print("PartsWriter: calculating volumes for GAT file:")
+    #    regioncount = len(regions)
+    #    regionsdone = 0
+    #    for r in regions:
+    #        regionsdone += 1
+    #        if regionsdone % 10 == 0:
+    #            print("Finished " + str(regionsdone) + "/" + str(len(regions)))
+    #        self.gatfile.write("'" + partname + ":1." + str(r.id) + "', 2=" + str(util.calc_volume(r, 1000)) + "/\n")
 
     def close(self):
         if self.file is not None:
