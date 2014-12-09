@@ -103,7 +103,7 @@ class PartsWriter:
 
         for r in evalregions:
             for pt in r.evalpoints:
-                self.rmap.write(str(r.id) + "\t" + str(pt[0]) + "\t" + str(pt[1]) + "\t" + str(pt[2]) + "\n")
+                self.rmap.write(gatregion + ":1." + str(r.id) + "\t" + str(pt[0]) + "\t" + str(pt[1]) + "\t" + str(pt[2]) + "\n")
 
     #def write_gatfile(self, partname, regions):
     #    print("PartsWriter: calculating volumes for GAT file:")
