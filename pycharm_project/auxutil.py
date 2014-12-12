@@ -328,7 +328,7 @@ def layerize(regions, layercount):
     for r in regions:
         left, right, bot, top, zmin, zmax = r.get_bounds()
         dl = (zmax - zmin)/layercount
-        for i in range(math.ceil(dl)):
+        for i in range(layercount):
             if i * dl + zmin > zmax - 1E-10:
                 break
             p = geo.Box3d.BoxZaligned((left, bot, zmin + i*dl), (right-left, 0), (0, top-bot), dl,
