@@ -169,7 +169,7 @@ LAT
 !
 !- Specify Boundary Conditions
 ! v00 denotes all Vacuum boundaries and no symmetry
-BND:v00 -80, 80, -80, 80, 0, 1 / RPP
+BND:v00 -80, 80, -80, 80, -7.5, 7.5 / RPP
 !BND:v00 -80, 80, -80, 80, 0.000001, .999999 / 1 / RPP
 
 !- Print & Punch Options
