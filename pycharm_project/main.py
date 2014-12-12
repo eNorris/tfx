@@ -34,12 +34,12 @@ airinner = geo.rcc2d.Rcc2d(74)
 airoutter = geo.rpp2d.Rpp2d(dims=(160, 160))
 externregions = [geo.region.Region(airoutter) - airinner]
 externregions[0].matid = 'G'  # Sets the material id to 'G' which is air
-#externregions = auxutil.extend_2d_to_3d(externregions, 15.0)
+externregions = auxutil.extend_2d_to_3d(externregions, 15.0)
 
 # Create the visualiser
 vis = pygamevisualizer.Visualizer()
 #vis.register(phantomregions)
-geocheck.check_domain(sliceregions, 2000, (-.1, 44.8, -7.5), (.1, 45.2, 7.5), vis)
+geocheck.check_domain(sliceregions, 2000, (-80, -80, -7.5), (80, 80, 7.5), vis)
 #geocheck.check(phantomregions, 500, vis)
 #geocheck.volumecheck(phantomregions, 1000)
 print("Phantom Bounds = " + str(geocheck.get_super_bounds(phantomregions)))
