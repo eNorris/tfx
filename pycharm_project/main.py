@@ -17,7 +17,7 @@ phantom = geo.region.Region(geo.rcc2d.Rcc2d(16))
 phantom.matid = 'E'                                   # Set the material id to 'E' which is Phantom PMMA
 phantomregions = auxutil.automesh(phantom, (31, 31))  # Mesh into 10x10 squares
 phantomregions = auxutil.extend_2d_to_3d(phantomregions, 15.0)
-#phantomregions = auxutil.layerize(phantomregions, 5)
+phantomregions = auxutil.layerize(phantomregions, 5)
 
 # The slice is a 1/16 slice that contains a collimator, botwtie filter, and flat filter
 # The air region is meshed into smaller RPP regions
