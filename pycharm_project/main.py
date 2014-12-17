@@ -29,6 +29,11 @@ for r in sliceregions:
             b.l = 5.0
             b.z = -0.14814/2
 
+# Layerize everything except the collimator hole itself
+hole = [x for x in sliceregions if x.comment == "Collimator hole"]
+sliceregions = auxutil.layerize([x for x in sliceregions if x.comment != "Collimator hole"], 3)
+sliceregions.extend(hole)
+
 # The external region makes the whole thing fit in a -75, 75 x -75, 75 box
 airinner = geo.rcc2d.Rcc2d(74)
 airoutter = geo.rpp2d.Rpp2d(dims=(160, 160))
