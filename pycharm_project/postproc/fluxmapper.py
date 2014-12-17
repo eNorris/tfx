@@ -34,7 +34,11 @@ class FluxMapper(object):
 
         for line in self.rmapfile.readline():
             tokens = line.split()  # Split on whitepsace
+            if len(tokens) == 0:   # Skip blank lines
+                continue
             name = tokens[0]
+            if name.startswith('#') or name.startswith('!') or name.startswith('//'):  # Skip comment lines
+                continue
             pt = [float(x) for x in tokens[1:len(tokens)]]
             mapping.update({name: pt})
 
