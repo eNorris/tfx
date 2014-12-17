@@ -57,6 +57,7 @@ class FluxMapper(object):
             linecount = len(lines)
             found = False
             while i < linecount:
+                print(str(i))
                 if lines[i].startswith("FLUX & DOSE RATES BY GROUP, BY REGION, BY VOLUME"):
                     found = True
                     i += 4  # Skip next 4 lines
