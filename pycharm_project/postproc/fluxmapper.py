@@ -71,10 +71,11 @@ class FluxMapper(object):
                 i += 1
 
 if __name__ == "__main__":
-    if len(sys.argv) == 0:
+    if len(sys.argv) == 1:
         print("Useage: python fluxmapper.py rmapfile lfile mshfile")
-    elif len(sys.argv) == 3:
-        f = FluxMapper(rmapfile=sys.argv[0], listfile=sys.argv[1], mshfile=sys.argv[2])
+    elif len(sys.argv) == 4:
+        # Arg 0 is the program name, fluxmapper.py
+        f = FluxMapper(rmapfile=sys.argv[1], listfile=sys.argv[2], mshfile=sys.argv[3])
         f.parse()
     else:
         print("Not the correct number of args!")
