@@ -1,6 +1,7 @@
 __author__ = 'Edward'
 
 import os.path
+import sys
 
 class FluxMapper(object):
 
@@ -26,6 +27,7 @@ class FluxMapper(object):
             else:
                 self.mshfile = open(name + ".msh", 'w')
 
+    # TODO This should return the results array not do the printing itself
     def parse(self):
         mapping = {}
         results = []
@@ -68,3 +70,12 @@ class FluxMapper(object):
 
                 i += 1
 
+if __name__ == "__main__":
+    if len(sys.argv) == 0:
+        print("Useage: python fluxmapper.py rmapfile lfile mshfile")
+    elif len(sys.argv) == 3:
+        f = FluxMapper(rmapfile=sys.argv[0], listfile=sys.argv[1], mshfile=sys.argv[2])
+        f.parse()
+    else:
+        print("Not the correct number of args!")
+        print("Useage: python fluxmapper.py rmapfile lfile mshfile")
