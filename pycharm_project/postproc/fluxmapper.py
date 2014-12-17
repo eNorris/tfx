@@ -25,6 +25,11 @@ class FluxMapper(object):
             if mshfile is not None:
                 self.mshfile = open(mshfile, 'wb')
             else:
+                self.mshfile = open(name + ".msh", 'wb')
+        else:
+            if mshfile is not None:
+                self.mshfile = open(mshfile, 'w')
+            else:
                 self.mshfile = open(name + ".msh", 'w')
 
     # TODO This should return the results array not do the printing itself
