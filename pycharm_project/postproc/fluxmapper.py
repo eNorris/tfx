@@ -88,7 +88,7 @@ class FluxMapper(object):
                         continue
 
                     self.mshfile.write(str(pt[0]) + "\t" + str(pt[1]) + "\t" + str(pt[2]) + "\t" +
-                                       str(vol) + "\t" + str(flux) + "\t" + str(doserate) + "\t" + str(h2o) + "\t")
+                                       str(vol) + "\t" + str(flux) + "\t" + str(doserate) + "\t" + str(h2o) + "\n")
 
                 i += 1
 
