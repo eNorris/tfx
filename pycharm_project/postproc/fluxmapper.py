@@ -60,6 +60,7 @@ class FluxMapper(object):
                 if lines[i].startswith("FLUX & DOSE RATES BY GROUP, BY REGION, BY VOLUME"):
                     found = True
                     i += 4  # Skip next 4 lines
+                    continue
                 if found:
 
                     data = lines[i].split()
