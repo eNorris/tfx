@@ -37,7 +37,7 @@ class FluxMapper(object):
         mapping = {}
         results = []
 
-        for line in self.rmapfile.readline():
+        for line in self.rmapfile.readlines():
             tokens = line.split()  # Split on whitepsace
             if len(tokens) == 0:   # Skip blank lines
                 continue
@@ -60,12 +60,20 @@ class FluxMapper(object):
                 #print(str(i))
                 if lines[i].startswith("FLUX & DOSE RATES BY GROUP, BY REGION, BY VOLUME"):
                     found = True
-                    i += 4  # Skip next 4 lines
+                    i += 5  # Skip next 4 lines
                     continue
                 if found:
-
                     data = lines[i].split()
+
+                    if len(data) == 0:
+                        found = False
+                        i += 1
+                        continue
+
                     count = len(data)
+                    if count < 4:  # Skip bad lines
+                        i += 1
+                        continue
                     name = data[0]
                     vol = data[count - 4]
                     flux = data[count - 3]
@@ -74,7 +82,8 @@ class FluxMapper(object):
 
                     pt = mapping.pop(name, None)  # Return None on failure
                     if pt is None:
-                        print("WARNING: Couldn't find part " + name + " in " + self.rmapfile.name)
+                        print("WARNING: Couldn't find part " + name + " in " + self.rmapfile.name +
+                              " (Does it not have any eval points?)")
                         i += 1
                         continue
 
