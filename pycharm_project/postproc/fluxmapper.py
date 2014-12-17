@@ -57,7 +57,7 @@ class FluxMapper(object):
             linecount = len(lines)
             found = False
             while i < linecount:
-                print(str(i))
+                #print(str(i))
                 if lines[i].startswith("FLUX & DOSE RATES BY GROUP, BY REGION, BY VOLUME"):
                     found = True
                     i += 4  # Skip next 4 lines
@@ -75,6 +75,7 @@ class FluxMapper(object):
                     pt = mapping.pop(name, None)  # Return None on failure
                     if pt is None:
                         print("WARNING: Couldn't find part " + name + " in " + self.rmapfile.name)
+                        i += 1
                         continue
 
                     self.mshfile.write(str(pt[0]) + "\t" + str(pt[1]) + "\t" + str(pt[2]) + "\t" +
