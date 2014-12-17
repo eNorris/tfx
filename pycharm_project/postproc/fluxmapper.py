@@ -73,6 +73,7 @@ class FluxMapper(object):
                     pt = mapping.pop(name, None)  # Return None on failure
                     if pt is None:
                         print("WARNING: Couldn't find part " + name + " in " + self.rmapfile.name)
+                        continue
 
                     self.mshfile.write(str(pt[0]) + "\t" + str(pt[1]) + "\t" + str(pt[2]) + "\t" +
                                        str(vol) + "\t" + str(flux) + "\t" + str(doserate) + "\t" + str(h2o) + "\t")
