@@ -51,7 +51,7 @@ geocheck.check_domain(sliceregions, 2000, (-80, -80, -7.5), (80, 80, 7.5), vis)
 print("Phantom Bounds = " + str(geocheck.get_super_bounds(phantomregions)))
 print("Slice Bounds = " + str(geocheck.get_super_bounds(sliceregions)))
 print("Extern Bounds = " + str(geocheck.get_super_bounds(externregions)))
-vis.launch()
+#vis.launch()
 
 # Write the file
 writer = partswriter.PartsWriter("./phantom.parts", {'E': "PHANTOM", 'F': "COLLIMATOR", 'G': "AIR", 'H': "ALUM"},

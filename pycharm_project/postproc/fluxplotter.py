@@ -57,7 +57,7 @@ class FluxPlotter(object):
         X, Y = numpy.meshgrid(xi, yi)
         return X, Y, Z
 
-    def plotflux_z(self, zmin, zmax):
+    def plotflux_z_surf(self, zmin, zmax):
         pts = self.flattenflux_z(zmin, zmax)
         pts = self.reduce_range(pts, x=(-20, 20), y=(-20, 20), z=(0, 1e11))
         xs = numpy.array([p[0] for p in pts])
@@ -72,15 +72,39 @@ class FluxPlotter(object):
         surf = ax.plot_trisurf(xs, ys, fluxs, triangles, cmap=pyplot.get_cmap("jet"), lw=0.2,
                 alpha=0.5)
 
-        # 3-D Countour plot
-        X, Y, Z = self.xxgrid(xs, ys, fluxs)
-        #surf = ax.contour(X, Y, Z, cmap=pyplot.get_cmap("jet"), lw=0.2,
-        #        alpha=0.5)
+        fig.colorbar(surf)
+        pyplot.show()
 
-        #X, Y, Z = self.xxgrid(xs, ys, fluxs)
-        #surf = pyplot.contourf(X, Y, Z, 100, cmap="jet")
+    def plotflux_z_contour(self, zmin, zmax):
+        pts = self.flattenflux_z(zmin, zmax)
+        pts = self.reduce_range(pts, x=(-20, 20), y=(-20, 20), z=(0, 1e11))
+        xs = numpy.array([p[0] for p in pts])
+        ys = numpy.array([p[1] for p in pts])
+        fluxs = numpy.array([p[2] for p in pts])
+
+        fig = pyplot.figure()
+        X, Y, Z = self.xxgrid(xs, ys, fluxs)
+        surf = pyplot.contourf(X, Y, Z, 100, cmap="jet")
 
         fig.colorbar(surf)
+        pyplot.show()
+
+    def plotflux_z_line(self, zmin, zmax):
+
+        pts = self.flattenflux_z(zmin, zmax)
+        pts = self.reduce_range(pts, x=(-.5, .5), y=(-.5, 30), z=(0, 1e11))
+        xs = numpy.array([p[0] for p in pts])
+        ys = numpy.array([p[1] for p in pts])
+        fluxs = numpy.array([p[2] for p in pts])
+
+        fig = pyplot.figure()
+        print(xs)
+        surf = pyplot.plot(ys, fluxs)
+
+        f = open("../data.txt", 'w')
+        for y,z in zip(ys, fluxs):
+            f.write(str(y) + "\t" + str(z) + "\n")
+
         pyplot.show()
 
 
@@ -91,17 +115,7 @@ if __name__ == "__main__":
     elif len(sys.argv) == 2:
         p = FluxPlotter(sys.argv[1])
         p.parse()
-        p.plotflux_z(-.5, .5)
+        p.plotflux_z_line(-.5, .5)
     else:
         print("Too many args!")
         print("Usage: python fluxplotter mshfile")
-
-    fig = pyplot.figure()
-    x = [0,1,2,3,4,5,6]
-    y3 = [5,6,8,3,4,6,1]
-    plot = pyplot.plot(x, y3)
-    pyplot.ylabel('Velocity [m/s]')
-    pyplot.xlabel('Temperature [eV]')
-    pyplot.legend(('T = 3 eV', 'T = 10 eV'))
-    pyplot.title("X-Velocity vs Temperature")
-    pyplot.show()
