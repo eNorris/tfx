@@ -17,7 +17,7 @@ phantom = geo.region.Region(geo.rcc2d.Rcc2d(16))
 phantom.matid = 'E'                                   # Set the material id to 'E' which is Phantom PMMA
 phantomregions = auxutil.automesh(phantom, (31, 31))  # Mesh into 10x10 squares
 phantomregions = auxutil.extend_2d_to_3d(phantomregions, 15.0)
-phantomregions = auxutil.layerize(phantomregions, 5)
+phantomregions = auxutil.layerize(phantomregions, 15)
 
 # The slice is a 1/16 slice that contains a collimator, botwtie filter, and flat filter
 # The air region is meshed into smaller RPP regions
@@ -26,13 +26,14 @@ sliceregions = auxutil.extend_2d_to_3d(sliceregions, 15.0)
 for r in sliceregions:
     for b in r.get_all_bodies():
         if b.comment == "Collimator hole":
-            b.l = 5.0
+            b.l = 0.14814
             b.z = -0.14814/2
 
 # Layerize everything except the collimator hole itself
-hole = [x for x in sliceregions if x.comment == "Collimator hole"]
-sliceregions = auxutil.layerize([x for x in sliceregions if x.comment != "Collimator hole"], 3)
-sliceregions.extend(hole)
+#hole = [x for x in sliceregions if x.comment == "Collimator hole"]
+#sliceregions = auxutil.layerize([x for x in sliceregions if x.comment != "Collimator hole"], 3)
+#sliceregions.extend(hole)
+sliceregions = auxutil.layerize(sliceregions, 15)
 
 # The external region makes the whole thing fit in a -75, 75 x -75, 75 box
 airinner = geo.rcc2d.Rcc2d(74)
