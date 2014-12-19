@@ -41,4 +41,8 @@ def calc_volume(region, points=1000):
         if (x, y, z) in region:
             hits += 1
 
+    if hits/points * boxvol < 1e-6:
+        print("WARNING: Very small volume: " + str(region.comment) + " vol = " + str(hits/points * boxvol))
+        return 1.0e-6
+
     return hits/points * boxvol
