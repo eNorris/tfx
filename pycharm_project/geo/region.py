@@ -186,7 +186,7 @@ class Region(visualizer.renderable.Renderable):
         #print("region.py::rotate_about_2d() [186]: rotating...")
         if self.type == Region.BASE:
             #print("base")
-            print(self.left.__class__.__name__)
+            #print(self.left.__class__.__name__)
             self.left.rotate_about_2d(theta, aboutpt, is_radians)
             #print("returned from recursion")
         else:

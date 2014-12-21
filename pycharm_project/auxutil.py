@@ -91,6 +91,33 @@ def automesh(region, n=(10, 10), d=None):
     return regions
 
 
+def unity_circle_mesh(r, matid):
+    """
+     r - outter radius of largest circle, it should be an integer
+    """
+
+    regions = []
+
+    for ro in range(1, r+1):
+        print("auxutil.py: unity_circle_mesh: ro = " + str(ro))
+        inner = geo.rcc2d.Rcc2d(ro-1.0)
+        outer = geo.rcc2d.Rcc2d(ro)
+        numslice = math.ceil(math.pi * (2 * ro + 1))
+
+        for i in range(numslice):
+            slice = sliceregion(20, 2 * math.pi / numslice, True)
+            slice.rotate_about_2d(i/numslice * 2 * math.pi, (0, 0), True)
+            newregion = geo.region.Region(outer) - inner + slice
+            newregion.comment = "phantom mesh part, ro = " + str(ro) + " i = " + str(i)
+            newregion.matid = matid
+            # Add the scatter point
+            add_scatter(newregion)
+            #newregion.evalpoints.append(util.get_rotated_about_2d([0, ro-0.5], 2 * math.pi / numslice, (0, 0), True))
+            regions.append(newregion)
+
+    return regions
+
+
 def recursively_build_acceptance_tree(e, ghosttree):
     if ghosttree.type == Region.BASE:
         ghosttree.left = acceptance(e, ghosttree.left)

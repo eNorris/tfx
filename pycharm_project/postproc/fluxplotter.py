@@ -84,7 +84,8 @@ class FluxPlotter(object):
 
         fig = pyplot.figure()
         X, Y, Z = self.xxgrid(xs, ys, fluxs)
-        surf = pyplot.contourf(X, Y, Z, 100, cmap="jet")
+        #surf = pyplot.contourf(X, Y, Z, 100, cmap="jet")
+        surf = pyplot.contour(X, Y, Z, 10, cmap="jet")
 
         fig.colorbar(surf)
         pyplot.show()
@@ -113,7 +114,7 @@ if __name__ == "__main__":
     elif len(sys.argv) == 2:
         p = FluxPlotter(sys.argv[1])
         p.parse()
-        p.plotflux_z_line(-.5, .5)
+        p.plotflux_z_contour(-.5, .5)
     else:
         print("Too many args!")
         print("Usage: python fluxplotter mshfile")

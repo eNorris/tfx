@@ -9,7 +9,7 @@ class FluxMapper(object):
         self.rmapfile = None
         self.listfile = None
         self.mshfile = None
-        self.READLIMIT = 10E6
+        self.READLIMIT = 10E7
 
         if rmapfile is not None:
             self.rmapfile = open(rmapfile, 'r')
@@ -49,6 +49,7 @@ class FluxMapper(object):
 
         if os.path.getsize(self.listfile.name) > self.READLIMIT:
             # Read line by line
+            print("Really big file! Size > " + str(self.READLIMIT) + " bytes!")
             pass
         else:
             # Read all at once
@@ -60,6 +61,7 @@ class FluxMapper(object):
                 #print(str(i))
                 if lines[i].startswith("FLUX & DOSE RATES BY GROUP, BY REGION, BY VOLUME"):
                     found = True
+                    print("Found flux data")
                     i += 5  # Skip next 4 lines
                     continue
                 if found:
