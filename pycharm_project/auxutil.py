@@ -106,7 +106,8 @@ def unity_circle_mesh(r, matid):
 
         for i in range(numslice):
             slice = sliceregion(20, 2 * math.pi / numslice, True)
-            slice.rotate_about_2d(i/numslice * 2 * math.pi, (0, 0), True)
+            # Rotate everything by 1 degree
+            slice.rotate_about_2d(i/numslice * 2 * math.pi + (2.0 * math.pi / 360.0), (0, 0), True)
             newregion = geo.region.Region(outer) - inner + slice
             newregion.comment = "phantom mesh part, ro = " + str(ro) + " i = " + str(i)
             newregion.matid = matid
