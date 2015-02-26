@@ -15,7 +15,7 @@ import math
 # The phantom itself is a 16 cm radius cylindrical phantom centered at (0, 0)
 phantom = geo.region.Region(geo.rcc2d.Rcc2d(16))
 phantom.matid = 'E'                                   # Set the material id to 'E' which is Phantom PMMA
-phantomregions = auxutil.automesh(phantom, (31, 31))  # Mesh into 10x10 squares
+phantomregions = auxutil.automesh(phantom, (17, 17))  # Mesh into 10x10 squares
 #phantomregions = auxutil.unity_circle_mesh(16, 'E')
 phantomregions = auxutil.extend_2d_to_3d(phantomregions, 15.0)
 phantomregions = auxutil.layerize(phantomregions, 15)
