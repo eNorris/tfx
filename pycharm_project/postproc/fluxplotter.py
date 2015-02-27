@@ -112,7 +112,7 @@ class FluxPlotter(object):
     def plotflux_z_contour(self, zmin, zmax):
         # x, y, z, vol, flux, dose, h2o -> x, y, flux
         pts = self.flattenflux_z(zmin, zmax)
-        pts = self.reduce_cyl_range(pts, x=0, y=0, z=(0, 5e-10), r=60)
+        pts = self.reduce_cyl_range(pts, x=0, y=0, z=(0, 5e-10), r=20)
 
         #for i in range(len(pts)):
         #    pts[i][2] = math.log10(pts[i][2])
@@ -145,7 +145,7 @@ class FluxPlotter(object):
         fig = pyplot.figure()
         surf = pyplot.plot(ys, fluxs)
 
-        surf.ylabel("y")
+        pyplot.ylabel("y")
         pyplot.xlabel("x")
 
         f = open("../data.txt", 'w')
@@ -161,7 +161,7 @@ if __name__ == "__main__":
         p = FluxPlotter(sys.argv[1])
         p.parse()
         #p.log_flux_data()
-        p.plotflux_z_contour(-.5, .5)
+        p.plotflux_z_contour(-.01, .01)
     else:
         print("Too many args!")
         print("Usage: python fluxplotter mshfile")
