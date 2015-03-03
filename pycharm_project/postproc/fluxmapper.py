@@ -93,6 +93,8 @@ class FluxMapper(object):
                                        str(vol) + "\t" + str(flux) + "\t" + str(doserate) + "\t" + str(h2o) + "\n")
 
                 i += 1
+        if not found:
+            print("Didn't find any data in the list file... The mesh file will be empty")
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:

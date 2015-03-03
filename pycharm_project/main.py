@@ -18,7 +18,7 @@ phantom.matid = 'E'                                   # Set the material id to '
 phantomregions = auxutil.automesh(phantom, (17, 17))  # Mesh into 10x10 squares
 #phantomregions = auxutil.unity_circle_mesh(16, 'E')
 phantomregions = auxutil.extend_2d_to_3d(phantomregions, 15.0)
-phantomregions = auxutil.layerize(phantomregions, 15) 
+phantomregions = auxutil.layerize(phantomregions, 15)
 
 # The slice is a 1/16 slice that contains a collimator, botwtie filter, and flat filter
 # The air region is meshed into smaller RPP regions
