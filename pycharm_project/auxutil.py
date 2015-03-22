@@ -91,6 +91,13 @@ def automesh(region, n=(10, 10), d=None):
     return regions
 
 
+def automesh_all(regions, n=(10, 10), d=None):
+    meshed_regions = []
+    for r in regions:
+        meshed_regions.append(automesh(r, n, d))
+    return meshed_regions
+
+
 def unity_circle_mesh(r, matid):
     """
      r - outter radius of largest circle, it should be an integer

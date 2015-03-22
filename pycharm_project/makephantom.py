@@ -215,9 +215,16 @@ def makeslice3d():
     airregion.evalpoints.extend([(0, 30, 0.5)])
     airregions = auxutil.automesh(airregion, (4, 8))
 
-    #regions.extend([upcolreg, downcolreg, filterreg, bowtieregion])
-    regions.extend([incolreg, outcolreg, filterreg, bt1region, bt2region, bt3region, bt4region, bt5region, bt6region,
-                    bt7region, bt8region, bt9region, bt10region, bt11region, bt12region, bt13region, btgapregion])
+    bow_tie_to_mesh = [filterreg, bt1region, bt2region, bt3region, bt4region, bt5region, bt6region,
+                       bt7region, bt8region, bt9region, bt10region, bt11region, bt12region, bt13region, btgapregion]
+
+    meshed_bow_tie = []
+    for rm in bow_tie_to_mesh:
+        newmesh = auxutil.automesh(rm, n=(1,1))
+        meshed_bow_tie.extend(newmesh)
+
+    regions.extend(meshed_bow_tie)
+    regions.extend([incolreg, outcolreg])
     # Change back to meshed version later!
     regions.extend(airregions)
 
