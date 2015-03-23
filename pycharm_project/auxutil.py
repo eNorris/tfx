@@ -79,14 +79,14 @@ def automesh(region, n=(10, 10), d=None):
             if accept == 1:
                 newregion = transform_rpp_to_box(e)  #Region(e)
                 newregion.matid = region.matid
-                add_scatter(newregion)
-                regions.append(newregion)
+                if add_scatter(newregion):
+                    regions.append(newregion)
             elif accept == 0:
                 #newregion = region + e
                 newregion = region + transform_rpp_to_box(e)
                 newregion.matid = region.matid
-                add_scatter(newregion)
-                regions.append(newregion)
+                if add_scatter(newregion):
+                    regions.append(newregion)
 
     return regions
 
@@ -274,7 +274,7 @@ def add_scatter(region):
     left, right, bottom, top, zmin, zmax = region.get_bounds()
 
     fires = 0
-    tries = 10000
+    tries = 100000
     accepts = []
 
     while fires < tries and len(accepts) < 1000:
@@ -284,7 +284,8 @@ def add_scatter(region):
             accepts.append([x, y])
 
     if len(accepts) == 0:
-        raise Exception("auxutil::add_scatter(): Failed to find a single scatter point after " + str(tries) + " tries!")
+        return False
+        #raise Exception("auxutil::add_scatter(): Failed to find a single scatter point after " + str(tries) + " tries!")
 
     xbar = sum(pt[0] for pt in accepts) / len(accepts)
     ybar = sum(pt[1] for pt in accepts) / len(accepts)
@@ -294,6 +295,7 @@ def add_scatter(region):
         region.evalpoints.append([xbar, ybar, 0.5])
     else:
         region.evalpoints.append([accepts[0][0], accepts[0][1], 0.5])
+    return True
 
 
 def rotate_regions(regionlist, theta, aboutpt=(0, 0), is_radians=True):
