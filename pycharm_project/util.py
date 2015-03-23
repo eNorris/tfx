@@ -46,3 +46,15 @@ def calc_volume(region, points=1000):
         return 1.0e-6
 
     return hits/points * boxvol
+
+def stateq(x, y):
+    if y != 0:
+        return 1-(1e-8) <= x/y <= 1+(1e-8)
+    else:
+        return x == 0
+
+def statgeq(x, y):
+    return x >= y or stateq(x, y)
+
+def statleq(x, y):
+    return x <= y or stateq(x, y)
