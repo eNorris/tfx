@@ -34,15 +34,25 @@ class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
 
     def __contains__(self, item):
         c = self.get_corners()
+
+        # Special case of a corner
+        if (util.stateq(item[0], c[0][0]) and util.stateq(item[1], c[0][1])) or \
+        (util.stateq(item[0], c[1][0]) and util.stateq(item[1], c[1][1])) or \
+        (util.stateq(item[0], c[2][0]) and util.stateq(item[1], c[2][1])) or \
+        (util.stateq(item[0], c[3][0]) and util.stateq(item[1], c[3][1])):
+            return True
+
         if len(c) < 3:
             return False
         v1 = c[0][0] - c[-1][0], c[0][1] - c[-1][1]
         v2 = c[0][0] - item[0], c[0][1] - item[1]
-        positive = v1[0] * v2[1] - v1[1] * v2[0] >= 0
+        #positive = v1[0] * v2[1] - v1[1] * v2[0] >= 0
+        positive = util.statgeq(v1[0] * v2[1] - v1[1] * v2[0], 0)
         for i in range(1, len(c)):
             v1 = c[i][0] - c[i-1][0], c[i][1] - c[i-1][1]
             v2 = c[i][0] - item[0], c[i][1] - item[1]
-            if (v1[0] * v2[1] - v1[1] * v2[0] >= 0) != positive:
+            #if (v1[0] * v2[1] - v1[1] * v2[0] >= 0) != positive:
+            if util.statgeq(v1[0] * v2[1] - v1[1] * v2[0], 0) != positive:
                 return False
         return True
 
