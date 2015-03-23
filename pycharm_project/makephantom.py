@@ -220,7 +220,7 @@ def makeslice3d():
 
     meshed_bow_tie = []
     for rm in bow_tie_to_mesh:
-        newmesh = auxutil.automesh(rm, n=(1,1))
+        newmesh = auxutil.automesh(rm, n=(2, 2))
         meshed_bow_tie.extend(newmesh)
 
     regions.extend(meshed_bow_tie)
