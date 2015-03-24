@@ -378,3 +378,32 @@ def layerize(regions, layercount):
             layeredregions.append(q)
 
     return layeredregions
+
+def sublayerize(regions, layercount):
+    if layercount < 2:
+        raise Exception("auxutil.py::layerize(): Can't make less than two layers.")
+
+    print("Beginning to layerize...")
+
+    #layeredregions = []
+    sublayers = []
+    for i in range(layercount):
+        sublayers.append([])
+
+    for r in regions:
+        left, right, bot, top, zmin, zmax = r.get_bounds()
+        dl = (zmax - zmin)/layercount
+        for i in range(layercount):
+            if i * dl + zmin > zmax - 1E-10:
+                break
+            p = geo.Box3d.BoxZaligned((left, bot, zmin + i*dl), (right-left, 0), (0, top-bot), dl,
+                                      False, str(i) + " layer of " + r.comment)
+            q = r+p
+            q.matid = r.matid
+            q.drawevals = r.drawevals
+            for evpt in r.evalpoints:
+                q.evalpoints.append((evpt[0], evpt[1], (i + .5)*dl + zmin))
+            sublayers[i].append(q)
+            #layeredregions.append(q)
+
+    return sublayers  #layeredregions
