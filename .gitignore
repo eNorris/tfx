@@ -52,3 +52,8 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Special file extensions specific to this project
+*.msh
+*.dat
+*.txt
