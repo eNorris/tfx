@@ -49,11 +49,13 @@ class Raw2d(CombinatorialBody2d, visualizer.renderable.Renderable):
 
         v1 = c[0][0] - c[-1][0], c[0][1] - c[-1][1]
         v2 = c[0][0] - item[0], c[0][1] - item[1]
-        positive = v1[0] * v2[1] - v1[1] * v2[0] > 0
+        #positive = v1[0] * v2[1] - v1[1] * v2[0] > 0
+        positive = util.statgeq(v1[0] * v2[1] - v1[1] * v2[0], 0)
         for i in range(1, len(c)):
             v1 = c[i][0] - c[i-1][0], c[i][1] - c[i-1][1]
             v2 = c[i][0] - item[0], c[i][1] - item[1]
-            if (v1[0] * v2[1] - v1[1] * v2[0] > 1e-10) != positive:
+            #if (v1[0] * v2[1] - v1[1] * v2[0] > 1e-10) != positive:
+            if util.statgeq(v1[0] * v2[1] - v1[1] * v2[0], 0) != positive:
                 return False
         return True
 
