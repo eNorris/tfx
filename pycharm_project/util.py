@@ -49,7 +49,7 @@ def calc_volume(region, points=1000):
 
 def stateq(x, y):
     if y != 0:
-        return 1-(1e-8) <= x/y <= 1+(1e-8)
+        return 1-(1e-6) <= x/y <= 1+(1e-6)
     else:
         return x == 0
 

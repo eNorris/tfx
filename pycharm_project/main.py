@@ -34,7 +34,11 @@ for r in sliceregions:
 #hole = [x for x in sliceregions if x.comment == "Collimator hole"]
 #sliceregions = auxutil.layerize([x for x in sliceregions if x.comment != "Collimator hole"], 3)
 #sliceregions.extend(hole)
-sliceregions = auxutil.layerize(sliceregions, 15)
+
+#sliceregions = auxutil.layerize(sliceregions, 15)
+s1, s2, s3 = auxutil.sublayerize(sliceregions, 3)
+s4 = auxutil.layerize(s2, 5)
+sliceregions = s1 + s4 + s3
 
 # The external region makes the whole thing fit in a -75, 75 x -75, 75 box
 airinner = geo.rcc2d.Rcc2d(74)
