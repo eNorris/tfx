@@ -44,16 +44,12 @@ class Box2d(CombinatorialBody2d, visualizer.renderable.Renderable):
 
         # Special case of on the line
         # TODO - This is actually completely wrong for a BOX!!!
-        if (util.stateq(item[0], c[0][0]) and c[0][1] <= item[1] <= c[0][1]) or \
-            (util.stateq(item[0], c[1][0]) and c[1][1] <= item[1] <= c[1][1]) or \
-            (util.stateq(item[0], c[2][0]) and c[2][1] <= item[1] <= c[2][1]) or \
-            (util.stateq(item[0], c[3][0]) and c[3][1] <= item[1] <= c[3][1]):
+        if (util.stateq(item[0], c[0][0]) and c[0][1] <= item[1] <= c[1][1]) or \
+            (util.stateq(item[0], c[2][0]) and c[3][1] <= item[1] <= c[2][1]):
             return True
 
-        if (util.stateq(item[1], c[0][1]) and c[0][0] <= item[1] <= c[0][0]) or \
-            (util.stateq(item[1], c[1][1]) and c[1][0] <= item[1] <= c[1][0]) or \
-            (util.stateq(item[1], c[2][1]) and c[2][0] <= item[1] <= c[2][0]) or \
-            (util.stateq(item[1], c[3][1]) and c[3][0] <= item[1] <= c[3][0]):
+        if (util.stateq(item[1], c[0][1]) and c[3][0] <= item[0] <= c[0][0]) or \
+            (util.stateq(item[1], c[1][1]) and c[2][0] <= item[0] <= c[1][0]):
             return True
 
         if len(c) < 3:
